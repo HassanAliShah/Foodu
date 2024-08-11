@@ -1,0 +1,39 @@
+
+
+import 'package:flutter/material.dart';
+
+class HOutlineButtonTheme{
+
+  HOutlineButtonTheme._();
+
+  static final lightOutlineButtonTheme = OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+  elevation: 0,
+  foregroundColor: Colors.white,
+  backgroundColor: Colors.blue,
+  disabledBackgroundColor: Colors.grey,
+  disabledForegroundColor: Colors.grey,
+  side:  const BorderSide(color:Colors.blue),
+  padding: const EdgeInsets.symmetric(vertical:  18),
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+  textStyle:  const TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w600
+    ),
+  ),);
+
+  static final darkOutlineButtonTheme = OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      elevation: 0,
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.blue,
+      disabledBackgroundColor: Colors.grey,
+      disabledForegroundColor: Colors.grey,
+      side:  const BorderSide(color:Colors.blue),
+      padding: const EdgeInsets.symmetric(vertical:  18),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      textStyle:  const TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w600
+      ),
+    ),);
+
+
+
+}
