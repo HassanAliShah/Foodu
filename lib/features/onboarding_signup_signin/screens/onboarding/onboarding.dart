@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:foodu/features/authentication/controller/onboarding_controller.dart';
-import 'package:foodu/features/authentication/screens/onboarding/widget/on_boarding_page.dart';
+import 'package:foodu/features/onboarding_signup_signin/controller/onboarding_controller.dart';
+import 'package:foodu/features/onboarding_signup_signin/screens/onboarding/widget/on_boarding_page.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';

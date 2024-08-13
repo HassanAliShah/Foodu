@@ -14,13 +14,13 @@ class HFormDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: HSizes.spaceBtwItems),
+      padding: EdgeInsets.symmetric(vertical: HSizes.defaultSpace),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Flexible(child: Divider(color: HColors.textGrey,thickness: 0.5,indent: 60,endIndent: 5,)),
+          Flexible(child: Divider(color: HColors.textGrey,thickness: 0.5,indent: 10,endIndent: 5,)),
           Text(text,style: Theme.of(context).textTheme.titleSmall,),
-          Flexible(child: Divider(color: HColors.textGrey,thickness: 0.5,indent: 5,endIndent: 60,)),
+          Flexible(child: Divider(color: HColors.textGrey,thickness: 0.5,indent: 5,endIndent: 10,)),
         ],
       ),
     );

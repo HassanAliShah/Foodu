@@ -3,6 +3,25 @@
 class HText{
 
 
+  //====== Welcome Text
+
+  static const String welcomeTitle = 'Welcome to Foodu! 👋';
+  static const String welcomeSubtitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+  //====== LetYouIn TEXT
+
+  static const String letYouIn = "Let's You In";
+  static const String continueWith = "Continue with";
+  static const String signInWithPhoneNo = "Sign in with Phone Number";
+
+  //===== otp
+
+
+  static const String otpCodeVerification = "OTP Code Verification";
+  static const String codeSendTo = "Code has been send to +1 111 ******99";
+  static const String verify = "Verify";
+
+
   //====== OnBoarding TEXT
 
   static const String onBoardingTitle1 = 'Order For Food';
@@ -22,7 +41,7 @@ class HText{
   static const String orContinue = 'or continue with';
   static const String signIN = 'Sign In';
   static const String signUp = 'Sign Up';
-  static const String continueWith = 'or continue with';
+  static const String orContinueWith = 'or continue with';
   static const String dontHaveAccount = "Don't have an Account?";
   static const String alreadyHaveAccount = "Already have an Account?";
 

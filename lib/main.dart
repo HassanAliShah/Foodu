@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:foodu/features/onboarding_signup_signin/screens/welcome/welcome.dart';
 import 'package:foodu/utils/theme/theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: HAppTheme.lightTheme,
       darkTheme: HAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home:  WelcomeScreen(),
     );
   }
 }

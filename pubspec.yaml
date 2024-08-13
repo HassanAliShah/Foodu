@@ -39,11 +39,13 @@ flutter:
     - assets/logos/
     - assets/icons/
     - assets/images/on_boarding_images/
+    - assets/images/welcome/
+    - assets/images/let_you_in/
 
   #============= Local Fonts ===============#
 
   fonts:
-    - family: poppins
+    - family: Urbanist
       fonts:
         - asset: assets/fonts/Urbanist-Light.ttf
           weight: 300

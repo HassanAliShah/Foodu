@@ -1,8 +1,7 @@
 
 
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/features/authentication/screens/login/login_screen.dart';
-import 'package:foodu/features/authentication/screens/signup/sign_up_screen.dart';
+import 'package:foodu/features/onboarding_signup_signin/screens/let_you_in/let_you_in.dart';
 import 'package:get/get.dart';
 
 class OnBoardingController extends GetxController{
@@ -22,7 +21,7 @@ class OnBoardingController extends GetxController{
 
   void nextPage(){
     if(currentPageIndex.value == 3){
-      Get.offAll( () => const SignUpScreen());
+      Get.offAll( () => const LetYouInScreen());
     }else
       {
         pageController.jumpToPage(currentPageIndex.value++);
