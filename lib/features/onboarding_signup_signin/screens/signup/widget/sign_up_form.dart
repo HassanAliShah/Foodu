@@ -2,6 +2,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodu/common/widgets/login_signup/phone_number_field.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
@@ -17,26 +18,7 @@ class HSignUpForm extends StatelessWidget {
       padding: EdgeInsets.only(top: HSizes.spaceBtwSection),
       child: Column(
         children: [
-          SizedBox(
-            height: HSizes.buttonHeight,
-            child: TextField(cursorColor: HColors.primary,cursorHeight: HSizes.lg,style: Theme.of(context).textTheme.bodySmall,
-              decoration: InputDecoration(
-                prefixIcon: CountryCodePicker(
-                  padding: EdgeInsets.zero,
-                  onChanged: print,
-                  initialSelection: 'PAK',
-                  favorite: ['+39','FR'],showDropDownButton: true,
-                  showCountryOnly: false,
-                  showOnlyCountryWhenClosed: false,
-                  hideMainText: true,
-                  alignLeft: false,
-
-                ),
-                hintText: HText.phoneNo,
-                hintStyle: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-          ),
+          PhoneNumberField(),
           SizedBox(height: HSizes.sm,),
           SizedBox(
             height: HSizes.buttonHeight,

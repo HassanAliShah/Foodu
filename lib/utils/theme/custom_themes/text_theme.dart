@@ -16,7 +16,7 @@ class HTextTheme{
     titleMedium: TextStyle().copyWith(fontSize: 16.0, fontWeight: FontWeight.w500, color: HColors.textPrimary),
     titleSmall: TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w400, color: HColors.textGrey),
 
-    bodyLarge: TextStyle().copyWith(fontSize: 18.0, fontWeight: FontWeight.w500, color: HColors.textblack),
+    bodyLarge: TextStyle().copyWith(fontSize: 18.0, fontWeight: FontWeight.w700, color: HColors.textblack),
     bodyMedium: TextStyle().copyWith(fontSize: 16.0, fontWeight: FontWeight.normal, color: HColors.textblack),
     bodySmall: TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w600, color: HColors.textblack),
 

@@ -28,7 +28,7 @@ class HSizes{
  static const double appBarHeight = 20.0;
 
  // Image Sizes
- static const double imageThumbSize = 80.0;
+ static const double imageThumbSize = 100.0;
 
  // Default spacing between sections
  static const double defaultSpace = 24.0;

@@ -25,7 +25,7 @@ class HAppTheme{
     appBarTheme: HAppBarTheme.lightAppBarTheme,
     outlinedButtonTheme: HOutlineButtonTheme.lightOutlineButtonTheme,
     elevatedButtonTheme: HElevatedButtonTheme.lightElevatedButtonTheme,
-    inputDecorationTheme: HTextFormFieldTheme.lightInputDecorationTheme
+    inputDecorationTheme: HTextFormFieldTheme.lightInputDecorationTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,

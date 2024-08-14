@@ -8,7 +8,12 @@ class HImages{
   //==== welcome
   static const String welcome = 'assets/images/welcome/welcome.png';
 
+  //==== Let's you in
   static const String letYouIn = 'assets/images/let_you_in/letyouin.png';
+
+  //==== profile form
+  static const String picImage = 'assets/icons/pic_image.png';
+  static const String profile = 'assets/images/profile/profile.png';
 
   //==== Logo Image
   static const String appLogo = 'assets/logos/logo.png';

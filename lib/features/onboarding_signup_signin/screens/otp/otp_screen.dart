@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
+import 'package:foodu/features/account_setup/screens/profile_form/profile_form_screen.dart';
 import 'package:foodu/features/onboarding_signup_signin/controller/otp_controller.dart';
 import 'package:foodu/features/onboarding_signup_signin/screens/otp/widget/textfield_and_time.dart';
 import 'package:foodu/utils/constants/colors.dart';
@@ -35,7 +36,7 @@ class OtpScreen extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child:
-                    ElevatedButton(onPressed: () {}, child: Text(HText.verify)))
+                    ElevatedButton(onPressed: ()=> Get.to(ProfileFormScreen()), child: Text(HText.verify)))
           ],
         ),
       ),
