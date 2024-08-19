@@ -22,6 +22,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   country_code_picker: ^3.0.0
   image_picker: ^1.1.2
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -39,10 +40,14 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/
+    - assets/icons/navigation_bar/
     - assets/images/on_boarding_images/
     - assets/images/welcome/
     - assets/images/let_you_in/
     - assets/images/profile/
+    - assets/images/discount/
+    - assets/images/category/
+    - assets/images/food/
 
   #============= Local Fonts ===============#
 
@@ -57,3 +62,7 @@ flutter:
           weight: 500
         - asset: assets/fonts/Urbanist-Bold.ttf
           weight: 700
+    - family: Luckiest Guy
+      fonts:
+        - asset: assets/fonts/LuckiestGuy-Regular.ttf
+          weight: 400

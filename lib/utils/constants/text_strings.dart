@@ -63,5 +63,12 @@ class HText{
   static const String createNewPin = 'Create New Pin';
   static const String pinText = 'Add a PIN number to make your account more secure';
 
+  //==== Discount
+
+  static const String discountPercent = '30%';
+  static const String discountSubtitle = 'Discount Only Valid For Today!';
+
+
+
 
 }

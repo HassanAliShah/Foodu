@@ -2,6 +2,7 @@
 class HSizes{
   // Padding and margin sizes
   static const double xs = 4.0;
+  static const double xm = 12.0;
   static const double sm = 8.0;
   static const double md = 16.0;
   static const double lg = 24.0;
@@ -34,4 +35,11 @@ class HSizes{
  static const double defaultSpace = 24.0;
  static const double spaceBtwItems = 16.0;
  static const double spaceBtwSection = 32.0;
+
+  //Card Radius
+  static const double cardRadiusLg = 16.0;
+  static const double cardRadiusXL = 32.0;
+  static const double cardRadiusMd = 12.0;
+  static const double cardRadiusSm = 10.0;
+  static const double cardRadiusXs = 6.0;
 }

@@ -11,7 +11,9 @@ class HAppBarTheme{
     elevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    centerTitle: false,titleTextStyle: TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w600, color: HColors.textblack),
+    centerTitle: false,
+    scrolledUnderElevation: 0,
+    titleTextStyle: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: HColors.textblack),
     iconTheme: IconThemeData(color: HColors.backgroundDark,size: 24),
     actionsIconTheme: IconThemeData(color: HColors.backgroundDark,size: 24),
   );

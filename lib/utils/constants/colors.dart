@@ -36,8 +36,14 @@ class HColors{
   //Container Border
   static const Color borderGrey = Color(0xFFEEEEEE);
 
+  //Container Shadow Color
+  static const Color containerShadow =  Color(0x3F1BAC4B);
+
   //Text Field Fill Color
   static const Color textFieldFillColor = Color(0xFFF9F9F9);
+
+  //Rating Color
+  static const Color rating = Colors.orange;
 
 
 }
