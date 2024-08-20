@@ -7,11 +7,12 @@ import 'package:foodu/utils/helpers/helper_function.dart';
 
 class DiscountConatiner extends StatelessWidget {
   const DiscountConatiner({
-    super.key, required this.title, required this.subtitle, required this.imagePath,
+    super.key, required this.discount, required this.description, required this.imagePath, required  this.gradient,
   });
-  final String title;
-  final String subtitle;
+  final String discount;
+  final String description;
   final String imagePath;
+  final Gradient gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class DiscountConatiner extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       padding: EdgeInsets.only(left: HSizes.lg),
       decoration: ShapeDecoration(
-        gradient: HColors.linerGradient,
+        gradient: gradient,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(HSizes.cardRadiusXL),
         ),
@@ -42,8 +43,8 @@ class DiscountConatiner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(title,style: Theme.of(context).textTheme.displayLarge,),
-                Text(subtitle,style: Theme.of(context).textTheme.displayMedium,)
+                Text(discount,style: Theme.of(context).textTheme.displayLarge,),
+                Text(description,style: Theme.of(context).textTheme.displayMedium,)
               ],
             ),
           ),

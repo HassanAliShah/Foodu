@@ -2,6 +2,7 @@
 class HSizes{
   // Padding and margin sizes
   static const double xs = 4.0;
+  static const double x = 2.0;
   static const double xm = 12.0;
   static const double sm = 8.0;
   static const double md = 16.0;

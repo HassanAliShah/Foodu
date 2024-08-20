@@ -25,7 +25,8 @@ class HSearchContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(HSizes.cardRadiusLg),
         border:showBorder ? Border.all(color: HColors.borderGrey) : null,
       ),
-      child: Row(
+      child:
+      Row(
         children: [
           Icon(iconData,color: HColors.textGrey,),
           SizedBox(width: HSizes.spaceBtwItems,),

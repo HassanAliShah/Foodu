@@ -1,8 +1,9 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/image_text_category_container.dart';
+import 'package:foodu/features/home_action_menu/controller/category_controller.dart';
 import 'package:foodu/features/home_action_menu/controller/home_controller.dart';
-import 'package:foodu/features/home_action_menu/screens/category/category_screen.dart';
+import 'package:foodu/features/home_action_menu/screens/category/selected_category_screen.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -15,9 +16,9 @@ class CategoryGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = HomeController.instance;
+    final controller = CategoryController.instance;
     return SizedBox(
-      height: HHelperFunctions.screenHeight() /5.3,
+      height: HHelperFunctions.screenHeight(),
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -25,13 +26,13 @@ class CategoryGridView extends StatelessWidget {
           mainAxisSpacing: 1,
           crossAxisSpacing: 1,
         ),
-        itemCount: controller.categoryName.length,
+        itemCount: controller.foodCategories.length,
         itemBuilder: (context, index) {
           return ImageTextCategoryContainer(
-            image: controller.categoryImage[index],
-            text: controller.categoryName[index],
+            image: controller.foodCategories[index].imageUrl,
+            text: controller.foodCategories[index].name,
             onTap: () {
-              Get.to(CategoryScreen());
+              Get.to(SelectedCategoryScreen());
             },
           );
         },

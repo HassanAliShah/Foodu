@@ -75,4 +75,8 @@ class HImages{
   static const String mozarella_cheese =  'assets/images/food/mozarella_cheese.png';
   static const String pizza_hut =  'assets/images/food/pizza_hut.png';
   static const String vegeterian_noodels =  'assets/images/food/vegeterian_noodles.png';
+
+  //==== Icons
+  static const String filter = 'assets/icons/filter.png';
+  static const String sort = 'assets/icons/sort.png';
 }

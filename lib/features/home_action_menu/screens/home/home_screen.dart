@@ -16,6 +16,9 @@ import 'package:foodu/features/home_action_menu/screens/home/widget/chip_list_ro
 import 'package:foodu/features/home_action_menu/screens/home/widget/horizental_food_list.dart';
 import 'package:foodu/features/home_action_menu/screens/home/widget/verical_food_list.dart';
 import 'package:foodu/features/home_action_menu/screens/notification/notification_screen.dart';
+import 'package:foodu/features/home_action_menu/screens/recommanded_for_you/recommanded_for_you_screen.dart';
+import 'package:foodu/features/home_action_menu/screens/search/search_screen.dart';
+import 'package:foodu/features/home_action_menu/screens/special_offer/special_offer_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
@@ -63,17 +66,19 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: HSizes.defaultSpace,),
-              const HSearchContainer(text: 'What are you craving?',),
+              GestureDetector(onTap: () =>Get.to(SearchScreen()),child: const HSearchContainer(text: 'What are you craving?',)),
               const SizedBox(height: HSizes.defaultSpace,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Special Offers',style:  Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.textblack)),
-                  Text('See All',style: Theme.of(context).textTheme.labelLarge,)
+                  GestureDetector(onTap: (){
+                    Get.to(const SpecialOfferScreen());
+                  }, child: Text('See All',style: Theme.of(context).textTheme.labelLarge,))
                 ],
               ),
               const SizedBox(height: HSizes.defaultSpace,),
-              const DiscountConatiner(title: HText.discountPercent,subtitle: HText.discountSubtitle,imagePath: HImages.discount0,),
+              const DiscountConatiner(description: HText.discountSubtitle,imagePath: HImages.discount0, discount: HText.discountPercent,gradient: HColors.greenGradient,),
               const SizedBox(height: HSizes.defaultSpace,),
               CategoryGridView(),
               const SizedBox(height: HSizes.defaultSpace,),
@@ -92,7 +97,9 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Recommended For You 😍',style:  Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.textblack),),
-                  Text('See All',style: Theme.of(context).textTheme.labelLarge,)
+                  GestureDetector(onTap: (){
+                    Get.to(RecommandedForYouScreen());
+                  },child: Text('See All',style: Theme.of(context).textTheme.labelLarge,))
                 ],
               ),
               ChipListRow(),
