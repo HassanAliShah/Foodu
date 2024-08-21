@@ -24,6 +24,7 @@ import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -37,6 +38,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: HAppBar(
           leadingImage: HImages.pic,
+          height: 50,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Time Square',style: Theme.of(context).textTheme.bodySmall,),
+                    Text('Time Square',style: Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.textblack),),
                      Icon(Icons.arrow_drop_down,color: HColors.primary,)
                   ],
                 ),
@@ -57,7 +59,7 @@ class HomeScreen extends StatelessWidget {
           actions: [
             ActionIcon(onTap: () =>Get.to(NotificationScreen())
              ,iconData: Icons.notifications_none_rounded,),
-            SizedBox(width: 1,),
+            Gap(5),
             ActionIcon(onTap:  () =>Get.to(CartScreen()),iconData: Icons.shopping_cart_outlined,),
           ],
         ),

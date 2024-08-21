@@ -12,9 +12,11 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.showBackButton = false,
       this.leadingImage,
       this.actions,
+     this.height = 40,
      this.leadingOnPressed});
 
   final Widget? title;
+  final double height;
   final bool showBackButton;
   final String? leadingImage;
   final List<Widget>? actions;
@@ -22,10 +24,11 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+    return Padding(padding: EdgeInsets.symmetric(horizontal: HSizes.x),
     child: AppBar(
       automaticallyImplyLeading: false,
       title: title,
+      centerTitle: false,
       actions: actions,
       leading: showBackButton ? IconButton(onPressed: ()=> Get.back(), icon: Icon(Icons.arrow_back)) :
       leadingImage != null ?  Image.asset(leadingImage!,fit: BoxFit.fill,height: HSizes.lg,width: HSizes.lg,)   : null,
@@ -34,5 +37,5 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(50);
+  Size get preferredSize => Size.fromHeight(height);
 }

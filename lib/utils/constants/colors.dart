@@ -35,6 +35,7 @@ class HColors{
 
   //Text Field Fill Color
   static const Color textFieldFillColor = Color(0xFFF9F9F9);
+  static const Color textFieldFillTapColor = Color(0x141BAC4B);
 
   //Rating Color
   static const Color rating = Colors.orange;

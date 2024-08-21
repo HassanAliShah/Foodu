@@ -32,6 +32,7 @@ class CustomChip extends StatelessWidget {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (imagePath != null) ...[
               Image(image: AssetImage(imagePath!),height: 20,width: 20,),
@@ -39,10 +40,7 @@ class CustomChip extends StatelessWidget {
             ],
             Text(
               label,
-              style: TextStyle(
-                color: labelColor,
-                fontSize: 14,
-              ),
+              style: Theme.of(context).textTheme.labelLarge
             ),
           ],
         ),

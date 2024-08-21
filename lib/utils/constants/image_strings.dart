@@ -79,4 +79,7 @@ class HImages{
   //==== Icons
   static const String filter = 'assets/icons/filter.png';
   static const String sort = 'assets/icons/sort.png';
+
+  //==== Search
+  static const String searchNotFound = 'assets/images/search/not_found.png';
 }
