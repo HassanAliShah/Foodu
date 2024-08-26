@@ -50,6 +50,7 @@ flutter:
     - assets/images/category/
     - assets/images/food/
     - assets/images/search/
+    - assets/images/restaurent/
 
   #============= Local Fonts ===============#
 

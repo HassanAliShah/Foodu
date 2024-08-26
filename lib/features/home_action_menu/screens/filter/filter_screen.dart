@@ -12,85 +12,95 @@ class FilterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(FilterController());
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Filter'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            Obx(() => FilterSection(
-              title: 'Sort by',
-              radioButton: true,
-              options: controller.sortByOptions.value,
-              selectedOptions: controller.selectedSortByIndex.value,
-              onOptionSelected: (index) {
-                controller.toggleOption(0, index);
-              },
-            )),
-            Obx(() => FilterSection(
-              title: 'Restaurant',
-              radioButton: true,
-              options: controller.restaurantOptions.value,
-              selectedOptions: controller.restaurantSelectedByIndex.value,
-              onOptionSelected: (index) {
-                controller.toggleOption(1, index);
-              },
-            )),
-            Obx(() => FilterSection(
-              title: 'Delivery Fee',
-              radioButton: true,
-              options: controller.deliveryFeeOptions.value,
-              selectedOptions: controller.selectedDeliveryFeeIndex.value,
-              onOptionSelected: (index) {
-                controller.toggleOption(2, index);
-              },
-            )),
-            Obx(() => FilterSection(
-              title: 'Mode',
-              radioButton: true,
-              options: controller.modeOptions.value,
-              selectedOptions: controller.selectedModeIndex.value,
-              onOptionSelected: (index) {
-                controller.toggleOption(3, index);
-              },
-            )),
-            Obx(() => FilterSection(
-              title: 'Cuisines',
-              radioButton: false,
-              options: controller.cuisinesOptions.value,
-              selectedOptions: controller.cuisinesSelected.value,
-              onOptionSelected: (index) {
-                controller.toggleOption(4, index);
-              },
-            )),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(onPressed: (){}, child: Text('Reset',style: TextStyle(color: HColors.primary),),style: OutlinedButton.styleFrom(
-                elevation: 0,
-                backgroundColor: Color(0xFFE8F7ED),
-                side:  const BorderSide(color:Color(0xFFE8F7ED)),
-                padding: const EdgeInsets.symmetric(vertical:  14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  textStyle:   TextStyle(fontSize: 14, color: HColors.primary,fontWeight: FontWeight.w700)
-              ),),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {
+    return DefaultTabController(
+      length: controller.tabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Filter'),
+          bottom:  PreferredSize(preferredSize: Size.fromHeight(50), child: TabBar(
+            isScrollable: true,
+            tabs:  controller.tabs.map((tabName) {
+              return Tab(text: tabName);
+            }).toList(),
+          ),
+          ),
+          ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              Obx(() => FilterSection(
+                title: 'Sort by',
+                radioButton: true,
+                options: controller.sortByOptions.value,
+                selectedOptions: controller.selectedSortByIndex.value,
+                onOptionSelected: (index) {
+                  controller.toggleOption(0, index);
                 },
-                child: Text('Apply'),
+              )),
+              Obx(() => FilterSection(
+                title: 'Restaurant',
+                radioButton: true,
+                options: controller.restaurantOptions.value,
+                selectedOptions: controller.restaurantSelectedByIndex.value,
+                onOptionSelected: (index) {
+                  controller.toggleOption(1, index);
+                },
+              )),
+              Obx(() => FilterSection(
+                title: 'Delivery Fee',
+                radioButton: true,
+                options: controller.deliveryFeeOptions.value,
+                selectedOptions: controller.selectedDeliveryFeeIndex.value,
+                onOptionSelected: (index) {
+                  controller.toggleOption(2, index);
+                },
+              )),
+              Obx(() => FilterSection(
+                title: 'Mode',
+                radioButton: true,
+                options: controller.modeOptions.value,
+                selectedOptions: controller.selectedModeIndex.value,
+                onOptionSelected: (index) {
+                  controller.toggleOption(3, index);
+                },
+              )),
+              Obx(() => FilterSection(
+                title: 'Cuisines',
+                radioButton: false,
+                options: controller.cuisinesOptions.value,
+                selectedOptions: controller.cuisinesSelected.value,
+                onOptionSelected: (index) {
+                  controller.toggleOption(4, index);
+                },
+              )),
+            ],
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(onPressed: (){}, child: Text('Reset',style: TextStyle(color: HColors.primary),),style: OutlinedButton.styleFrom(
+                  elevation: 0,
+                  backgroundColor: Color(0xFFE8F7ED),
+                  side:  const BorderSide(color:Color(0xFFE8F7ED)),
+                  padding: const EdgeInsets.symmetric(vertical:  14),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                    textStyle:   TextStyle(fontSize: 14, color: HColors.primary,fontWeight: FontWeight.w700)
+                ),),
               ),
-            ),
-          ],
+              SizedBox(width: 16),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                  },
+                  child: Text('Apply'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

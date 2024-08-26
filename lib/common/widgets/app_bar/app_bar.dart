@@ -12,6 +12,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.showBackButton = false,
       this.leadingImage,
       this.actions,
+     this.bottomBar,
      this.height = 40,
      this.leadingOnPressed});
 
@@ -21,6 +22,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? leadingImage;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
+  final PreferredSizeWidget? bottomBar;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title,
       centerTitle: false,
       actions: actions,
+      bottom: bottomBar,
       leading: showBackButton ? IconButton(onPressed: ()=> Get.back(), icon: Icon(Icons.arrow_back)) :
       leadingImage != null ?  Image.asset(leadingImage!,fit: BoxFit.fill,height: HSizes.lg,width: HSizes.lg,)   : null,
     ),);

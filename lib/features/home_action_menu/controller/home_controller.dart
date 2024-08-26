@@ -82,6 +82,12 @@ class HomeController extends GetxController{
     },
   ];
 
+  var selectedChipIndex = 0.obs;
+
+  void selectChip(int index) {
+    selectedChipIndex.value = index;
+  }
+
   List<String>  chipListName = [
     'All',
     'Hamburger',

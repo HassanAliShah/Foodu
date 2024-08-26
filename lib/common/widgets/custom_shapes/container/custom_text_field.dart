@@ -10,6 +10,7 @@ class CustomTextField extends StatefulWidget {
   final IconData? suffixIcon;
   final bool showBottomSheet;
   final Widget? bottomSheetContent;
+  final int?   maxline;
   final TextEditingController textEditingController;
 
   const CustomTextField({
@@ -18,6 +19,7 @@ class CustomTextField extends StatefulWidget {
     this.hintText,
     this.prefixIcon,
     this.suffixIcon,
+    this.maxline = 1,
     this.showBottomSheet = false,
     this.bottomSheetContent,
     required this.textEditingController,
@@ -61,6 +63,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         controller: widget.textEditingController,
         focusNode: _focusNode,
         cursorColor: HColors.primary,
+        maxLines: widget.maxline,
         cursorHeight: HSizes.lg,
         style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(

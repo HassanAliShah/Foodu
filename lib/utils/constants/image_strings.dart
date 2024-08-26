@@ -79,7 +79,12 @@ class HImages{
   //==== Icons
   static const String filter = 'assets/icons/filter.png';
   static const String sort = 'assets/icons/sort.png';
+  static const String rating = 'assets/icons/rating.png';
+  static const String more = 'assets/icons/more.png';
 
-  //==== Search
+  //==== Searchs
   static const String searchNotFound = 'assets/images/search/not_found.png';
+
+  //==== Restaurent
+static const String restaurent = 'assets/images/restaurent/restaurent.png';
 }

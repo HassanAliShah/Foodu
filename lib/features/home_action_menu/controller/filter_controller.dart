@@ -17,6 +17,14 @@ class FilterController extends GetxController {
   var cuisinesOptions = ['Dessert', 'Beverages', 'Snack', 'Chicken', 'Japanese', 'Noodles', 'Pizza & Pasta'].obs;
   var cuisinesSelected = [false, true, false, false, true, true, false].obs;
 
+  var tabs = [
+    'Sort By',
+    'Restaurant',
+    'Delivery Fee',
+    'Mode',
+    'Cuisines',
+  ].obs;
+
   void toggleOption(int section, int index) {
     switch (section) {
       case 0: // Sort by section
