@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/checkout_order/widget/option_tile.dart';
+import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/discount/discount_screen.dart';
+import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/payment_method/payment_method_screen.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class PaymentsAndDiscounts extends StatelessWidget {
   @override
@@ -32,7 +36,7 @@ class PaymentsAndDiscounts extends StatelessWidget {
             icon: Icons.account_balance_wallet_outlined,
             title: 'Payment Methods',
             onTap: () {
-
+              Get.to(PaymentMethodScreen());
             },
           ),
           custom_divider(),
@@ -40,7 +44,7 @@ class PaymentsAndDiscounts extends StatelessWidget {
             icon: Icons.local_offer_outlined,
             title: 'Get Discounts',
             onTap: () {
-
+              Get.to(DiscountScreen());
             },
           ),
         ],

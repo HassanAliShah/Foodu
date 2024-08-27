@@ -10,8 +10,8 @@ class HOutlineButtonTheme{
   static final lightOutlineButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
   elevation: 0,
-  foregroundColor: Colors.white,
-  backgroundColor: HColors.backgroundLight,
+  foregroundColor: HColors.primary,
+  backgroundColor: Color(0xffE8F7ED),
   disabledBackgroundColor: Colors.grey,
   disabledForegroundColor: Colors.grey,
   side:  const BorderSide(color:HColors.borderGrey),

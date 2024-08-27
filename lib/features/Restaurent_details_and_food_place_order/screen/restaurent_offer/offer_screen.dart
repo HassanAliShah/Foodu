@@ -18,7 +18,7 @@ class OfferScreen extends StatelessWidget {
     return Scaffold(
       appBar: HAppBar(
         showBackButton: true,
-        title: Text("Offers Are Available"),
+        title: Text("Offers Are Available",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body:  Padding(
         padding:HSpacingStyles.paddingWithHeightWidth,

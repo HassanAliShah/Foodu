@@ -28,7 +28,7 @@ class _RatingAndReviewsState extends State<RatingAndReviews> {
     return Scaffold(
       appBar: HAppBar(
         showBackButton: true,
-        title: Text("Rating & Reviews"),
+        title: Text("Rating & Reviews",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body: Padding(padding: HSpacingStyles.paddingWithHeightWidth,
       child: Column(
