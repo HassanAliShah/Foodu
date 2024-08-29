@@ -20,6 +20,7 @@ class HImages{
   static const String google = 'assets/logos/google.png';
   static const String apple = 'assets/logos/apple.png';
   static const String facebook = 'assets/logos/facebook.png';
+  static const String paypal = 'assets/logos/paypal.png';
 
   //==== Navigation bar
   static const String chat = 'assets/icons/navigation_bar/chat.png';
@@ -80,7 +81,12 @@ class HImages{
   static const String filter = 'assets/icons/filter.png';
   static const String sort = 'assets/icons/sort.png';
   static const String rating = 'assets/icons/rating.png';
+  static const String masterCard = 'assets/icons/master_card.png';
   static const String more = 'assets/icons/more.png';
+  static const String visa = 'assets/icons/visa.png';
+  static const String topup = 'assets/icons/order.png';
+  static const String topdown = 'assets/icons/topUp.png';
+
 
   //==== Searchs
   static const String searchNotFound = 'assets/images/search/not_found.png';

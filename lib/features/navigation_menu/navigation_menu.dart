@@ -24,7 +24,6 @@ class NavigationMenu extends StatelessWidget {
             showUnselectedLabels: true,
             backgroundColor: HColors.backgroundLight,
             type: BottomNavigationBarType.fixed,
-          //landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
              items: [
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(HImages.home))  ,label: 'Home',),
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(HImages.order))  ,label: 'Order',),
@@ -33,7 +32,7 @@ class NavigationMenu extends StatelessWidget {
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(HImages.profile))   ,label: 'Profile',),
         ],),
       ),
-      body: controller.screens[controller.selectedIndex.value],
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }

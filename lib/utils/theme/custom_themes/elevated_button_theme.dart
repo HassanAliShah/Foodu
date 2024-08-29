@@ -16,7 +16,7 @@ class HElevatedButtonTheme{
       disabledBackgroundColor: Colors.grey,
       disabledForegroundColor: Colors.grey,
       side:  const BorderSide(color:HColors.buttonPrimary),
-      padding: const EdgeInsets.symmetric(vertical:  14),
+      padding: const EdgeInsets.symmetric(vertical:  14,horizontal: 14),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       textStyle:  const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w700)
     )

@@ -11,6 +11,7 @@ class CustomTextField extends StatefulWidget {
   final bool showBottomSheet;
   final Widget? bottomSheetContent;
   final int?   maxline;
+  final VoidCallback? prefixOnTap;
   final TextEditingController textEditingController;
 
   const CustomTextField({
@@ -23,6 +24,7 @@ class CustomTextField extends StatefulWidget {
     this.showBottomSheet = false,
     this.bottomSheetContent,
     required this.textEditingController,
+    this.prefixOnTap,
   }) : super(key: key);
 
   @override
@@ -73,7 +75,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           hintText: widget.hintText ?? '',
           hintStyle: Theme.of(context).textTheme.labelSmall,
           prefixIcon: widget.prefixIcon != null
-              ? Icon(widget.prefixIcon, color: isTapped ? HColors.primary : HColors.textGrey)
+              ? IconButton(icon: Icon(widget.prefixIcon,color: isTapped ? HColors.primary : HColors.textGrey,),  onPressed: widget.prefixOnTap, )
               : null,
           suffixIcon: widget.suffixIcon != null
               ? Icon(widget.suffixIcon, color: isTapped ? HColors.primary : HColors.textGrey)

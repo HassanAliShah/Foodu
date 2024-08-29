@@ -15,7 +15,7 @@ class HOutlineButtonTheme{
   disabledBackgroundColor: Colors.grey,
   disabledForegroundColor: Colors.grey,
   side:  const BorderSide(color:HColors.borderGrey),
-  padding: const EdgeInsets.symmetric(vertical:  14,horizontal: 32),
+  padding: const EdgeInsets.symmetric(vertical:  14,horizontal: 14),
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
   textStyle:  const TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w600
     ),

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
+import 'package:foodu/common/widgets/custom_shapes/container/pin_field.dart';
 import 'package:foodu/features/account_setup/controller/pin_controller.dart';
-import 'package:foodu/features/account_setup/screens/pin/widget/pin_field.dart';
 import 'package:foodu/features/navigation_menu/navigation_menu.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';

@@ -62,6 +62,7 @@ class HText{
   //===== Crate New Pin
   static const String createNewPin = 'Create New Pin';
   static const String pinText = 'Add a PIN number to make your account more secure';
+  static const String confirmPinText = 'Enter your PIN to confirm top up';
 
   //==== Discount
 
