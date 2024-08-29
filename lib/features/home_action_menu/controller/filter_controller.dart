@@ -3,16 +3,16 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class FilterController extends GetxController {
   var sortByOptions = ['Recommended', 'Popularity', 'Rating', 'Distance'].obs;
-  var selectedSortByIndex = 0.obs;  // Use an integer to track the selected radio button index
+  var selectedSortByIndex = 0.obs;
 
   var restaurantOptions = ['Promo', 'Priority Restaurant', 'Small MSME Restaurant'].obs;
   var restaurantSelectedByIndex = 0.obs;
 
   var deliveryFeeOptions = ['Any', 'Less than \$2.00', 'Less than \$4.00', 'Less than \$8.00'].obs;
-  var selectedDeliveryFeeIndex = 0.obs;  // Use an integer to track the selected radio button index
+  var selectedDeliveryFeeIndex = 0.obs;
 
   var modeOptions = ['Delivery', 'Self Pick-up'].obs;
-  var selectedModeIndex = 0.obs;  // Use an integer to track the selected radio button index
+  var selectedModeIndex = 0.obs;  //
 
   var cuisinesOptions = ['Dessert', 'Beverages', 'Snack', 'Chicken', 'Japanese', 'Noodles', 'Pizza & Pasta'].obs;
   var cuisinesSelected = [false, true, false, false, true, true, false].obs;

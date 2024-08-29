@@ -1,21 +1,10 @@
-import 'dart:io';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:foodu/common/styles/spacing_styles.dart';
-import 'package:foodu/common/widgets/login_signup/phone_number_field.dart';
 import 'package:foodu/features/account_setup/controller/profile_form_controller.dart';
 import 'package:foodu/features/account_setup/screens/location/set_your_location.dart';
-import 'package:foodu/features/account_setup/screens/profile_form/profile_form_screen.dart';
-import 'package:foodu/features/account_setup/screens/profile_form/widget/gender_selection_button.dart';
 import 'package:foodu/features/account_setup/screens/profile_form/widget/profile_form.dart';
-import 'package:foodu/features/account_setup/screens/profile_form/widget/profile_pic_selection.dart';
-import 'package:foodu/features/account_setup/screens/profile_form/widget/textIconContainer.dart';
-import 'package:foodu/utils/constants/colors.dart';
-import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 class ProfileFormScreen extends StatelessWidget {
   const ProfileFormScreen({super.key});
