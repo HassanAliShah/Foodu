@@ -2,16 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
-import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/features/wallet/screens/e_wallet/widget/balance_card.dart';
 import 'package:foodu/features/wallet/screens/e_wallet/widget/transection_history_widget.dart';
 import 'package:foodu/features/wallet/screens/transaction_history/transaction_history_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class EWalletScreen extends StatelessWidget {
   const EWalletScreen({super.key});
@@ -22,9 +19,9 @@ class EWalletScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('E-Wallet'),
+          title: const Text('E-Wallet'),
           leading: Image.asset(HImages.appLogo,),
-          actions: [
+          actions: const [
             Icon(Icons.search)
           ],
           ),
@@ -32,20 +29,20 @@ class EWalletScreen extends StatelessWidget {
           padding: HSpacingStyles.paddingWithHeightWidth,
           child: Column(
             children: [
-              BalanceCard(),
+              const BalanceCard(),
               Padding(
-                padding:  EdgeInsets.symmetric(vertical: 8.0),
+                padding:  const EdgeInsets.symmetric(vertical: 8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Transaction History',style:  Theme.of(context).textTheme.bodyLarge),
                     GestureDetector(onTap: (){
                       Get.to(const TransactionHistoryScreen());
-                    }, child: Text('See All',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary),))
+                    }, child: Text('See All',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),))
                   ],
                 ),
               ),
-              TransectionHistoryWidget()
+              const TransectionHistoryWidget()
             ],
           ),
         ),

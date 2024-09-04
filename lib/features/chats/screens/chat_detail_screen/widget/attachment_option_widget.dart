@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class AttachmentOptionsWidget extends StatelessWidget {
   final void Function(String) onOptionSelected;
 
-  AttachmentOptionsWidget({required this.onOptionSelected});
+  const AttachmentOptionsWidget({super.key, required this.onOptionSelected});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.0),
@@ -16,14 +16,14 @@ class AttachmentOptionsWidget extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
       child: GridView(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           childAspectRatio: 1,
           mainAxisSpacing: 16.0,
@@ -52,10 +52,10 @@ class AttachmentOptionsWidget extends StatelessWidget {
             radius: 30,
             child: Icon(icon, size: 30, color: Colors.pink),
           ),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               color: Colors.black,
             ),

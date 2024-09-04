@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomChip extends StatelessWidget {
@@ -10,21 +9,21 @@ class CustomChip extends StatelessWidget {
   final VoidCallback? onTap;
 
   const CustomChip({
-    Key? key,
+    super.key,
     required this.label,
     this.imagePath,
     this.backgroundColor = Colors.white,
     this.borderColor = Colors.green,
     this.labelColor = Colors.green,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(20),
@@ -36,7 +35,7 @@ class CustomChip extends StatelessWidget {
           children: [
             if (imagePath != null) ...[
               Image(image: AssetImage(imagePath!),height: 20,width: 20,),
-              SizedBox(width: 4),
+              const SizedBox(width: 4),
             ],
             Text(
               label,

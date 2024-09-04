@@ -11,13 +11,13 @@ class FavouriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const HAppBar(
         showBackButton: true,
         title: Text("My Favourite Restaurent"),
       ),
       body: Padding(
         padding: HSpacingStyles.paddingWithHeightWidth,
-        child: VerticalFoodList(),
+        child: const VerticalFoodList(),
       ),
     );
   }

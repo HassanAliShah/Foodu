@@ -19,7 +19,7 @@ class RecommandedForYouScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: HSpacingStyles.paddingWithHeightWidth,
-          child: Column(
+          child: const Column(
             children: [
               ChipListRow(),
               VerticalFoodList(),

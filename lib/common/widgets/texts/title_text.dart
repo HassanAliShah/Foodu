@@ -1,10 +1,9 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TitleText extends StatelessWidget {
-  const TitleText({
+  const TitleText({super.key, 
     required this.title
   });
   final String title;

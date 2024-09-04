@@ -6,11 +6,11 @@ class ContactOption extends StatelessWidget {
   final VoidCallback onTap;
 
   const ContactOption({
-    Key? key,
+    super.key,
     required this.icon,
     required this.title,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ContactOption extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 8,
-              offset: Offset(0, 2),
+              offset: const Offset(0, 2),
             ),
           ],
         ),

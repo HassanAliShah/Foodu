@@ -15,7 +15,7 @@ class _ExpandableTextState extends State<ExpandableText> {
   late String firstHalf;
   late String secondHalf;
   bool hiddenText =  true;
-  double textHeight  = HHelperFunctions.screenHeight() / 5.63;
+  double textHeight  = THelperFunctions.screenHeight() / 5.63;
 
 
   @override
@@ -36,7 +36,7 @@ class _ExpandableTextState extends State<ExpandableText> {
     return Container(
       child: secondHalf.isEmpty ? Text(firstHalf) : Column(
         children: [
-          Text(hiddenText ? (firstHalf+"...") :(firstHalf+secondHalf),style: Theme.of(context).textTheme.labelSmall,),
+          Text(hiddenText ? ("$firstHalf...") :(firstHalf+secondHalf),style: Theme.of(context).textTheme.labelSmall,),
           InkWell(
             onTap: (){
               setState(() {
@@ -46,7 +46,7 @@ class _ExpandableTextState extends State<ExpandableText> {
             child: Row(
               children: [
                 Text(hiddenText ?"Read more" : 'Read less',style: Theme.of(context).textTheme.labelLarge,),
-                Icon(hiddenText ?Icons.arrow_drop_down :Icons.arrow_drop_up,color: HColors.primary,)
+                Icon(hiddenText ?Icons.arrow_drop_down :Icons.arrow_drop_up,color: TColors.primary,)
               ],
             ),
           )

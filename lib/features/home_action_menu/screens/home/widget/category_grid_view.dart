@@ -5,7 +5,6 @@ import 'package:foodu/features/home_action_menu/controller/home_controller.dart'
 import 'package:foodu/features/home_action_menu/screens/category/category_screen.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class CategoryGridView extends StatelessWidget {
   const CategoryGridView({
@@ -17,10 +16,10 @@ class CategoryGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = HomeController.instance;
     return SizedBox(
-      height: HHelperFunctions.screenHeight() /5.3,
+      height: THelperFunctions.screenHeight() /5.3,
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           mainAxisSpacing: 1,
           crossAxisSpacing: 1,
@@ -31,7 +30,7 @@ class CategoryGridView extends StatelessWidget {
             image: controller.categoryImage[index],
             text: controller.categoryName[index],
             onTap: () {
-              Get.to(CategoryScreen());
+              Get.to(const CategoryScreen());
             },
           );
         },

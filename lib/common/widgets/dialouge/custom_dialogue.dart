@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/order_section/screens/whats_your_mind/whats_your_mind.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class CustomDialog extends StatelessWidget {
   final String title;
@@ -9,11 +6,11 @@ class CustomDialog extends StatelessWidget {
   final IconData emoji;
 
   const CustomDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.emoji,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

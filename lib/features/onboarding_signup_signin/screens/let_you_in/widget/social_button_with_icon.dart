@@ -11,7 +11,7 @@ class SocialButtoWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: HSizes.defaultSpace),
+      padding: const EdgeInsets.only(top: TSizes.defaultSpace),
       child: Column(
         children: [
           SizedBox(
@@ -24,7 +24,7 @@ class SocialButtoWithIcon extends StatelessWidget {
               ],
             )),
           ),
-          SizedBox(height: HSizes.spaceBtwItems,),
+          const SizedBox(height: TSizes.spaceBtwItems,),
           SizedBox(
             width: double.infinity,
             child: OutlinedButton(onPressed: (){}, child: Row(
@@ -35,7 +35,7 @@ class SocialButtoWithIcon extends StatelessWidget {
               ],
             )),
           ),
-          SizedBox(height: HSizes.spaceBtwItems,),
+          const SizedBox(height: TSizes.spaceBtwItems,),
           SizedBox(
             width: double.infinity,
             child: OutlinedButton(onPressed: (){}, child: Row(

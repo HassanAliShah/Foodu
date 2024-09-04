@@ -1,6 +1,4 @@
 
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/login_signup/phone_number_field.dart';
 import 'package:foodu/utils/constants/colors.dart';
@@ -15,33 +13,33 @@ class HSignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(child: Padding(
-      padding: EdgeInsets.only(top: HSizes.spaceBtwSection),
+      padding: const EdgeInsets.only(top: TSizes.spaceBtwSection),
       child: Column(
         children: [
-          PhoneNumberField(),
-          SizedBox(height: HSizes.sm,),
+          const PhoneNumberField(),
+          const SizedBox(height: TSizes.sm,),
           SizedBox(
-            height: HSizes.buttonHeight,
-            child: TextField(cursorColor: HColors.primary,cursorHeight: HSizes.lg,style: Theme.of(context).textTheme.bodySmall,
+            height: TSizes.buttonHeight,
+            child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                prefixIcon:Icon(Icons.email),
+                prefixIcon:const Icon(Icons.email),
                 hintText: HText.email,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
-          SizedBox(height: HSizes.sm,),
+          const SizedBox(height: TSizes.sm,),
           SizedBox(
-            height: HSizes.buttonHeight,
-            child: TextField(style: Theme.of(context).textTheme.bodySmall,cursorColor: HColors.primary,cursorHeight: HSizes.lg,
+            height: TSizes.buttonHeight,
+            child: TextField(style: Theme.of(context).textTheme.bodySmall,cursorColor: TColors.primary,cursorHeight: TSizes.lg,
               decoration: InputDecoration(
-                prefixIcon:Icon(Icons.person),
+                prefixIcon:const Icon(Icons.person),
                 hintText: HText.fullName,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
-          SizedBox(height: HSizes.sm,),
+          const SizedBox(height: TSizes.sm,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -49,10 +47,10 @@ class HSignUpForm extends StatelessWidget {
               Text(HText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
-          SizedBox(height: HSizes.sm,),
+          const SizedBox(height: TSizes.sm,),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(onPressed: (){}, child: Text(HText.signUp)),
+            child: ElevatedButton(onPressed: (){}, child: const Text(HText.signUp)),
           ),
         ],
       ),

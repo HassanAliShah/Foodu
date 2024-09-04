@@ -10,13 +10,13 @@ class TipSelectionWidget extends StatelessWidget {
   final VoidCallback onCustomTipSelected;
 
 
-  TipSelectionWidget({
-    Key? key,
+  const TipSelectionWidget({
+    super.key,
     required this.driverImage,
     required this.title,
     required this.subtitle,
     required this.onCustomTipSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,14 @@ class TipSelectionWidget extends StatelessWidget {
         // Title with Emoji
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: HColors.textblack),
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: TColors.textblack),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 10.0),
         // Subtitle
         Text(
           subtitle,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: HColors.textGrey),
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: TColors.textGrey),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20.0),
@@ -55,12 +55,12 @@ class TipSelectionWidget extends StatelessWidget {
                 height: 40.0,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: HColors.primary,
+                    color: TColors.primary,
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                   color: controller.selectedTip.value == tip
-                      ? HColors.primary
+                      ? TColors.primary
                       : Colors.transparent,
                 ),
                 child: Center(
@@ -70,8 +70,8 @@ class TipSelectionWidget extends StatelessWidget {
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       color: controller.selectedTip.value == tip
-                          ? HColors.backgroundLight
-                          : HColors.primary,
+                          ? TColors.backgroundLight
+                          : TColors.primary,
                     ),
                   ),
                 ),

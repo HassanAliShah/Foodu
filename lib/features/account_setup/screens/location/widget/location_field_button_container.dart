@@ -7,7 +7,6 @@ import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class locationFieldAndButtonContainer extends StatelessWidget {
   const locationFieldAndButtonContainer({
@@ -19,26 +18,26 @@ class locationFieldAndButtonContainer extends StatelessWidget {
     return Positioned(
       bottom: 0,
       child: Container(
-        width: HHelperFunctions.screenWidth(),
-        height:HHelperFunctions.screenHeight() / 3.3,
+        width: THelperFunctions.screenWidth(),
+        height:THelperFunctions.screenHeight() / 3.3,
         padding: const EdgeInsets.symmetric(
-          vertical: HSizes.md,
-          horizontal: HSizes.defaultSpace,
+          vertical: TSizes.md,
+          horizontal: TSizes.defaultSpace,
         ),
         clipBehavior: Clip.antiAlias,
-        decoration: ShapeDecoration(
-          color: HColors.backgroundLight,
+        decoration: const ShapeDecoration(
+          color: TColors.backgroundLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(HSizes.buttonHeight),
-              topRight: Radius.circular(HSizes.buttonHeight),
+              topLeft: Radius.circular(TSizes.buttonHeight),
+              topRight: Radius.circular(TSizes.buttonHeight),
             ),
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Divider(endIndent: 130,indent: 130,thickness: 2,height: 10,),
+            const Divider(endIndent: 130,indent: 130,thickness: 2,height: 10,),
             SizedBox(
               width: double.infinity,
               child: Text(
@@ -47,13 +46,13 @@ class locationFieldAndButtonContainer extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge
               ),
             ),
-            Divider(),
+            const Divider(),
 
             TextIconContainer(text: "Islamabad", iconData: Icons.location_on, onTap: (){}),
 
-            Divider(),
+            const Divider(),
 
-            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(CreateNewPin()), child: Text(HText.continueB)))
+            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(HText.continueB)))
           ],
         ),
       ),

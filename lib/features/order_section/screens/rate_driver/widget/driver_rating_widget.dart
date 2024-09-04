@@ -11,13 +11,13 @@ class DriverRatingWidget extends StatelessWidget {
   final VoidCallback onCallDriverPressed;
 
   const DriverRatingWidget({
-    Key? key,
+    super.key,
     required this.driverImage,
     required this.title,
     required this.subtitle,
     required this.onRatingChanged,
     required this.onCallDriverPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,27 +36,27 @@ class DriverRatingWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
           textAlign: TextAlign.center,
         ),
-       Gap(20),
+       const Gap(20),
         // Subtitle
         Text(
           subtitle,
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: HColors.textGrey),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: TColors.textGrey),
           textAlign: TextAlign.center,
         ),
-       Gap(20),
+       const Gap(20),
         // Star Rating
         StarRating(
           starSize: 30.0,
           onRatingChanged: onRatingChanged,
         ),
-       Gap(20),
+       const Gap(20),
         //  Driver Text
          Text(
           "Haven't received your order?",
           style: Theme.of(context).textTheme.titleSmall,
           textAlign: TextAlign.center,
         ),
-       Gap(10),
+       const Gap(10),
         //  Driver Button
         GestureDetector(
           onTap: onCallDriverPressed,

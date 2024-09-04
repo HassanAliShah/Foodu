@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/utils/constants/colors.dart';
 import 'package:gap/gap.dart';
 
 class CancalledOrderCard extends StatelessWidget {
@@ -10,13 +9,13 @@ class CancalledOrderCard extends StatelessWidget {
   final String imageUrl;
 
   const CancalledOrderCard({
-    Key? key,
+    super.key,
     required this.restaurantName,
     required this.itemsInfo,
     required this.price,
     required this.isCancelled,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class CancalledOrderCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Gap(16),
+          const Gap(16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,12 +53,12 @@ class CancalledOrderCard extends StatelessWidget {
                   restaurantName,
                   style: Theme.of(context).textTheme.bodyLarge
                 ),
-               Gap(4),
+               const Gap(4),
                 Text(
                   itemsInfo,
                   style: Theme.of(context).textTheme.labelSmall
                 ),
-                Gap(8),
+                const Gap(8),
                 Row(
                   children: [
                     Text(

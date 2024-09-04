@@ -32,9 +32,9 @@ class SpecialOfferController extends GetxController {
   ].obs;
 
   final List<Gradient> colors = [
-    HColors.greenGradient,
-    HColors.orangeGradient,
-    HColors.redGradient,
-    HColors.blueGradient,
+    TColors.greenGradient,
+    TColors.orangeGradient,
+    TColors.redGradient,
+    TColors.blueGradient,
   ];
 }

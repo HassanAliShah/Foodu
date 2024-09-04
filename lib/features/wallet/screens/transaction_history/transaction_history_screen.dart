@@ -12,13 +12,13 @@ class TransactionHistoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: HAppBar(
         showBackButton: true,
-        title: Text("Transaction History"),
+        title: const Text("Transaction History"),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search))
+          IconButton(onPressed: (){}, icon: const Icon(Icons.search))
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: TransectionHistoryWidget(),
       ),
     );

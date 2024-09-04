@@ -5,8 +5,6 @@ import 'package:foodu/features/onboarding_signup_signin/controller/otp_controlle
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 class TextFeildandTime extends StatelessWidget {
   const TextFeildandTime({
     super.key,
@@ -16,24 +14,24 @@ class TextFeildandTime extends StatelessWidget {
   Widget build(BuildContext context) {
    final controller = OtpController.instance;
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: HSizes.buttonHeight),
+      padding:  const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
       child: Column(
         children: [
           Text(HText.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
-          SizedBox(
-            height: HSizes.buttonHeight,
+          const SizedBox(
+            height: TSizes.buttonHeight,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: HSizes.buttonHeight,
-                width: HSizes.buttonHeight,
+                height: TSizes.buttonHeight,
+                width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: HColors.primary,
+                    cursorColor: TColors.primary,
                     focusNode: controller.focusNode1
-                    ,cursorHeight: HSizes.lg,
+                    ,cursorHeight: TSizes.lg,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
@@ -44,12 +42,12 @@ class TextFeildandTime extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: HSizes.buttonHeight,
-                width: HSizes.buttonHeight,
+                height: TSizes.buttonHeight,
+                width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: HColors.primary
-                    ,cursorHeight: HSizes.lg,
+                    cursorColor: TColors.primary
+                    ,cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode2,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -61,12 +59,12 @@ class TextFeildandTime extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: HSizes.buttonHeight,
-                width: HSizes.buttonHeight,
+                height: TSizes.buttonHeight,
+                width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: HColors.primary
-                    ,cursorHeight: HSizes.lg,
+                    cursorColor: TColors.primary
+                    ,cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode3,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -78,12 +76,12 @@ class TextFeildandTime extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: HSizes.buttonHeight,
-                width: HSizes.buttonHeight,
+                height: TSizes.buttonHeight,
+                width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: HColors.primary
-                    ,cursorHeight: HSizes.lg,
+                    cursorColor: TColors.primary
+                    ,cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode4,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -96,8 +94,8 @@ class TextFeildandTime extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: HSizes.buttonHeight,
+          const SizedBox(
+            height: TSizes.buttonHeight,
           ),
           Text.rich(
             TextSpan(

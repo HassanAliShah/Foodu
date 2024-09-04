@@ -8,12 +8,12 @@ class HorizontalFoodCardRestaurent extends StatefulWidget {
   final String? badgeText;
 
   const HorizontalFoodCardRestaurent({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.price,
     this.badgeText,
-  }) : super(key: key);
+  });
 
   @override
   _HorizontalFoodCardRestaurentState createState() =>
@@ -45,7 +45,7 @@ class _HorizontalFoodCardRestaurentState
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
           border: Border.all(
@@ -64,7 +64,7 @@ class _HorizontalFoodCardRestaurentState
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 8.0),
+            const SizedBox(width: 8.0),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,20 +79,20 @@ class _HorizontalFoodCardRestaurentState
                       ),
                       child: Text(
                         widget.badgeText!,
-                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.backgroundLight,fontSize: 5),
+                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
                       ),
                     ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Text(
                     widget.title,
                     style: Theme.of(context).textTheme.bodySmall,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 4.0),
+                  const SizedBox(height: 4.0),
     Text(
     "\$ ${widget.price}",
-    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary)
+    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary)
     ),
                 ],
               ),

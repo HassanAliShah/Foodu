@@ -57,7 +57,7 @@ class OrderController extends GetxController {
   }
 
   void trackOrder(int index) {
-    Get.to(TrackOrderScreen());
+    Get.to(const TrackOrderScreen());
   }
 
   var reasons = [

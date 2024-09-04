@@ -6,7 +6,6 @@ import 'package:foodu/features/chats/model/chat_item_model.dart';
 import 'package:foodu/features/chats/screens/chat_screen/widget/chat_list_widget.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -18,11 +17,11 @@ class ChatScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Message'),
+          title: const Text('Message'),
           leading: Image.asset(HImages.appLogo,),
-          bottom:  PreferredSize(preferredSize: Size.fromHeight(50), child: TabBar(
+          bottom:  PreferredSize(preferredSize: const Size.fromHeight(50), child: TabBar(
             tabAlignment: TabAlignment.center,
-            labelPadding: EdgeInsets.symmetric(horizontal: 50),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 50),
 
             isScrollable: false,
             tabs:  controller.tabs.map((tabName) {

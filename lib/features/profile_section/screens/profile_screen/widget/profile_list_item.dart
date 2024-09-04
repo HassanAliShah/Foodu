@@ -7,12 +7,12 @@ class ProfileListItem extends StatelessWidget {
   final String? trailingText;
 
   const ProfileListItem({
-    Key? key,
+    super.key,
      this.icon,
     required this.title,
     required this.onTap,
     this.trailingText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ProfileListItem extends StatelessWidget {
       title: Text(title,style: Theme.of(context).textTheme.bodyMedium,),
       trailing: trailingText != null
           ? Text(trailingText!, style: Theme.of(context).textTheme.bodySmall)
-          : Icon(Icons.chevron_right, color: Colors.black),
+          : const Icon(Icons.chevron_right, color: Colors.black),
       onTap: onTap,
     );
   }

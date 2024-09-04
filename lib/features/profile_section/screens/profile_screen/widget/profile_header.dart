@@ -8,12 +8,12 @@ class ProfileHeader extends StatelessWidget {
   final VoidCallback onEdit;
 
   const ProfileHeader({
-    Key? key,
+    super.key,
     required this.name,
     required this.phoneNumber,
     required this.imageUrl,
     required this.onEdit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +35,13 @@ class ProfileHeader extends StatelessWidget {
               ),
               Text(
                 phoneNumber,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.textGrey),
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.textGrey),
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
-            icon: Icon(Icons.edit, color: Colors.green),
+            icon: const Icon(Icons.edit, color: Colors.green),
             onPressed: onEdit,
           ),
         ],

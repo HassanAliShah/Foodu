@@ -5,7 +5,6 @@ import 'package:foodu/features/navigation_menu/controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -19,12 +18,12 @@ class NavigationMenu extends StatelessWidget {
             elevation: 20,
             currentIndex: controller.selectedIndex.value,
             onTap: (index) => controller.selectedIndex.value = index,
-            selectedItemColor: HColors.primary,
-            unselectedItemColor: HColors.textGrey,
+            selectedItemColor: TColors.primary,
+            unselectedItemColor: TColors.textGrey,
             showUnselectedLabels: true,
-            backgroundColor: HColors.backgroundLight,
+            backgroundColor: TColors.backgroundLight,
             type: BottomNavigationBarType.fixed,
-             items: [
+             items: const [
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(HImages.home))  ,label: 'Home',),
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(HImages.order))  ,label: 'Order',),
           BottomNavigationBarItem(icon:  ImageIcon(AssetImage(HImages.chat))  ,label: 'Messages',),

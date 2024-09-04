@@ -1,11 +1,9 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-import 'package:foodu/utils/constants/text_strings.dart';
 
 class HFooter extends StatelessWidget {
-   HFooter({
+   const HFooter({
     super.key, required this.text, required this.onPressed, required this.buttonText,
   });
 
@@ -16,12 +14,12 @@ class HFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: HSizes.sm),
+      padding: const EdgeInsets.symmetric(vertical: TSizes.sm),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(text,style: Theme.of(context).textTheme.labelSmall,),
-          SizedBox(width: HSizes.sm,),
+          const SizedBox(width: TSizes.sm,),
           TextButton(onPressed: onPressed, child: Text(buttonText,style: Theme.of(context).textTheme.labelLarge,),)
         ],
       ),

@@ -7,7 +7,6 @@ import 'package:foodu/features/order_section/screens/track_order/widget/driver_c
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class TrackOrderScreen extends StatelessWidget {
   const TrackOrderScreen({super.key});
@@ -15,15 +14,15 @@ class TrackOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFA4DEB7),
+      backgroundColor: const Color(0xFFA4DEB7),
       body: Column(
         children: [
           Stack(
             children:[
               Container(
               color: Colors.greenAccent.shade100,
-              height: HHelperFunctions.screenHeight() /1.338,
-              child: Center(child: Text("Google Map"),),
+              height: THelperFunctions.screenHeight() /1.338,
+              child: const Center(child: Text("Google Map"),),
             ),
               Positioned(
                 top: 40,
@@ -33,26 +32,26 @@ class TrackOrderScreen extends StatelessWidget {
                   height: 50,
                   padding: const EdgeInsets.all(12),
                   decoration: ShapeDecoration(
-                    color: Color(0xFFA4DEB7),
+                    color: const Color(0xFFA4DEB7),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100),
                     ),
                   ),
-                  child: Center(child: BackButtonIcon(),),
+                  child: const Center(child: BackButtonIcon(),),
                 ),
               )
 
             ]
           ),
           InkWell(
-            onTap: () => Get.to(DriverInformationScreen()),
+            onTap: () => Get.to(const DriverInformationScreen()),
             child: DriverInfoCard(
               driverName: 'Rayfore Chanil',
               vehicleName: 'Yamaha mx king',
               vehiclePlate: 'HSW 476 XK',
               rating: 4.5,
               driverImageUrl: HImages.pic,
-              onCancel: () => Get.to(CancelOrderScreen()),
+              onCancel: () => Get.to(const CancelOrderScreen()),
               onMessage: () {  },
               onCall: () {  },),
           ),

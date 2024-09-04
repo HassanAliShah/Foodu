@@ -1,12 +1,10 @@
 
 
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HColors{
-  HColors._();
+class TColors{
+  TColors._();
 
   // App Basic Color
   static const Color primary = Color(0xff1BAC4B);

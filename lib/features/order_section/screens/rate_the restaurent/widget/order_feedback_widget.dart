@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_text_field.dart';
@@ -34,22 +33,22 @@ class OrderFeedbackWidget extends StatelessWidget {
           const SizedBox(height: 16.0),
           Text(
             title,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: HColors.textblack),
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: TColors.textblack),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8.0),
           Text(
             subtitle,
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: HColors.textGrey),
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: TColors.textGrey),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8.0),
-         custom_divider(),
+         const custom_divider(),
           StarRating(
             starSize: 30.0,
             onRatingChanged: onRatingChanged,
           ),
-          custom_divider(),
+          const custom_divider(),
           const SizedBox(height: 8.0),
           CustomTextField(height: 100, maxline: 3,hintText: "write your comment",textEditingController: TextEditingController())
         ],

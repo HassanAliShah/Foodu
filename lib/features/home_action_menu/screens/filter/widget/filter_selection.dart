@@ -9,12 +9,12 @@ class FilterSection extends StatelessWidget {
   final bool radioButton;
 
   const FilterSection({
-    Key? key,
+    super.key,
     required this.title,
     required this.options,
     required this.selectedOptions,
     required this.onOptionSelected, required this.radioButton,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +29,16 @@ class FilterSection extends StatelessWidget {
               title,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 14),
             ),
-            SizedBox(height: 8),
-            Divider(),
+            const SizedBox(height: 8),
+            const Divider(),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: options.length,
               itemBuilder: (context, index) {
                 return radioButton ? RadioListTile(
                   value: index,
-                  activeColor: HColors.primary,
+                  activeColor: TColors.primary,
                   groupValue: selectedOptions,  // Compare with the integer index
                   onChanged: (value) {
                     onOptionSelected(index);

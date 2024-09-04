@@ -15,7 +15,6 @@ import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class RestaurentDetailScreen extends StatelessWidget {
   const RestaurentDetailScreen({super.key});
@@ -33,8 +32,8 @@ class RestaurentDetailScreen extends StatelessWidget {
               [
                 Container(
                 width: double.infinity,
-                height: HHelperFunctions.screenHeight() /3,
-                decoration: BoxDecoration(
+                height: THelperFunctions.screenHeight() /3,
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(HImages.restaurent),
                     fit: BoxFit.fill,
@@ -43,19 +42,19 @@ class RestaurentDetailScreen extends StatelessWidget {
               ),
                 Positioned(top:20,right: 0,left: 0, child:
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+                      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(onPressed: (){
                             Get.back();
-                          }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+                          }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
                           SizedBox(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_outlined,color: Colors.white,)),
-                                IconButton(onPressed: (){}, icon: Icon(Icons.share,color: Colors.white,)),
+                                IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_border_outlined,color: Colors.white,)),
+                                IconButton(onPressed: (){}, icon: const Icon(Icons.share,color: Colors.white,)),
                               ],
                             ),
                           )
@@ -67,36 +66,36 @@ class RestaurentDetailScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(HSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
-                InfoRow(title: 'Big Gardan Salad',onTap: ()=> Get.to(RestaurentAboutScreen()),),
-                Divider(),
-                InfoRow(leadingIcon:Icon(Icons.star,color: HColors.rating,),text: '4.8',secondaryText: '(4.8k reviews)',onTap: () => Get.to(RatingAndReviews()),),
-                Divider(),
-                InfoRow(text: '2.4 Km',leadingIcon:Icon(Icons.location_on_rounded,color: HColors.primary,),onTap: () => Get.to(AddItemToBasket()) ,priceText: '\$2.0',showBottomRow: true,),
-                Divider(),
-                InfoRow(text: 'Offers are available',leadingIcon: Icon(Icons.local_offer_rounded,color: HColors.primary,),onTap: () => Get.to(OfferScreen())),
-                Divider(),
+                InfoRow(title: 'Big Gardan Salad',onTap: ()=> Get.to(const RestaurentAboutScreen()),),
+                const Divider(),
+                InfoRow(leadingIcon:const Icon(Icons.star,color: TColors.rating,),text: '4.8',secondaryText: '(4.8k reviews)',onTap: () => Get.to(const RatingAndReviews()),),
+                const Divider(),
+                InfoRow(text: '2.4 Km',leadingIcon:const Icon(Icons.location_on_rounded,color: TColors.primary,),onTap: () => Get.to(const AddItemToBasket()) ,priceText: '\$2.0',showBottomRow: true,),
+                const Divider(),
+                InfoRow(text: 'Offers are available',leadingIcon: const Icon(Icons.local_offer_rounded,color: TColors.primary,),onTap: () => Get.to(const OfferScreen())),
+                const Divider(),
               ],
             ),),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal:HSizes.defaultSpace),
+              padding: const EdgeInsets.symmetric(horizontal:TSizes.defaultSpace),
               child: Text("For You",style:  Theme.of(context).textTheme.bodyLarge,),
             ),
 
-            HorizontalFoodList(),
+            const HorizontalFoodList(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal:HSizes.defaultSpace),
+              padding: const EdgeInsets.symmetric(horizontal:TSizes.defaultSpace),
               child: Text("Menu",style:  Theme.of(context).textTheme.bodyLarge,),
             ),
-            VerticalFoodList()
+            const VerticalFoodList()
           ],
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: HSizes.defaultSpace,vertical: HSizes.defaultSpace),
-        child: ElevatedButton(onPressed: () => Get.to(CheckoutOrderScreen()), child: Text('Basket - 1 item -\$2 ')),
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace,vertical: TSizes.defaultSpace),
+        child: ElevatedButton(onPressed: () => Get.to(const CheckoutOrderScreen()), child: const Text('Basket - 1 item -\$2 ')),
       ),
     );
   }

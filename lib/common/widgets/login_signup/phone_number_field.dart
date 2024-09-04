@@ -13,8 +13,8 @@ class PhoneNumberField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: HSizes.buttonHeight,
-      child: TextField(cursorColor: HColors.primary,cursorHeight: HSizes.lg,style: Theme.of(context).textTheme.bodySmall,
+      height: TSizes.buttonHeight,
+      child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
           prefixIcon: const CountryCodePicker(
             padding: EdgeInsets.zero,

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/home_action_menu/model/search_food_item_model.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
-import 'package:get/get.dart';
 import 'package:foodu/utils/constants/colors.dart';
 
 class SearchFoodCard extends StatelessWidget {
   final SearchFoodItemModel foodItem;
 
-  const SearchFoodCard({Key? key, required this.foodItem}) : super(key: key);
+  const SearchFoodCard({super.key, required this.foodItem});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +68,7 @@ class SearchFoodCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Divider(color: HColors.textGrey.withOpacity(0.3)),
+            Divider(color: TColors.textGrey.withOpacity(0.3)),
             const SizedBox(height: 8),
             Column(
               children: foodItem.recommendedItems.map((item) {
@@ -91,9 +90,9 @@ class SearchFoodCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            HHelperFunctions.truncateText(item.title, 25)
+                            THelperFunctions.truncateText(item.title, 25)
                             ,
-                            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.textblack),
+                            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.textblack),
                           ),
                           Text(
                             '\$${item.price.toStringAsFixed(2)}',

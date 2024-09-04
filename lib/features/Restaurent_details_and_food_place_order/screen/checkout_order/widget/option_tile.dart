@@ -7,12 +7,12 @@ class OptionTile extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  OptionTile({
-    Key? key,
+  const OptionTile({
+    super.key,
     required this.icon,
     required this.title,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +22,18 @@ class OptionTile extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: HColors.primary,
+            color: TColors.primary,
           ),
-          Gap(16),
+          const Gap(16),
           Expanded(
             child: Text(
               title,
               style: Theme.of(context).textTheme.bodySmall
             ),
           ),
-          Icon(
+          const Icon(
             Icons.arrow_forward_ios,
-            color:HColors.primary,
+            color:TColors.primary,
             size: 16.0,
           ),
         ],

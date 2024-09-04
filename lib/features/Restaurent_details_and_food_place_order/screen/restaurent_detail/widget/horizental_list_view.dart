@@ -5,14 +5,16 @@ import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
 class HorizontalFoodList extends StatelessWidget {
+  const HorizontalFoodList({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     final controller = RestaurantController.instance;
     return Padding(
-      padding:  EdgeInsets.only(left:HSizes.defaultSpace),
+      padding:  const EdgeInsets.only(left:TSizes.defaultSpace),
       child: SizedBox(
-        height: HHelperFunctions.screenHeight() / 3.3,
+        height: THelperFunctions.screenHeight() / 3.3,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: controller.foodItems.length,

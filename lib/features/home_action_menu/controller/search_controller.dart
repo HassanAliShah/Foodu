@@ -3,7 +3,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/features/home_action_menu/model/search_food_item_model.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
-import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
 class SearchPageController extends GetxController{

@@ -7,8 +7,8 @@ class HCardTheme{
   HCardTheme._();
 
   static  CardTheme lightCardTheme =  CardTheme(
-    surfaceTintColor: HColors.backgroundLight,
-    color: HColors.backgroundLight,
+    surfaceTintColor: TColors.backgroundLight,
+    color: TColors.backgroundLight,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(16.0),
     ),

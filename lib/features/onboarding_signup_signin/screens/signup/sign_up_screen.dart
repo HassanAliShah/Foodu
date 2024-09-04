@@ -10,7 +10,6 @@ import 'package:foodu/features/onboarding_signup_signin/screens/signup/widget/si
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -22,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(onPressed: (){
             Get.back();
-          }, icon: Icon(Icons.arrow_back)),
+          }, icon: const Icon(Icons.arrow_back)),
         ),
         body: SingleChildScrollView(
           padding: HSpacingStyles.paddingWithHeightWidth,
@@ -31,20 +30,20 @@ class SignUpScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // logo widget
-               HHeader(text: HText.createNewAccount,image: HImages.appLogo,),
+               const HHeader(text: HText.createNewAccount,image: HImages.appLogo,),
 
               //Form
               const HSignUpForm(),
 
               //Divider
-              HFormDivider(text: "or ${HText.continueWith}",),
+              const HFormDivider(text: "or ${HText.continueWith}",),
 
               //Social Button
               const HSocialRowButon(),
 
 
                HFooter(text: HText.alreadyHaveAccount,buttonText: HText.signIN,onPressed: (){
-                 Get.to(LoginScreen());
+                 Get.to(const LoginScreen());
                },)
 
             ],

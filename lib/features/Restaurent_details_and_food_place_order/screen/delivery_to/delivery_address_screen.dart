@@ -1,18 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/controller/address_controller.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/delivery_to/widget/address_card.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class DeliveryAddressScreen extends StatelessWidget {
 
 
-  DeliveryAddressScreen({Key? key}) : super(key: key);
+  const DeliveryAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +24,7 @@ class DeliveryAddressScreen extends StatelessWidget {
         child: Obx(() => Column(
           children: [
             SizedBox(
-              height: HHelperFunctions.screenHeight() / 1.4,
+              height: THelperFunctions.screenHeight() / 1.4,
               child: ListView.builder(
                 itemCount: controller.addresses.length,
                 itemBuilder: (context, index) {
@@ -49,7 +46,7 @@ class DeliveryAddressScreen extends StatelessWidget {
                 onPressed: () {
                   controller.addAddress('New Address', '123 New Street, NY', isDefault: false);
                 },
-                child: Text(
+                child: const Text(
                   'Add new Address',
                 ),
               ),
@@ -63,7 +60,7 @@ class DeliveryAddressScreen extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          child: Text(
+          child: const Text(
             'Apply',
           ),
         ),

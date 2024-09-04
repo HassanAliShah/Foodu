@@ -1,10 +1,9 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 
 class ActionIcon extends StatelessWidget {
-  ActionIcon({
+  const ActionIcon({
     super.key, required this.iconData, required this.onTap,
   });
 
@@ -18,7 +17,7 @@ class ActionIcon extends StatelessWidget {
       height: 45,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: HColors.borderGrey),
+          side: const BorderSide(width: 1, color: TColors.borderGrey),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

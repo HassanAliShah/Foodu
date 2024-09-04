@@ -5,7 +5,6 @@ import 'package:foodu/features/onboarding_signup_signin/screens/onboarding/widge
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

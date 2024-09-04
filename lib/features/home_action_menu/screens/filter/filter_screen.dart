@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/home_action_menu/controller/filter_controller.dart';
 import 'package:foodu/features/home_action_menu/screens/filter/widget/filter_selection.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class FilterScreen extends StatelessWidget {
+  const FilterScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(FilterController());
@@ -16,8 +15,8 @@ class FilterScreen extends StatelessWidget {
       length: controller.tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Filter'),
-          bottom:  PreferredSize(preferredSize: Size.fromHeight(50), child: TabBar(
+          title: const Text('Filter'),
+          bottom:  PreferredSize(preferredSize: const Size.fromHeight(50), child: TabBar(
             isScrollable: true,
             tabs:  controller.tabs.map((tabName) {
               return Tab(text: tabName);
@@ -82,21 +81,21 @@ class FilterScreen extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: OutlinedButton(onPressed: (){}, child: Text('Reset',style: TextStyle(color: HColors.primary),),style: OutlinedButton.styleFrom(
+                child: OutlinedButton(onPressed: (){},style: OutlinedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: Color(0xFFE8F7ED),
+                  backgroundColor: const Color(0xFFE8F7ED),
                   side:  const BorderSide(color:Color(0xFFE8F7ED)),
                   padding: const EdgeInsets.symmetric(vertical:  14),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                    textStyle:   TextStyle(fontSize: 14, color: HColors.primary,fontWeight: FontWeight.w700)
-                ),),
+                    textStyle:   const TextStyle(fontSize: 14, color: TColors.primary,fontWeight: FontWeight.w700)
+                ), child: const Text('Reset',style: TextStyle(color: TColors.primary),),),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
                   },
-                  child: Text('Apply'),
+                  child: const Text('Apply'),
                 ),
               ),
             ],

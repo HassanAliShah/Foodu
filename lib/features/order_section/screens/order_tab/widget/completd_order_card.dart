@@ -13,7 +13,7 @@ class CompletedOrderCard extends StatelessWidget {
   final VoidCallback onOrderAgain;
 
   const CompletedOrderCard({
-    Key? key,
+    super.key,
     required this.restaurantName,
     required this.itemsInfo,
     required this.price,
@@ -21,7 +21,7 @@ class CompletedOrderCard extends StatelessWidget {
     required this.imageUrl,
     required this.onLeaveReview,
     required this.onOrderAgain,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class CompletedOrderCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,12 +82,12 @@ class CompletedOrderCard extends StatelessWidget {
                               vertical: 4.0,
                             ),
                             decoration: BoxDecoration(
-                              color: HColors.primary,
+                              color: TColors.primary,
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child:  Text(
                               'Completed',
-                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.backgroundLight)
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.backgroundLight)
                             ),
                           ),
                       ],
@@ -97,7 +97,7 @@ class CompletedOrderCard extends StatelessWidget {
               ),
             ],
           ),
-         custom_divider(),
+         const custom_divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodu/features/profile_section/screens/help_center/widget/contect_option.dart';
 
 class ContactOptionsWidget extends StatelessWidget {
-  const ContactOptionsWidget({Key? key}) : super(key: key);
+  const ContactOptionsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

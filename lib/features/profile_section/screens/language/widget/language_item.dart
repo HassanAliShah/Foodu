@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class LanguageItem extends StatelessWidget {
   final String language;
 
-  LanguageItem({required this.language});
+  const LanguageItem({super.key, required this.language});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,8 @@ class LanguageItem extends StatelessWidget {
     return Obx(() => ListTile(
       title: Text(language,style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 14),),
       trailing: controller.selectedLanguage.value == language
-          ? Icon(Icons.check_circle, color: HColors.primary)
-          : Icon(Icons.circle, color: Colors.grey),
+          ? const Icon(Icons.check_circle, color: TColors.primary)
+          : const Icon(Icons.circle, color: Colors.grey),
       onTap: () {
         controller.changeLanguage(language);
       },

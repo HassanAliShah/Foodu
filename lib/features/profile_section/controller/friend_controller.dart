@@ -1,7 +1,6 @@
 import 'package:foodu/features/profile_section/model/invite_friend.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class FriendsController extends GetxController {
   var friendsList = <Friend>[].obs;

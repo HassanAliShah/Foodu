@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class DriverInformationCard extends StatelessWidget {
   final String driverName;
@@ -15,7 +14,7 @@ class DriverInformationCard extends StatelessWidget {
   final String plateNumber;
 
   const DriverInformationCard({
-    Key? key,
+    super.key,
     required this.driverName,
     required this.driverPhoneNumber,
     required this.driverImageUrl,
@@ -25,37 +24,37 @@ class DriverInformationCard extends StatelessWidget {
     required this.memberSince,
     required this.vehicleModel,
     required this.plateNumber,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
 
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         // Profile picture and name
         CircleAvatar(
           radius: 50,
           backgroundImage: AssetImage(driverImageUrl),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Text(
           driverName,
           style:Theme.of(context).textTheme.bodyLarge
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               driverPhoneNumber,
-                style:Theme.of(context).textTheme.bodyLarge?.copyWith(color: HColors.textGrey)
+                style:Theme.of(context).textTheme.bodyLarge?.copyWith(color: TColors.textGrey)
             ),
-            SizedBox(width: 8),
-            Icon(Icons.verified, color: HColors.primary, size: 16),
+            const SizedBox(width: 8),
+            const Icon(Icons.verified, color: TColors.primary, size: 16),
           ],
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         // Stats
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -77,7 +76,7 @@ class DriverInformationCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         // Additional Information
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -92,9 +91,9 @@ class DriverInformationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _buildInfoRow('Member Since', memberSince),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   _buildInfoRow('Motorcycle Model', vehicleModel),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   _buildInfoRow('Plate Number', plateNumber),
                 ],
               ),
@@ -108,13 +107,13 @@ class DriverInformationCard extends StatelessWidget {
   Widget _buildStatColumn(IconData icon, String value, String label) {
     return Column(
       children: [
-        Icon(icon, color: HColors.primary, size: 32),
-        SizedBox(height: 8),
+        Icon(icon, color: TColors.primary, size: 32),
+        const SizedBox(height: 8),
         Text(
           value,
           style: Theme.of(Get.context!).textTheme.bodyMedium
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
           label,
           style:Theme.of(Get.context!).textTheme.titleSmall

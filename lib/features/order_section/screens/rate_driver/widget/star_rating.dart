@@ -7,12 +7,12 @@ class StarRating extends StatefulWidget {
   final Function(int) onRatingChanged;
 
   const StarRating({
-    Key? key,
+    super.key,
     this.starCount = 5,
     this.starSize = 30.0,
     this.color = Colors.orange,
     required this.onRatingChanged,
-  }) : super(key: key);
+  });
 
   @override
   _StarRatingState createState() => _StarRatingState();

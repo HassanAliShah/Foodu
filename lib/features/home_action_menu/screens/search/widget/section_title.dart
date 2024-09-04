@@ -4,6 +4,6 @@ import 'package:foodu/utils/constants/colors.dart';
 Widget buildSectionTitle(String title) {
   return Text(
     title,
-    style: TextStyle(fontSize: 14.0,fontFamily: 'Urbanist', fontWeight: FontWeight.bold, color: HColors.textblack),
+    style: const TextStyle(fontSize: 14.0,fontFamily: 'Urbanist', fontWeight: FontWeight.bold, color: TColors.textblack),
   );
 }

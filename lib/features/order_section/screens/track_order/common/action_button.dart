@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ActionButton extends StatelessWidget {
@@ -28,7 +27,7 @@ class ActionButton extends StatelessWidget {
           width: 24,
           height: 24,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child:Icon(iconData,color: Colors.white,),
         ),
       ),

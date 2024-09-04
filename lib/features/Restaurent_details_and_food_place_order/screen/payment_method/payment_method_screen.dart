@@ -5,13 +5,11 @@ import 'package:foodu/features/Restaurent_details_and_food_place_order/controlle
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/payment_method/widget/payment_method_card.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
 
 
-  PaymentMethodScreen({Key? key}) : super(key: key);
+  const PaymentMethodScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class PaymentMethodScreen extends StatelessWidget {
         child: Obx(() => Column(
           children: [
             SizedBox(
-              height: HHelperFunctions.screenHeight() / 1.4,
+              height: THelperFunctions.screenHeight() / 1.4,
               child: ListView.builder(
                 itemCount: controller.paymentMethods.length,
                 itemBuilder: (context, index) {
@@ -51,7 +49,7 @@ class PaymentMethodScreen extends StatelessWidget {
                     balance: '**** **** **** 4679',
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Add new Payment',
                 ),
               ),
@@ -65,7 +63,7 @@ class PaymentMethodScreen extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          child: Text(
+          child: const Text(
             'Apply',
           ),
         ),

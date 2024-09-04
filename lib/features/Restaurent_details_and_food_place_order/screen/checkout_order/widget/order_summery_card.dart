@@ -10,7 +10,7 @@ class OrderSummaryCard extends StatelessWidget {
   final String title;
   final OrderController orderController = Get.put(OrderController());
 
-  OrderSummaryCard({Key? key, required this.title}) : super(key: key);
+  OrderSummaryCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class OrderSummaryCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
           ),
         ],
       ),
@@ -55,7 +55,7 @@ class OrderSummaryCard extends StatelessWidget {
               ),),
             ],
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           // Order Items List
           Obx(() {
             return Column(
@@ -86,7 +86,7 @@ class OrderSummaryCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-         Gap(16),
+         const Gap(16),
           // Item Details
           Expanded(
             child: Column(
@@ -94,17 +94,17 @@ class OrderSummaryCard extends StatelessWidget {
               children: [
                 Text(
                   item.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                Gap(14),
+                const Gap(14),
                 Text(
                   '\$${item.price.toStringAsFixed(2)}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14.0,
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
@@ -113,14 +113,14 @@ class OrderSummaryCard extends StatelessWidget {
               ],
             ),
           ),
-          Gap(16),
+          const Gap(16),
           // Quantity and Edit Icon
           Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: HColors.primary),
+                  border: Border.all(color: TColors.primary),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Text(
@@ -128,11 +128,11 @@ class OrderSummaryCard extends StatelessWidget {
                   style: Theme.of(Get.context!).textTheme.headlineLarge?.copyWith(fontSize: 14)
                 ),
               ),
-              Gap(4),
+              const Gap(4),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.edit,
-                  color: HColors.primary,
+                  color: TColors.primary,
                   size: 16.0,
                 ),
                 onPressed: () {

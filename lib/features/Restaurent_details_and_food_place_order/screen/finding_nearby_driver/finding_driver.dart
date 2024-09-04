@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
@@ -24,36 +23,36 @@ class FindingDriver extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //Head
-          Padding(padding: EdgeInsets.only(top: 10),child: Column(
+          Padding(padding: const EdgeInsets.only(top: 10),child: Column(
       children: [
-        Center(child: Image(image: AssetImage(HImages.appLogo))),
-        SizedBox(height: HSizes.md,),
+        const Center(child: Image(image: AssetImage(HImages.appLogo))),
+        const SizedBox(height: TSizes.md,),
         Text("Finding you a nearby driver...",
           style: Theme.of(context).textTheme.bodyLarge,
           textAlign: TextAlign.center ,),
-        SizedBox(height: HSizes.x,),
+        const SizedBox(height: TSizes.x,),
         Text("This may take a few seconds...",
           style: Theme.of(context).textTheme.labelSmall,
           textAlign: TextAlign.center ,),
       ],
     ),),
-          Padding(padding: EdgeInsets.symmetric(vertical: 20),child:
+          Padding(padding: const EdgeInsets.symmetric(vertical: 20),child:
           RippleWave(
             color: Colors.green,
             repeat: true,
             child: Image.asset(HImages.pic)
           ),),
           SizedBox(
-            width: HHelperFunctions.screenWidth() /1.7,
+            width: THelperFunctions.screenWidth() /1.7,
             child: SlideAction(
               text: "     >>Slide to cancel",
               sliderButtonIconPadding: 14,
-              innerColor: HColors.primary,
+              innerColor: TColors.primary,
               textColor: Colors.grey,
               outerColor: Colors.white,
-              sliderButtonIcon: Icon(Icons.close,color: Colors.white,),
+              sliderButtonIcon: const Icon(Icons.close,color: Colors.white,),
               textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: HColors.textGrey
+                color: TColors.textGrey
               ),
 
 

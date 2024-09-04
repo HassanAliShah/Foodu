@@ -13,7 +13,7 @@ class custom_divider extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
         width: double.infinity,
-        color: HColors.borderGrey,
+        color: TColors.borderGrey,
         height: 1,
       ),
     );

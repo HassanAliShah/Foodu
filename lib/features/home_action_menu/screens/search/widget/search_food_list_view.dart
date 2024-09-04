@@ -4,6 +4,8 @@ import 'package:foodu/features/home_action_menu/screens/search/widget/search_foo
 import 'package:get/get.dart';
 
 class SearchFoodListView extends StatelessWidget {
+  const SearchFoodListView({super.key});
+
 
   @override
   Widget build(BuildContext context) {

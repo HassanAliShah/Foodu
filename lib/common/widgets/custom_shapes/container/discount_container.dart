@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
@@ -18,17 +17,17 @@ class DiscountConatiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: HHelperFunctions.screenHeight() / 5.3,
+      height: THelperFunctions.screenHeight() / 5.3,
       clipBehavior: Clip.antiAlias,
-      padding: EdgeInsets.only(left: HSizes.lg),
+      padding: const EdgeInsets.only(left: TSizes.lg),
       decoration: ShapeDecoration(
         gradient: gradient,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(HSizes.cardRadiusXL),
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusXL),
         ),
         shadows: const [
           BoxShadow(
-            color: HColors.containerShadow,
+            color: TColors.containerShadow,
             blurRadius: 24,
             offset: Offset(4, 8),
             spreadRadius: 0,

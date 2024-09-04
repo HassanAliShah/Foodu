@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/order_section/screens/track_order/common/action_button.dart';
@@ -14,7 +13,7 @@ class DriverInformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const HAppBar(
         showBackButton: true,
         title: Text("Driver Information"),
       ),
@@ -22,7 +21,7 @@ class DriverInformationScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
 
-        DriverInformationCard(
+        const DriverInformationCard(
         driverName: 'Rayford Chenail',
         driverPhoneNumber: '+1 800 555 0199',
         driverImageUrl: HImages.pic,
@@ -38,9 +37,9 @@ class DriverInformationScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ActionButton(onTap: (){},iconData: Icons.close ,colorGradient: HColors.redGradient,),
-                ActionButton(onTap: (){},iconData: Icons.message ,colorGradient: HColors.greenGradient,),
-                ActionButton(onTap: (){},iconData: Icons.call ,colorGradient: HColors.greenGradient,),
+                ActionButton(onTap: (){},iconData: Icons.close ,colorGradient: TColors.redGradient,),
+                ActionButton(onTap: (){},iconData: Icons.message ,colorGradient: TColors.greenGradient,),
+                ActionButton(onTap: (){},iconData: Icons.call ,colorGradient: TColors.greenGradient,),
               ],
             ),
           ),

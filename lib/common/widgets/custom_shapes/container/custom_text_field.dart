@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-import 'package:get/get.dart';
 
 class CustomTextField extends StatefulWidget {
   final double height;
@@ -15,7 +14,7 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController textEditingController;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.height,
     this.hintText,
     this.prefixIcon,
@@ -25,7 +24,7 @@ class CustomTextField extends StatefulWidget {
     this.bottomSheetContent,
     required this.textEditingController,
     this.prefixOnTap,
-  }) : super(key: key);
+  });
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -64,21 +63,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: TextField(
         controller: widget.textEditingController,
         focusNode: _focusNode,
-        cursorColor: HColors.primary,
+        cursorColor: TColors.primary,
         maxLines: widget.maxline,
-        cursorHeight: HSizes.lg,
+        cursorHeight: TSizes.lg,
         style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
           filled: true,
-          contentPadding: EdgeInsets.all(HSizes.xs),
-          fillColor: isTapped ? HColors.textFieldFillTapColor : HColors.textFieldFillColor,
+          contentPadding: const EdgeInsets.all(TSizes.xs),
+          fillColor: isTapped ? TColors.textFieldFillTapColor : TColors.textFieldFillColor,
           hintText: widget.hintText ?? '',
           hintStyle: Theme.of(context).textTheme.labelSmall,
           prefixIcon: widget.prefixIcon != null
-              ? IconButton(icon: Icon(widget.prefixIcon,color: isTapped ? HColors.primary : HColors.textGrey,),  onPressed: widget.prefixOnTap, )
+              ? IconButton(icon: Icon(widget.prefixIcon,color: isTapped ? TColors.primary : TColors.textGrey,),  onPressed: widget.prefixOnTap, )
               : null,
           suffixIcon: widget.suffixIcon != null
-              ? Icon(widget.suffixIcon, color: isTapped ? HColors.primary : HColors.textGrey)
+              ? Icon(widget.suffixIcon, color: isTapped ? TColors.primary : TColors.textGrey)
               : null,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),

@@ -3,19 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-import 'package:foodu/utils/helpers/helper_function.dart';
 
 class HElevatedButtonTheme{
   HElevatedButtonTheme._();
 
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      elevation: HSizes.buttonElevation,
+      elevation: TSizes.buttonElevation,
       foregroundColor: Colors.white,
-      backgroundColor: HColors.buttonPrimary,
+      backgroundColor: TColors.buttonPrimary,
       disabledBackgroundColor: Colors.grey,
       disabledForegroundColor: Colors.grey,
-      side:  const BorderSide(color:HColors.buttonPrimary),
+      side:  const BorderSide(color:TColors.buttonPrimary),
       padding: const EdgeInsets.symmetric(vertical:  14,horizontal: 14),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       textStyle:  const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w700)

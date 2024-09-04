@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/chats/model/chat_item_model.dart';
 import 'package:foodu/features/chats/screens/chat_detail_screen/chat_detail_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ChatListWidget extends StatelessWidget {
   final List<ChatItem> chatItems;
 
-  const ChatListWidget({Key? key, required this.chatItems}) : super(key: key);
+  const ChatListWidget({super.key, required this.chatItems});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class ChatListWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         final chatItem = chatItems[index];
         return InkWell(
-          onTap: () => Get.to(ChatDetailScreen()),
+          onTap: () => Get.to(const ChatDetailScreen()),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             child: Row(
@@ -54,8 +52,8 @@ class ChatListWidget extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(top: 8.0),
                         padding: const EdgeInsets.all(6.0),
-                        decoration: BoxDecoration(
-                          color: HColors.primary,
+                        decoration: const BoxDecoration(
+                          color: TColors.primary,
                           shape: BoxShape.circle,
                         ),
                         child: Text(

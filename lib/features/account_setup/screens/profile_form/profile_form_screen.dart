@@ -18,19 +18,19 @@ class ProfileFormScreen extends StatelessWidget {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.arrow_back)),
-        title: Text(HText.fillYourProfile),
+            icon: const Icon(Icons.arrow_back)),
+        title: const Text(HText.fillYourProfile),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace,vertical: HSizes.defaultSpace),
+          padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace,vertical: TSizes.defaultSpace),
           child: Column(
             children: [
-              ProfileForm(),
-              SizedBox(
-                height: HSizes.defaultSpace,
+              const ProfileForm(),
+              const SizedBox(
+                height: TSizes.defaultSpace,
               ),
-              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(SetYourLocation()), child: Text(HText.continueB)))
+              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(const SetYourLocation()), child: const Text(HText.continueB)))
 
 
             ],

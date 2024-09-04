@@ -9,7 +9,6 @@ import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/ch
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/checkout_order/widget/payment_and_discount.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/finding_nearby_driver/finding_driver.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class CheckoutOrderScreen extends StatelessWidget {
   const CheckoutOrderScreen({super.key});
@@ -25,13 +24,13 @@ class CheckoutOrderScreen extends StatelessWidget {
         child: Padding(padding: HSpacingStyles.paddingWithHeightWidth,
         child: Column(
           children: [
-            DeliveryAddressCard(
+            const DeliveryAddressCard(
               title: 'Home',
               address: 'Times Square NYC, Manhattan',
               isDefault: true,
             ),
             OrderSummaryCard(title: "Order Summery"),
-            PaymentsAndDiscounts(),
+            const PaymentsAndDiscounts(),
             const OrderSummaryDetail(subtotal: 24, deliveryFee: 2,)
           ],
         )
@@ -39,7 +38,7 @@ class CheckoutOrderScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
-        child: SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(FindingDriver()), child: Text("Place Order - 26\$"))),
+        child: SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const FindingDriver()), child: const Text("Place Order - 26\$"))),
       ),
     );
   }

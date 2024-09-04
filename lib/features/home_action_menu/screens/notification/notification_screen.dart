@@ -1,14 +1,11 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/home_action_menu/controller/notification_controller.dart';
 import 'package:foodu/features/home_action_menu/screens/notification/widget/notification_card.dart';
-import 'package:foodu/utils/constants/sizes.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});

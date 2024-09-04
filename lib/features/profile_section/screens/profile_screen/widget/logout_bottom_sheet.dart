@@ -9,14 +9,14 @@ class LogoutBottomSheet extends StatelessWidget {
   final VoidCallback onConfirm;
 
   const LogoutBottomSheet({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
     required this.cancelText,
     required this.confirmText,
     required this.onCancel,
     required this.onConfirm,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

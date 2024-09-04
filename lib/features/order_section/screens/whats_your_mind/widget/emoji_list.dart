@@ -11,12 +11,12 @@ class EmojiListWidget extends StatelessWidget {
   final  controller = OrderController.instance;
 
   EmojiListWidget({
-    Key? key,
+    super.key,
     required this.emojiList,
     this.emojiSize = 50.0,
     this.borderRadius = 16.0,
     this.borderWidth = 2.0,
-  }) : super(key: key) {
+  }) {
     // Initialize the controller with the emoji list
     controller.initializeEmojiList(emojiList);
   }
@@ -37,7 +37,7 @@ class EmojiListWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 border: controller.emojiBorderStates[index]
-                    ? Border.all(color: HColors.primary, width: borderWidth)
+                    ? Border.all(color: TColors.primary, width: borderWidth)
                     : null,
                 borderRadius: BorderRadius.circular(borderRadius),
               ),

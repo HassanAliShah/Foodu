@@ -1,8 +1,6 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
-import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
@@ -25,11 +23,11 @@ class ImageTextCategoryContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image(image: AssetImage(image),width: 40,height: 40,),
-          SizedBox(height: HSizes.sm,),
+          const SizedBox(height: TSizes.sm,),
           Text(
-            HHelperFunctions.truncateText(text, 6),
+            THelperFunctions.truncateText(text, 6),
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.textblack),
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.textblack),
           ),
         ],
       ),

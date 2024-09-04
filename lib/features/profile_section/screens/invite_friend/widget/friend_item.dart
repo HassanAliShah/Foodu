@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class FriendItem extends StatelessWidget {
   final Friend friend;
 
-  FriendItem({required this.friend});
+  const FriendItem({super.key, required this.friend});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class FriendItem extends StatelessWidget {
           backgroundColor: friend.isInvited.value ? Colors.white : Colors.green,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.green),
+            side: const BorderSide(color: Colors.green),
           ),
         ),
         child: Text(friend.isInvited.value ? 'Invited' : 'Invite'),

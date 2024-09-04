@@ -17,7 +17,7 @@ class ReviewList extends StatelessWidget {
     final controller = ReviewAndRatingController.instance;
     return Obx(() {
       return SizedBox(
-        height: HHelperFunctions.screenHeight() / 1.75,
+        height: THelperFunctions.screenHeight() / 1.75,
         child: ListView.builder(
           itemCount: controller.reviews.length,
           itemBuilder: (context, index) {

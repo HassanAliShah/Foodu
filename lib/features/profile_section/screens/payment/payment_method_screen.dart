@@ -1,22 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/profile_section/screens/payment/widget/payment_method_item.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
+  const PaymentMethodScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const HAppBar(
         showBackButton: true,
         title: Text("Payment Method"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
+      body: const Padding(
+        padding: EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -45,8 +44,8 @@ class PaymentMethodScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Padding(padding: EdgeInsets.all(20),
-        child: ElevatedButton(onPressed: (){}, child: Text("Add new card")),),
+      bottomNavigationBar: Padding(padding: const EdgeInsets.all(20),
+        child: ElevatedButton(onPressed: (){}, child: const Text("Add new card")),),
     );
   }
 

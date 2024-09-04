@@ -6,8 +6,6 @@ import 'package:foodu/features/wallet/screens/payment_method/payment_method_scre
 import 'package:foodu/features/wallet/screens/top_up/AmoutButton.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class TopUpScreen extends StatelessWidget {
   const TopUpScreen({super.key});
@@ -16,7 +14,7 @@ class TopUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = WalletController.instance;
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const HAppBar(
         showBackButton: true,
         title: Text("Top Up E-Wallet"),
       ),
@@ -30,9 +28,9 @@ class TopUpScreen extends StatelessWidget {
               'Enter the amount of top up',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge,),
-             SizedBox(height: 20),
+             const SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.green, width: 2),
                 borderRadius: BorderRadius.circular(10),
@@ -40,16 +38,16 @@ class TopUpScreen extends StatelessWidget {
               child: Obx(() => Text(
                 '\$${controller.selectedAmount}',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: HColors.primary)
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: TColors.primary)
               )),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GridView.count(
               crossAxisCount: 3,
               shrinkWrap: true,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              children: [
+              children: const [
                 AmountButton( amount: 10,),
                 AmountButton( amount: 20,),
                 AmountButton( amount: 50,),
@@ -61,8 +59,8 @@ class TopUpScreen extends StatelessWidget {
                 AmountButton( amount: 1000,),
               ],
             ),
-            SizedBox(height: 20),
-            ElevatedButton(onPressed: () => Get.to(PaymentMethodScreen()), child: Text("Submit"))
+            const SizedBox(height: 20),
+            ElevatedButton(onPressed: () => Get.to(PaymentMethodScreen()), child: const Text("Submit"))
           ],
         ),
       ),

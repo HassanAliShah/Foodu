@@ -21,8 +21,8 @@ class FaqWidget extends StatelessWidget {
       padding: HSpacingStyles.paddingWithHeightWidth,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -33,7 +33,7 @@ class FaqWidget extends StatelessWidget {
               ],
             ),
           ),
-          custom_divider(),
+          const custom_divider(),
           Expanded(
             child: Obx(() => ListView.builder(
               itemCount: controller.faqs.length,

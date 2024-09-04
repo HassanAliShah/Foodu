@@ -7,7 +7,6 @@ import 'package:foodu/common/widgets/custom_shapes/container/discount_container.
 import 'package:foodu/features/home_action_menu/controller/special_offer_controller.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SpecialOfferScreen extends StatelessWidget {
   const SpecialOfferScreen({super.key});
@@ -31,7 +30,7 @@ class SpecialOfferScreen extends StatelessWidget {
                     imagePath: offer['imageUrl']!,
                     gradient: controller.colors[index]);
               }, separatorBuilder: (BuildContext context, int index) {
-                return Gap(10);
+                return const Gap(10);
             },
             ),),
     );

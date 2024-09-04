@@ -10,10 +10,9 @@ import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class AddItemToBasket extends StatelessWidget {
-   AddItemToBasket({super.key});
+   const AddItemToBasket({super.key});
 
 
   @override
@@ -29,8 +28,8 @@ class AddItemToBasket extends StatelessWidget {
               [
                 Container(
                   width: double.infinity,
-                  height: HHelperFunctions.screenHeight() /3,
-                  decoration: BoxDecoration(
+                  height: THelperFunctions.screenHeight() /3,
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(HImages.restaurent),
                       fit: BoxFit.fill,
@@ -39,18 +38,18 @@ class AddItemToBasket extends StatelessWidget {
                 ),
                 Positioned(top:20,right: 0,left: 0, child:
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+                  padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
                         Get.back();
-                      }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+                      }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
                       SizedBox(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconButton(onPressed: (){}, icon: Icon(Icons.share,color: Colors.white,)),
+                            IconButton(onPressed: (){}, icon: const Icon(Icons.share,color: Colors.white,)),
                           ],
                         ),
                       )
@@ -73,9 +72,9 @@ class AddItemToBasket extends StatelessWidget {
                       ),
                     ),
                   ),
-                  custom_divider(),
-                  ExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
-                  Gap(20),
+                  const custom_divider(),
+                  const ExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
+                  const Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -84,12 +83,12 @@ class AddItemToBasket extends StatelessWidget {
                       CounterButton(onTap: ()=> controller.itemCount--,iconData: Icons.remove,)
                     ],
                   ),
-                  CustomTextField(height: HHelperFunctions.screenHeight() /5,
+                  CustomTextField(height: THelperFunctions.screenHeight() /5,
                       maxline: 4,
                       hintText: 'Note To Restaurant (Optional)',
                       textEditingController: controller.textEditingController),
-                  custom_divider(),
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text("Add to Basket - 12\$")))
+                  const custom_divider(),
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text("Add to Basket - 12\$")))
                 ],
               ),)
 
@@ -120,12 +119,12 @@ class CounterButton extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: HColors.borderGrey),
+            side: const BorderSide(width: 1, color: TColors.borderGrey),
             borderRadius: BorderRadius.circular(16),
           ),
         ),
         child: Center(
-          child: Icon(iconData,color: HColors.primary,),
+          child: Icon(iconData,color: TColors.primary,),
         )
       ),
     );

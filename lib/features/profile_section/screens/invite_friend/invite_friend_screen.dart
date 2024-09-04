@@ -5,12 +5,14 @@ import 'package:foodu/features/profile_section/screens/invite_friend/widget/frie
 import 'package:get/get.dart';
 
 class InviteFriendsScreen extends StatelessWidget {
+  const InviteFriendsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final FriendsController controller = Get.put(FriendsController());
 
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const HAppBar(
         showBackButton: true,
         title: Text("Invite Friend"),
       ),

@@ -1,14 +1,12 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/features/order_section/controller/order_controller.dart';
 import 'package:foodu/features/order_section/screens/order_tab/widget/active_order_tab.dart';
-import 'package:foodu/features/order_section/screens/order_tab/widget/cancelled_order_tab.dart';import 'package:foodu/features/order_section/screens/order_tab/widget/cancelled_order_card.dart';
+import 'package:foodu/features/order_section/screens/order_tab/widget/cancelled_order_tab.dart';
 import 'package:foodu/features/order_section/screens/order_tab/widget/completed_order_tab.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -20,9 +18,9 @@ class OrderScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Order'),
+          title: const Text('Order'),
           leading: Image.asset(HImages.appLogo,),
-          bottom:  PreferredSize(preferredSize: Size.fromHeight(50), child: TabBar(
+          bottom:  PreferredSize(preferredSize: const Size.fromHeight(50), child: TabBar(
             tabAlignment: TabAlignment.center,
             isScrollable: true,
             tabs:  controller.tabs.map((tabName) {
@@ -31,7 +29,7 @@ class OrderScreen extends StatelessWidget {
           ),
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children:
           [
             ActiveOrderTab(),

@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/common/widgets/app_bar/app_bar.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class OrderSummaryDetail extends StatelessWidget {
   final double subtotal;
   final double deliveryFee;
 
   const OrderSummaryDetail({
-    Key? key,
+    super.key,
     required this.subtotal,
     required this.deliveryFee,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     double total = subtotal + deliveryFee;
 
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 6.0,
@@ -34,9 +31,9 @@ class OrderSummaryDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildSummaryRow('Subtotal', subtotal),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
           _buildSummaryRow('Delivery Fee', deliveryFee),
-          Divider(thickness: 1.0),
+          const Divider(thickness: 1.0),
           _buildSummaryRow('Total', total, isBold: true),
         ],
       ),
