@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
 class VerticalFoodCardRestaurent extends StatefulWidget {
@@ -9,12 +10,12 @@ class VerticalFoodCardRestaurent extends StatefulWidget {
   final String? badgeText;
 
   const VerticalFoodCardRestaurent({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.price,
     this.badgeText,
-  }) : super(key: key);
+  });
 
   @override
   _VerticalFoodCardRestaurentState createState() =>
@@ -32,24 +33,25 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: _toggleBorderColor,
       child: Container(
-        width: HHelperFunctions.screenWidth() / 2.7,
-        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+        width: THelperFunctions.screenWidth() / 2.7,
+        margin: const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.xm),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard : Colors.white,
           borderRadius: BorderRadius.circular(15.0),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: const Offset(0, 3),
             ),
           ],
           border: Border.all(
-            color: isTapped ? HColors.primary : Colors.transparent,
+            color: isTapped ? TColors.primary : Colors.transparent,
             width: 2.0,
           ),
         ),
@@ -59,7 +61,7 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(15)
+                  borderRadius: const BorderRadius.all(Radius.circular(15)
                   ),
                   child: Image.asset(
                     widget.imageUrl,
@@ -81,7 +83,7 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
                       ),
                       child: Text(
                         widget.badgeText!,
-                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.backgroundLight,fontSize: 5),
+                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
                       ),
                     ),
                   ),
@@ -103,7 +105,7 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
               padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
               child: Text(
                "\$ ${widget.price}",
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary)
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary)
               ),
             ),
           ],

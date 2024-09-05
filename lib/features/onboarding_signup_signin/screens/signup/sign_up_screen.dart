@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
+import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/common/widgets/login_signup/footer.dart';
 import 'package:foodu/common/widgets/login_signup/form_divider.dart';
 import 'package:foodu/common/widgets/login_signup/header.dart';
@@ -10,7 +11,6 @@ import 'package:foodu/features/onboarding_signup_signin/screens/signup/widget/si
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -19,32 +19,30 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(onPressed: (){
-            Get.back();
-          }, icon: Icon(Icons.arrow_back)),
+        appBar: const TAppBar(
+          showBackButton: true,
         ),
         body: SingleChildScrollView(
-          padding: HSpacingStyles.paddingWithHeightWidth,
+          padding: TSpacingStyles.paddingWithHeightWidth,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // logo widget
-               HHeader(text: HText.createNewAccount,image: HImages.appLogo,),
+               const THeader(text: TText.createNewAccount,image: TImages.appLogo,),
 
               //Form
-              const HSignUpForm(),
+              const TSignUpForm(),
 
               //Divider
-              HFormDivider(text: "or ${HText.continueWith}",),
+              const TFormDivider(text: "or ${TText.continueWith}",),
 
               //Social Button
-              const HSocialRowButon(),
+              const TSocialRowButon(),
 
 
-               HFooter(text: HText.alreadyHaveAccount,buttonText: HText.signIN,onPressed: (){
-                 Get.to(LoginScreen());
+               TFooter(text: TText.alreadyHaveAccount,buttonText: TText.signIN,onPressed: (){
+                 Get.to(const LoginScreen());
                },)
 
             ],

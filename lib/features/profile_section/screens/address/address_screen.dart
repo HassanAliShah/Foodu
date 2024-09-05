@@ -15,16 +15,16 @@ class AddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller  = ProfileController.instance;
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Address"),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => Column(
           children: [
             SizedBox(
-              height: HHelperFunctions.screenHeight() / 1.4,
+              height: THelperFunctions.screenHeight() / 1.4,
               child: ListView.builder(
                 itemCount: controller.addresses.length,
                 itemBuilder: (context, index) {
@@ -48,7 +48,7 @@ class AddressScreen extends StatelessWidget {
           onPressed: () {
 
           },
-          child: Text(
+          child: const Text(
             'Add new Address',
           ),
         ),

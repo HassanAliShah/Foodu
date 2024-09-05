@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:foodu/features/account_setup/controller/pin_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-class PinField extends StatelessWidget {
-  const PinField({
+class TPinField extends StatelessWidget {
+  const TPinField({
     super.key,
   });
 
@@ -17,13 +17,13 @@ class PinField extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
-          height: HSizes.buttonHeight,
-          width: HSizes.buttonHeight,
+          height: TSizes.buttonHeight,
+          width: TSizes.buttonHeight,
           child: Center(
             child: TextField(
-              cursorColor: HColors.primary,
+              cursorColor: TColors.primary,
               focusNode: controller.focusNode1
-              ,cursorHeight: HSizes.lg,
+              ,cursorHeight: TSizes.lg,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodySmall,
               keyboardType: TextInputType.phone,
@@ -35,12 +35,12 @@ class PinField extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: HSizes.buttonHeight,
-          width: HSizes.buttonHeight,
+          height: TSizes.buttonHeight,
+          width: TSizes.buttonHeight,
           child: Center(
             child: TextField(
-              cursorColor: HColors.primary
-              ,cursorHeight: HSizes.lg,
+              cursorColor: TColors.primary
+              ,cursorHeight: TSizes.lg,
               focusNode: controller.focusNode2,
               textAlign: TextAlign.center,
               obscureText: true,
@@ -53,12 +53,12 @@ class PinField extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: HSizes.buttonHeight,
-          width: HSizes.buttonHeight,
+          height: TSizes.buttonHeight,
+          width: TSizes.buttonHeight,
           child: Center(
             child: TextField(
-              cursorColor: HColors.primary
-              ,cursorHeight: HSizes.lg,
+              cursorColor: TColors.primary
+              ,cursorHeight: TSizes.lg,
               focusNode: controller.focusNode3,
               textAlign: TextAlign.center,
               obscureText: true,
@@ -71,12 +71,12 @@ class PinField extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: HSizes.buttonHeight,
-          width: HSizes.buttonHeight,
+          height: TSizes.buttonHeight,
+          width: TSizes.buttonHeight,
           child: Center(
             child: TextField(
-              cursorColor: HColors.primary
-              ,cursorHeight: HSizes.lg,
+              cursorColor: TColors.primary
+              ,cursorHeight: TSizes.lg,
               focusNode: controller.focusNode4,
               textAlign: TextAlign.center,
               obscureText: true,

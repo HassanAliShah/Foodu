@@ -24,8 +24,8 @@ class ProfilePicSelection extends StatelessWidget {
             },
             child: Obx(() {
               return Container(
-                width: HSizes.imageThumbSize,
-                height: HSizes.imageThumbSize,
+                width: TSizes.imageThumbSize,
+                height: TSizes.imageThumbSize,
                 decoration: const ShapeDecoration(
                   shape: CircleBorder(
                     side: BorderSide.none,
@@ -33,7 +33,7 @@ class ProfilePicSelection extends StatelessWidget {
                 ),
                 child: controller.imagePath.value.isEmpty
                     ? const CircleAvatar(
-                  backgroundImage: AssetImage(HImages.profile),
+                  backgroundImage: AssetImage(TImages.profile),
                 )
                     : CircleAvatar(
                   backgroundImage: FileImage(File(controller.imagePath.value)),
@@ -45,17 +45,17 @@ class ProfilePicSelection extends StatelessWidget {
             bottom: -5,
             right: 0,
             child: Container(
-              width: HSizes.iconMd,
-              height: HSizes.iconMd,
+              width: TSizes.iconMd,
+              height: TSizes.iconMd,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
               ),
-              child: Center(
-                child: Container(
+              child: const Center(
+                child: SizedBox(
                   width: 20,
                   height: 20,
-                  child: const Image(image: AssetImage(HImages.picImage),fit:BoxFit.fill,),
+                  child: Image(image: AssetImage(TImages.picImage),fit:BoxFit.fill,),
                 ),
               ),
             ),

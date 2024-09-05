@@ -14,9 +14,9 @@ class CancelledOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final  controller  =  OrderController.instance ;
+    final  controller  =  OrderController.instance;
     return Padding(
-      padding: HSpacingStyles.paddingWithHeightWidth,
+      padding: TSpacingStyles.paddingWithHeightWidth,
       child: Obx(
             () => ListView.builder(
           itemCount: controller.orders.length,

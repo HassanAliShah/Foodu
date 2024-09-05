@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_chip.dart';
 import 'package:foodu/features/home_action_menu/controller/home_controller.dart';
@@ -17,7 +16,7 @@ class ChipListRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = HomeController.instance;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: HSizes.defaultSpace),
+      padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
       child: SizedBox(
         height: 30,
         width: double.infinity,
@@ -27,19 +26,19 @@ class ChipListRow extends StatelessWidget {
             itemBuilder: (context, index){
               return Obx(() {
                 bool isSelected = index == controller.selectedChipIndex.value;
-                return CustomChip(
+                return TCustomChip(
                   label: controller.chipListName[index],
-                  labelColor: isSelected ? Colors.white : HColors.primary,
+                  labelColor: isSelected ? Colors.white : TColors.primary,
                   imagePath: controller.chipListImage[index],
                   onTap: () {
                     controller.selectChip(index);
                   },
-                  backgroundColor: isSelected ? HColors.primary : Colors
+                  backgroundColor: isSelected ? TColors.primary : Colors
                       .white,);
               });
             },
             separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(width: HSizes.sm,);
+              return const SizedBox(width: TSizes.sm,);
             },
           ),
         ),

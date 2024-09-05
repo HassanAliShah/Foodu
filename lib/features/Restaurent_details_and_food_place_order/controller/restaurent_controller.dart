@@ -9,13 +9,13 @@ class RestaurantController extends GetxController{
 
   final List<Map<String, dynamic>> foodItems = [
     {
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
       'title': 'Mixid Vegtable Salad',
       'price': '6.0',
       'badgeText': 'Best Seller'
     },
     {
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
       'title': 'Mixid Vegtable Salad',
       'price': '6.0',
       'badgeText': null

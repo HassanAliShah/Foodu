@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:foodu/features/home_action_menu/controller/search_controller.dart';
 import 'package:foodu/features/home_action_menu/screens/search/widget/chip_list.dart';
 import 'package:foodu/features/home_action_menu/screens/search/widget/section_title.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 import 'package:gap/gap.dart';
 
 class ShowRecentSearchAndOtherOptions extends StatelessWidget {
@@ -19,17 +20,17 @@ class ShowRecentSearchAndOtherOptions extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Gap(4),
-        buildSectionTitle('Recent Searches'),
-        Gap(4),
+         const Gap(TSizes.sm),
+        const buildSectionTitle( title:'Recent Searches',),
+        const Gap(TSizes.sm),
         buildChipList(controller.recentSearches),
-        Gap(4),
-        buildSectionTitle('Popular Cuisines'),
-        Gap(4),
+        const Gap(TSizes.sm),
+        const buildSectionTitle( title: 'Popular Cuisines',),
+        const Gap(TSizes.sm),
         buildChipList(controller.popularCuisines),
-        Gap(4),
-        buildSectionTitle('All Cuisines'),
-        Gap(4),
+        const Gap(TSizes.sm),
+        const buildSectionTitle( title: 'All Cuisines',),
+        const Gap(TSizes.sm),
         buildChipList(controller.allCuisines),
       ],
     );

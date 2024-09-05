@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/common/widgets/button/profile_toggle_item.dart';
-import 'package:foodu/features/home_action_menu/screens/notification/notification_screen.dart';
 import 'package:foodu/features/profile_section/controller/profile_controller.dart';
 import 'package:foodu/features/profile_section/screens/address/address_screen.dart';
 import 'package:foodu/features/profile_section/screens/favourite/favourite_screen.dart';
@@ -19,42 +18,43 @@ import 'package:foodu/features/profile_section/screens/update_profile/update_pro
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
 
 
   @override
   Widget build(BuildContext context) {
     final  controller = Get.put(ProfileController());
     return Scaffold(
-      appBar: HAppBar(
-        leadingImage: HImages.appLogo,
+      appBar: const TAppBar(
+        leadingImage: TImages.appLogo,
         title: Text("Profile"),
         actions: [
-          ImageIcon(AssetImage(HImages.more))
+          ImageIcon(AssetImage(TImages.more))
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+          padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
           child: Column(
             children: [
               ProfileHeader(
                 name: 'Andrew Ainsley',
                 phoneNumber: '+1 111 467 378 399',
-                imageUrl: HImages.pic,
+                imageUrl: TImages.pic,
                 onEdit: () {
                   // Edit profile action
                 },
               ),
-              Divider(),
+              const Divider(),
               ProfileListItem(
                 icon: Icons.favorite,
                 title: 'My Favorite Restaurants',
                 onTap: () {
-                 Get.to(FavouriteScreen());
+                 Get.to(const FavouriteScreen());
                 },
               ),
               ProfileListItem(
@@ -68,36 +68,36 @@ class ProfileScreen extends StatelessWidget {
                 icon: Icons.payment,
                 title: 'Payment Methods',
                 onTap: () {
-                 Get.to(PaymentMethodScreen());
+                 Get.to(const PaymentMethodScreen());
                 },
               ),
-              Divider(),
+              const Divider(),
               ProfileListItem(
                 icon: Icons.person,
                 title: 'Profile',
                 onTap: () {
-                  Get.to(UpdateProfileScreen());
+                  Get.to(const UpdateProfileScreen());
                 },
               ),
               ProfileListItem(
                 icon: Icons.location_on,
                 title: 'Address',
                 onTap: () {
-                 Get.to(AddressScreen());
+                 Get.to(const AddressScreen());
                 },
               ),
               ProfileListItem(
                 icon: Icons.notifications,
                 title: 'Notification',
                 onTap: () {
-                 Get.to(NotificationSetting());
+                 Get.to(const NotificationSetting());
                 },
               ),
               ProfileListItem(
                 icon: Icons.security,
                 title: 'Security',
                 onTap: () {
-                 Get.to(SecuritySetting());
+                 Get.to(const SecuritySetting());
                 },
               ),
               ProfileListItem(
@@ -105,7 +105,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Language',
                 trailingText: 'English (US)',
                 onTap: () {
-                 Get.to(LanguageSetting());
+                 Get.to(const LanguageSetting());
                 },
               ),
               Obx(() => ProfileToggleItem(
@@ -120,17 +120,17 @@ class ProfileScreen extends StatelessWidget {
                 icon: Icons.help_center,
                 title: 'Help Center',
                 onTap: () {
-                  Get.to(HelpCenterScreen());
+                  Get.to(const HelpCenterScreen());
                 },
               ),
               ProfileListItem(
                 icon: Icons.people,
                 title: 'Invite Friends',
                 onTap: () {
-                  Get.to(InviteFriendsScreen());
+                  Get.to(const InviteFriendsScreen());
                 },
               ),
-              Divider(),
+              const Divider(),
               LogoutButton(
                 onTap: () {
                   showLogoutConfirmation(context);

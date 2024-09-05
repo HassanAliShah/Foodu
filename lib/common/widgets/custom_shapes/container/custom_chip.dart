@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
-class CustomChip extends StatelessWidget {
+class TCustomChip extends StatelessWidget {
   final String label;
   final String? imagePath;
   final Color backgroundColor;
@@ -9,24 +11,25 @@ class CustomChip extends StatelessWidget {
   final Color labelColor;
   final VoidCallback? onTap;
 
-  const CustomChip({
-    Key? key,
+  const TCustomChip({
+    super.key,
     required this.label,
     this.imagePath,
     this.backgroundColor = Colors.white,
     this.borderColor = Colors.green,
     this.labelColor = Colors.green,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical:  TSizes.xs),
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: isDark? TColors.backgroundDark :backgroundColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: borderColor),
         ),
@@ -36,7 +39,7 @@ class CustomChip extends StatelessWidget {
           children: [
             if (imagePath != null) ...[
               Image(image: AssetImage(imagePath!),height: 20,width: 20,),
-              SizedBox(width: 4),
+              const SizedBox(width: TSizes.xs),
             ],
             Text(
               label,

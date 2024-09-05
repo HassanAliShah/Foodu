@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
 class ProfileListItem extends StatelessWidget {
   final IconData? icon;
@@ -7,21 +8,22 @@ class ProfileListItem extends StatelessWidget {
   final String? trailingText;
 
   const ProfileListItem({
-    Key? key,
+    super.key,
      this.icon,
     required this.title,
     required this.onTap,
     this.trailingText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return ListTile(
-      leading: icon !=null ? Icon(icon, color: Colors.black) : null,
+      leading: icon !=null ? Icon(icon, color: isDark ? Colors.white : Colors.black) : null,
       title: Text(title,style: Theme.of(context).textTheme.bodyMedium,),
       trailing: trailingText != null
           ? Text(trailingText!, style: Theme.of(context).textTheme.bodySmall)
-          : Icon(Icons.chevron_right, color: Colors.black),
+          :  Icon(Icons.chevron_right, color: isDark  ? Colors.white  : Colors.black),
       onTap: onTap,
     );
   }

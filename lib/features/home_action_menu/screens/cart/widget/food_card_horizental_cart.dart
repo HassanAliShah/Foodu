@@ -8,12 +8,12 @@ class FoodCardHorizontalCart extends StatelessWidget {
   final double price;
 
   const FoodCardHorizontalCart({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.description,
     required this.price,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class FoodCardHorizontalCart extends StatelessWidget {
                         fit: BoxFit.fill,
                       ),
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 2, color: Colors.white),
+                        side: const BorderSide(width: 2, color: Colors.white),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -80,7 +80,7 @@ class FoodCardHorizontalCart extends StatelessWidget {
                 const SizedBox(height: 8.0),
                 Text(
                   '\$$price',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
                 ),
               ],
             ),

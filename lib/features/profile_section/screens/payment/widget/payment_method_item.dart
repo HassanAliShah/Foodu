@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/wallet/controller/wallet_controller.dart';
-import 'package:get/get.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   final int index;
@@ -8,7 +6,7 @@ class PaymentMethodItem extends StatelessWidget {
   final String image;
   final String? cardNumber;
 
-  PaymentMethodItem({
+  const PaymentMethodItem({super.key, 
     required this.index,
     required this.label,
     required this.image,

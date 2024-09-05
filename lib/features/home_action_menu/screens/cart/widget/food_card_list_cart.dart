@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/home_action_menu/controller/cart_controller.dart';
 import 'package:foodu/features/home_action_menu/screens/cart/widget/food_card_horizental_cart.dart';
@@ -7,6 +6,8 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class FoodCardList extends StatelessWidget {
+  const FoodCardList({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,11 @@ class FoodCardList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Slidable(
             direction: Axis.horizontal,
-            endActionPane: ActionPane(motion:BehindMotion(), children: [
+            endActionPane: ActionPane(motion:const BehindMotion(), children: [
               SlidableAction(
                 onPressed: (context){},
-                borderRadius: BorderRadius.only(bottomRight: Radius.circular(20),topRight: Radius.circular(20) ),
-                backgroundColor: Color(0xffF75555),
+                borderRadius: const BorderRadius.only(bottomRight: Radius.circular(20),topRight: Radius.circular(20) ),
+                backgroundColor: const Color(0xffF75555),
                 icon: Icons.delete,
                 autoClose: true,
               )
@@ -36,7 +37,7 @@ class FoodCardList extends StatelessWidget {
             ),
           );
         }, separatorBuilder: (BuildContext context, int index) {
-          return Gap(5);
+          return const Gap(5);
           },
       ),
     );

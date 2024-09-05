@@ -12,14 +12,14 @@ class RecommandedForYouScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         title: Text('Recommended For You 😍',style: Theme.of(context).textTheme.bodySmall,),
         showBackButton: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: HSpacingStyles.paddingWithHeightWidth,
-          child: Column(
+          padding: TSpacingStyles.paddingWithHeightWidth,
+          child: const Column(
             children: [
               ChipListRow(),
               VerticalFoodList(),

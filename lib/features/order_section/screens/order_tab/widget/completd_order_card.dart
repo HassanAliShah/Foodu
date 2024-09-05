@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 
 class CompletedOrderCard extends StatelessWidget {
@@ -13,7 +15,7 @@ class CompletedOrderCard extends StatelessWidget {
   final VoidCallback onOrderAgain;
 
   const CompletedOrderCard({
-    Key? key,
+    super.key,
     required this.restaurantName,
     required this.itemsInfo,
     required this.price,
@@ -21,16 +23,17 @@ class CompletedOrderCard extends StatelessWidget {
     required this.imageUrl,
     required this.onLeaveReview,
     required this.onOrderAgain,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      padding: const EdgeInsets.all(16.0),
+      margin: const EdgeInsets.symmetric(vertical:TSizes.sm),
+      padding: const EdgeInsets.all(TSizes.md),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
+        color: isDark ? TColors.darkCard : Colors.white,
+        borderRadius: BorderRadius.circular(TSizes.xm),
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
@@ -45,7 +48,7 @@ class CompletedOrderCard extends StatelessWidget {
           Row(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(TSizes.xm),
                 child: Image.asset(
                   imageUrl,
                   width: 80,
@@ -53,7 +56,7 @@ class CompletedOrderCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,32 +65,32 @@ class CompletedOrderCard extends StatelessWidget {
                       restaurantName,
                      style: Theme.of(context).textTheme.bodyLarge
                     ),
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: TSizes.xs),
                     Text(
                       itemsInfo,
                         style: Theme.of(context).textTheme.labelSmall
                     ),
-                    const SizedBox(height: 8.0),
+                    const SizedBox(height: TSizes.sm),
                     Row(
                       children: [
                         Text(
                           '\$$price',
                             style: Theme.of(context).textTheme.titleMedium
                         ),
-                        const SizedBox(width: 8.0),
+                        const SizedBox(width: TSizes.sm),
                         if (isCompleted)
                           Container(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 8.0,
-                              vertical: 4.0,
+                              horizontal: TSizes.sm,
+                              vertical: TSizes.xs,
                             ),
                             decoration: BoxDecoration(
-                              color: HColors.primary,
-                              borderRadius: BorderRadius.circular(12.0),
+                              color: TColors.primary,
+                              borderRadius: BorderRadius.circular(TSizes.md,),
                             ),
                             child:  Text(
                               'Completed',
-                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.backgroundLight)
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.backgroundLight)
                             ),
                           ),
                       ],
@@ -97,7 +100,7 @@ class CompletedOrderCard extends StatelessWidget {
               ),
             ],
           ),
-         custom_divider(),
+         const TCustomDivider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -3,6 +3,8 @@ import 'package:foodu/features/Restaurent_details_and_food_place_order/controlle
 import 'package:foodu/features/Restaurent_details_and_food_place_order/model/order_item_model.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
@@ -10,21 +12,22 @@ class OrderSummaryCard extends StatelessWidget {
   final String title;
   final OrderController orderController = Get.put(OrderController());
 
-  OrderSummaryCard({Key? key, required this.title}) : super(key: key);
+  OrderSummaryCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
-      padding: const EdgeInsets.all(16.0),
-      margin: const EdgeInsets.symmetric(vertical: 12.0,),
+      padding: const EdgeInsets.all(TSizes.md),
+      margin: const EdgeInsets.symmetric(vertical: TSizes.xm,),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
+        color: isDark ?  TColors.darkCard :  Colors.white,
+        borderRadius: BorderRadius.circular(TSizes.xm),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
           ),
         ],
       ),
@@ -43,7 +46,7 @@ class OrderSummaryCard extends StatelessWidget {
                   orderController.addItem(
                     OrderItem(
                       name: 'Mixid Salad',
-                      imageUrl: HImages.mixid_salad,
+                      imageUrl: TImages.mixid_salad,
                       price: 10.0,
                       quantity: 1,
                     ),
@@ -55,14 +58,14 @@ class OrderSummaryCard extends StatelessWidget {
               ),),
             ],
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           // Order Items List
           Obx(() {
             return Column(
               children: orderController.orderItems
                   .asMap()
                   .entries
-                  .map((entry) => _buildOrderItem(entry.key, entry.value))
+                  .map((entry) => _buildOrderItem(entry.key, entry.value,context))
                   .toList(),
             );
           }),
@@ -71,14 +74,15 @@ class OrderSummaryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildOrderItem(int index, OrderItem item) {
+  Widget _buildOrderItem(int index, OrderItem item,BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: TSizes.sm),
       child: Row(
         children: [
           // Item Image
           ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(TSizes.sm),
             child: Image.asset(
               item.imageUrl,
               height: 70.0,
@@ -86,7 +90,7 @@ class OrderSummaryCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-         Gap(16),
+         const Gap(16),
           // Item Details
           Expanded(
             child: Column(
@@ -94,17 +98,17 @@ class OrderSummaryCard extends StatelessWidget {
               children: [
                 Text(
                   item.name,
-                  style: TextStyle(
+                  style:  TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: isDark ? TColors.textWhite  : Colors.black87,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                Gap(14),
+                const Gap(14),
                 Text(
                   '\$${item.price.toStringAsFixed(2)}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14.0,
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
@@ -113,14 +117,14 @@ class OrderSummaryCard extends StatelessWidget {
               ],
             ),
           ),
-          Gap(16),
+          const Gap(16),
           // Quantity and Edit Icon
           Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: HColors.primary),
+                  border: Border.all(color: TColors.primary),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Text(
@@ -128,11 +132,11 @@ class OrderSummaryCard extends StatelessWidget {
                   style: Theme.of(Get.context!).textTheme.headlineLarge?.copyWith(fontSize: 14)
                 ),
               ),
-              Gap(4),
+              const Gap(4),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.edit,
-                  color: HColors.primary,
+                  color: TColors.primary,
                   size: 16.0,
                 ),
                 onPressed: () {

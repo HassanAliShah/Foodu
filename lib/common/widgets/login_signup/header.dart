@@ -1,11 +1,9 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class HHeader extends StatelessWidget {
-  const HHeader({
+class THeader extends StatelessWidget {
+  const THeader({
     super.key, required this.text, required this.image,
   });
   final String text;
@@ -16,7 +14,7 @@ class HHeader extends StatelessWidget {
     return Column(
       children: [
         Center(child: Image(image: AssetImage(image))),
-        SizedBox(height: HSizes.md,),
+        const SizedBox(height: TSizes.md,),
         Text(text,
           style: Theme.of(context).textTheme.titleLarge,
           textAlign: TextAlign.center ,),

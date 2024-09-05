@@ -10,23 +10,23 @@ class NotificationCard extends StatelessWidget {
   final String status;
 
   const NotificationCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.date,
     required this.time,
     required this.description,
     required this.status,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(HSizes.md),
+        borderRadius: BorderRadius.circular(TSizes.md),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(HSizes.md),
+        padding: const EdgeInsets.all(TSizes.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,52 +34,52 @@ class NotificationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Leading Icon with Background
-                if(title=='Orders Successful!')CircleAvatar(
+                if(title=='Orders Successful!')const CircleAvatar(
                   backgroundColor: Colors.green,
-                  radius: HSizes.lg,
+                  radius: TSizes.lg,
                   child: Icon(
                     Icons.lock,
                     color: Colors.white,
-                    size: HSizes.lg,
+                    size: TSizes.lg,
                   ),
                 ),
                 if(title=='Orders Cancelled!')const CircleAvatar(
                     backgroundColor:Color(0x14F75555),
-                    radius: HSizes.lg,
+                    radius: TSizes.lg,
                     child: Icon(
                       Icons.close,
                       color: Color(0xffFF8A9B),
-                      size: HSizes.lg,
+                      size: TSizes.lg,
                     ),
                   ),
                 if(title=='New Services Available!')const CircleAvatar(
                     backgroundColor:Color(0x14FF9800),
-                    radius: HSizes.lg,
+                    radius: TSizes.lg,
                     child: Icon(
                       Icons.home_repair_service,
                       color: Color(0xffFFAB38),
-                      size: HSizes.lg,
+                      size: TSizes.lg,
                     ),
                   ),
                 if(title=='Credit Card Connected!')const CircleAvatar(
                   backgroundColor:Color(0x14246BFD),
-                  radius: HSizes.lg,
+                  radius: TSizes.lg,
                   child: Icon(
                     Icons.credit_card,
                     color: Color(0xff5089FF),
-                    size: HSizes.lg,
+                    size: TSizes.lg,
                   ),
                 ),
                 if(title=='Account Setup Successful!')const CircleAvatar(
                   backgroundColor:Color(0x141BAC4B),
-                  radius: HSizes.lg,
+                  radius: TSizes.lg,
                   child: Icon(
                     Icons.person,
                     color: Color(0xff46D375),
-                    size: HSizes.lg,
+                    size: TSizes.lg,
                   ),
                 ),
-                const SizedBox(width: HSizes.xm),
+                const SizedBox(width: TSizes.xm),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,12 +93,12 @@ class NotificationCard extends StatelessWidget {
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: HSizes.sm,
-                              vertical: HSizes.xs,
+                              horizontal: TSizes.sm,
+                              vertical: TSizes.xs,
                             ),
                             decoration: BoxDecoration(
                               color: Colors.green,
-                              borderRadius: BorderRadius.circular(HSizes.cardRadiusMd),
+                              borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
                             ),
                             child: Text(
                               status,
@@ -107,7 +107,7 @@ class NotificationCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: HSizes.xs),
+                      const SizedBox(height: TSizes.xs),
                       Text(
                         '$date | $time',
                         style: Theme.of(context).textTheme.labelSmall
@@ -117,11 +117,11 @@ class NotificationCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: HSizes.xm),
+            const SizedBox(height: TSizes.xm),
             Text(
               description,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: HColors.textblack
+                color: TColors.textblack
               )
             ),
           ],

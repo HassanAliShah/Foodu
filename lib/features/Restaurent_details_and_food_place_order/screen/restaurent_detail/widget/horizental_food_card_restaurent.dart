@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
 class HorizontalFoodCardRestaurent extends StatefulWidget {
   final String imageUrl;
@@ -8,12 +10,12 @@ class HorizontalFoodCardRestaurent extends StatefulWidget {
   final String? badgeText;
 
   const HorizontalFoodCardRestaurent({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.price,
     this.badgeText,
-  }) : super(key: key);
+  });
 
   @override
   _HorizontalFoodCardRestaurentState createState() =>
@@ -32,20 +34,21 @@ class _HorizontalFoodCardRestaurentState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: _toggleBorderColor,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.xs),
+        padding: const EdgeInsets.all(TSizes.sm),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard : Colors.white,
           borderRadius: BorderRadius.circular(15.0),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3),
+              spreadRadius: 1,
+              blurRadius: 0,
+              offset: const Offset(0, 1),
             ),
           ],
           border: Border.all(
@@ -64,7 +67,7 @@ class _HorizontalFoodCardRestaurentState
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 8.0),
+            const SizedBox(width: TSizes.sm),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,27 +75,27 @@ class _HorizontalFoodCardRestaurentState
                   if (widget.badgeText != null)
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 4.0),
+                          horizontal: TSizes.sm, vertical:TSizes.xs),
                       decoration: BoxDecoration(
                         color: Colors.green,
-                        borderRadius: BorderRadius.circular(12.0),
+                        borderRadius: BorderRadius.circular(TSizes.xm),
                       ),
                       child: Text(
                         widget.badgeText!,
-                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.backgroundLight,fontSize: 5),
+                        style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
                       ),
                     ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height:TSizes.sm),
                   Text(
                     widget.title,
                     style: Theme.of(context).textTheme.bodySmall,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 4.0),
+                  const SizedBox(height: TSizes.xs),
     Text(
     "\$ ${widget.price}",
-    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary)
+    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary)
     ),
                 ],
               ),

@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/profile_section/model/faq.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class FAQItem extends StatelessWidget {
   final FAQ faq;
 
-  FAQItem({required this.faq});
+  const FAQItem({super.key, required this.faq});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Obx(() => Container(
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: isDark ? TColors.darkCard : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x0C04060F),
             blurRadius: 60,
@@ -37,7 +39,7 @@ class FAQItem extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(faq.answer, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: HColors.textGrey)),
+            child: Text(faq.answer, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: TColors.textGrey)),
           ),
         ],
       ),

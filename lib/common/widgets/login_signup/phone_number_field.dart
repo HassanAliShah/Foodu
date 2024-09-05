@@ -5,17 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
-class PhoneNumberField extends StatelessWidget {
-  const PhoneNumberField({
+import 'package:foodu/utils/helpers/helper_function.dart';
+class TPhoneNumberField extends StatelessWidget {
+  const TPhoneNumberField({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return SizedBox(
-      height: HSizes.buttonHeight,
-      child: TextField(cursorColor: HColors.primary,cursorHeight: HSizes.lg,style: Theme.of(context).textTheme.bodySmall,
+      height: TSizes.buttonHeight,
+      child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
+          fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
           prefixIcon: const CountryCodePicker(
             padding: EdgeInsets.zero,
             onChanged: print,
@@ -26,7 +29,7 @@ class PhoneNumberField extends StatelessWidget {
             hideMainText: true,
             alignLeft: false,
           ),
-          hintText: HText.phoneNo,
+          hintText: TText.phoneNo,
           hintStyle: Theme.of(context).textTheme.titleSmall,
         ),
       ),

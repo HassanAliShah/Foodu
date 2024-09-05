@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
@@ -14,8 +13,8 @@ class AmountButton extends StatelessWidget {
       onPressed: () => controller.updateAmount(amount),
       style: OutlinedButton.styleFrom(
         backgroundColor: Colors.white,
-        side: BorderSide(
-          color: HColors.primary,
+        side: const BorderSide(
+          color: TColors.primary,
           width: 2
         ),
       ),

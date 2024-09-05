@@ -17,35 +17,35 @@ class RestaurentAboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
-      body: Padding(padding: HSpacingStyles.paddingWithHeightWidth,child: Column(
+      body: Padding(padding: TSpacingStyles.paddingWithHeightWidth,child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Big Gardan Salad",style: Theme.of(context).textTheme.titleLarge,),
-          custom_divider(),
-          RatingAndBarGraph(),
-          custom_divider(),
-          TitleText(title: 'Overview',),
-          Expanded(child: SingleChildScrollView(
-            child: ExpandableText(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad dskfjkshfkjskfsdlkjflskjfsldkjfldsjflksjflksjlfksjlkjdslkfjlskjflksjflkjldskjflsjslfkjfdsl'),
+          const TCustomDivider(),
+          const RatingAndBarGraph(),
+          const TCustomDivider(),
+          const TTitleText(title: 'Overview',),
+          const Expanded(child: SingleChildScrollView(
+            child: TExpandableText(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad dskfjkshfkjskfsdlkjflskjfsldkjfldsjflksjflksjlfksjlkjdslkfjlskjflksjflkjldskjflsjslfkjfdsl'),
           )),
-          DayAnddTime(dayStart: 'Monday',dayend: 'Friday',
+          const DayAnddTime(dayStart: 'Monday',dayend: 'Friday',
             hourStart: '10:00',
            hourEnd: '22:00',),
-          Gap(10),
-          DayAnddTime(dayStart: 'Saturday',dayend: 'Sunday',
+          const Gap(10),
+          const DayAnddTime(dayStart: 'Saturday',dayend: 'Sunday',
             hourStart: '12:00',
             hourEnd: '20:00',),
-          custom_divider(),
-          TitleText(title: "Address"),
+          const TCustomDivider(),
+          const TTitleText(title: "Address"),
           Row(
             children: [
-              Icon(Icons.location_on_rounded,color: HColors.primary,),
-              Gap(10),
+              const Icon(Icons.location_on_rounded,color: TColors.primary,),
+              const Gap(10),
               SizedBox(
-                width: HHelperFunctions.screenWidth() / 1.3,
+                width: THelperFunctions.screenWidth() / 1.3,
                 child: Text('Grand City St. 100, New York, United States',
                   style: Theme.of(context).textTheme.labelSmall,
                 overflow: TextOverflow.ellipsis,
@@ -55,7 +55,7 @@ class RestaurentAboutScreen extends StatelessWidget {
           ),
           Container(color: Colors.green.shade50,
             width: double.infinity,
-          height: HHelperFunctions.screenHeight() / 5,)
+          height: THelperFunctions.screenHeight() / 5,)
         ],
       ),
       ),

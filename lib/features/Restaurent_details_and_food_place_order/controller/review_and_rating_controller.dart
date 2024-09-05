@@ -6,7 +6,7 @@ class ReviewAndRatingController extends GetxController {
   var reviews = <Map<String, dynamic>>[
     {
       "userName": "Charlotte Hanlin",
-      "userImage": HImages.pic,
+      "userImage": TImages.pic,
       "rating": 5,
       "reviewText": "Excellent food. Menu is extensive and seasonal to a particularly high standard. Definitely fine dining 😍😍",
       "likes": 938,
@@ -14,7 +14,7 @@ class ReviewAndRatingController extends GetxController {
     },
     {
       "userName": "John Doe",
-      "userImage": HImages.pic,
+      "userImage": TImages.pic,
       "rating": 4,
       "reviewText": "Good food but service was slow.",
       "likes": 150,
@@ -22,7 +22,7 @@ class ReviewAndRatingController extends GetxController {
     },
     {
       "userName": "'Lauralee Quintero",
-      "userImage": HImages.pic,
+      "userImage": TImages.pic,
       "rating": 4,
       "reviewText": "Delicious dishes, beautiful presentation, wide wine list and wonderful dessert. I recommend to everyone! I would like to order here again and again 👌👌",
       "likes": 629,

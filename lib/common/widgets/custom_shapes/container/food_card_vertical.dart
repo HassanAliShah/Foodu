@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
-class FoodCardVertical extends StatelessWidget {
+class TFoodCardVertical extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String distance;
@@ -16,8 +15,8 @@ class FoodCardVertical extends StatelessWidget {
   final VoidCallback onFavoriteToggle;
   final VoidCallback onTap;
 
-  const FoodCardVertical({
-    Key? key,
+  const TFoodCardVertical({
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.distance,
@@ -28,24 +27,25 @@ class FoodCardVertical extends StatelessWidget {
     required this.isFavorite,
     required this.onFavoriteToggle,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: HHelperFunctions.screenWidth() / 2,
-        padding: EdgeInsets.symmetric(horizontal: HSizes.sm,vertical: HSizes.sm),
+        width: THelperFunctions.screenWidth() / 2,
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm,vertical: TSizes.sm),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(HSizes.cardRadiusLg),
+          color: isDark ? TColors.darkCard  :Colors.white,
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 15,
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
             ),
           ],
         ),
@@ -55,50 +55,50 @@ class FoodCardVertical extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(HSizes.cardRadiusMd),
+                  borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
                   child: Image.asset(imageUrl, fit: BoxFit.cover, width: double.infinity, height: 120),
                 ),
                 Positioned(
                   top: 6,
                   left: 4,
                   child: Container(
-                    padding: EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                      color: HColors.primary,
+                      color: TColors.primary,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
                       'PROMO',
-                      style:Theme.of(context).textTheme.labelLarge?.copyWith(color: HColors.backgroundLight,fontSize: 5),
+                      style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: HSizes.sm),
+            const SizedBox(height: TSizes.sm),
             Text(
               title,
               style: Theme.of(context).textTheme.bodySmall,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: HSizes.xs),
+            const SizedBox(height: TSizes.xs),
             Row(
               children: [
                 Text(
                   distance,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                 ),
-                SizedBox(width: HSizes.xs),
-                Container(
+                const SizedBox(width: TSizes.xs),
+                const SizedBox(
                   height: 14,
                   child: VerticalDivider(
                     thickness: 1,
-                    color: HColors.textGrey,
+                    color: TColors.textGrey,
                   ),
                 ),
-                Icon(Icons.star, size: 12, color: HColors.rating),
-                SizedBox(width:  HSizes.xs),
+                const Icon(Icons.star, size: 12, color: TColors.rating),
+                const SizedBox(width:  TSizes.xs),
                 Text(
                   rating,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
@@ -109,28 +109,28 @@ class FoodCardVertical extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: HSizes.sm),
+            const SizedBox(height: TSizes.sm),
             Row(
               children: [
                 Text(
                   "\$$price",
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
                 ),
-                SizedBox(width:  HSizes.sm),
-                Container(
+                const SizedBox(width:  TSizes.sm),
+                const SizedBox(
                   height: 14,
                   child: VerticalDivider(
                     thickness: 1,
-                    color: HColors.textGrey,
+                    color: TColors.textGrey,
                   ),
                 ),
-                Icon(Icons.delivery_dining, size: 20, color: HColors.primary),
-                SizedBox(width:  HSizes.xs),
+                const Icon(Icons.delivery_dining, size: 20, color: TColors.primary),
+                const SizedBox(width:  TSizes.xs),
                 Text(
                  "\$$deliveryFee",
                   style:  Theme.of(context).textTheme.labelSmall,
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: onFavoriteToggle,
                   child: Icon(

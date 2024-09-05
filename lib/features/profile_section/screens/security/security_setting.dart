@@ -11,7 +11,7 @@ class SecuritySetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Security"),
       ),
@@ -23,13 +23,13 @@ class SecuritySetting extends StatelessWidget {
               ProfileToggleItem(title: "Biometric", value: true, onChanged: (value){}),
               ProfileListItem(title: 'Google Authenticator', onTap: (){}),
               Padding(
-            padding: HSpacingStyles.paddingWithHeightWidth,
-            child: SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: Text("Change Pin"))),
+            padding: TSpacingStyles.paddingWithHeightWidth,
+            child: SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text("Change Pin"))),
           ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
              Padding(
-            padding: HSpacingStyles.paddingWithHeightWidth,
-            child: SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: Text("Change Password"))),
+            padding: TSpacingStyles.paddingWithHeightWidth,
+            child: SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text("Change Password"))),
           ),
         ],
       ),

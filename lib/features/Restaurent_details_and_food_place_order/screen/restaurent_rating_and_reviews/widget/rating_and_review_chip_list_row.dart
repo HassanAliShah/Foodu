@@ -1,9 +1,7 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_chip.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/controller/restaurent_controller.dart';
-import 'package:foodu/features/home_action_menu/controller/home_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
@@ -19,7 +17,7 @@ class RatingAndReviewChipListRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = RestaurantController.instance;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: HSizes.xm),
+      padding: const EdgeInsets.symmetric(vertical: TSizes.xm),
       child: SizedBox(
         height: 30,
         width: double.infinity,
@@ -29,19 +27,19 @@ class RatingAndReviewChipListRow extends StatelessWidget {
           itemBuilder: (context, index){
             return Obx(() {
               bool isSelected = index == controller.selectedChipIndex.value;
-              return CustomChip(
+              return TCustomChip(
                 label: controller.chipList[index],
-                labelColor: isSelected ? Colors.white : HColors.primary,
-                imagePath: controller.chipList[index] == 'Sort By' ? HImages.sort : HImages.rating ,
+                labelColor: isSelected ? Colors.white : TColors.primary,
+                imagePath: controller.chipList[index] == 'Sort By' ? TImages.sort : TImages.rating ,
                 onTap: () {
                   controller.selectChip(index);
                 },
-                backgroundColor: isSelected ? HColors.primary : Colors
+                backgroundColor: isSelected ? TColors.primary : Colors
                     .white,);
             });
           },
           separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(width: HSizes.sm,);
+            return const SizedBox(width: TSizes.sm,);
           },
         ),
       ),

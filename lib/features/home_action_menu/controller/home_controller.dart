@@ -19,19 +19,19 @@ class HomeController extends GetxController{
   ];
 
   List<String>  categoryImage = [
-    HImages.burger,
-    HImages.pizza,
-    HImages.noodles,
-    HImages.meat,
-    HImages.vegtable,
-    HImages.dessert,
-    HImages.drink,
-    HImages.others,
+    TImages.burger,
+    TImages.pizza,
+    TImages.noodles,
+    TImages.meat,
+    TImages.vegtable,
+    TImages.dessert,
+    TImages.drink,
+    TImages.others,
   ];
 
   final List<Map<String, dynamic>> foodItems = [
     {
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
       'title': 'Mixid Salad bomb',
       'distance': '1.5 km',
       'rating': '4.8',
@@ -41,7 +41,7 @@ class HomeController extends GetxController{
       'isFavorite': false,
     },
     {
-      'imageUrl': HImages.fruit_salad,
+      'imageUrl': TImages.fruit_salad,
       'title': 'Fruit Salad',
       'distance': '1.5 km',
       'rating': '4.8',
@@ -51,7 +51,7 @@ class HomeController extends GetxController{
       'isFavorite': false,
     },
     {
-      'imageUrl': HImages.mozarella_cheese,
+      'imageUrl': TImages.mozarella_cheese,
       'title': 'Mozarella Cheese',
       'distance': '1.5 km',
       'rating': '4.8',
@@ -61,7 +61,7 @@ class HomeController extends GetxController{
       'isFavorite': true,
     },
     {
-      'imageUrl': HImages.pizza_hut,
+      'imageUrl': TImages.pizza_hut,
       'title': 'Pizza Hut',
       'distance': '1.5 km',
       'rating': '4.8',
@@ -71,7 +71,7 @@ class HomeController extends GetxController{
       'isFavorite': true,
     },
     {
-      'imageUrl': HImages.vegeterian_noodels,
+      'imageUrl': TImages.vegeterian_noodels,
       'title': 'Pizza Hut',
       'distance': '1.5 km',
       'rating': '4.8',
@@ -100,15 +100,15 @@ class HomeController extends GetxController{
     'More',
   ];
   List<String>  chipListImage = [
-    HImages.all,
-    HImages.burger,
-    HImages.pizza,
-    HImages.noodles,
-    HImages.meat,
-    HImages.vegtable,
-    HImages.dessert,
-    HImages.drink,
-    HImages.others,
+    TImages.all,
+    TImages.burger,
+    TImages.pizza,
+    TImages.noodles,
+    TImages.meat,
+    TImages.vegtable,
+    TImages.dessert,
+    TImages.drink,
+    TImages.others,
   ];
 
 

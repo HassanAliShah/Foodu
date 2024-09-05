@@ -1,14 +1,12 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/features/wallet/screens/top_up/top_up_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class BalanceCard extends StatelessWidget {
   const BalanceCard({super.key});
@@ -16,11 +14,12 @@ class BalanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = WalletController.instance;
+    final isDark = THelperFunctions.isDarkMode(context);
     return  Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: HColors.primary,
+        color: TColors.primary,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -35,7 +34,7 @@ class BalanceCard extends StatelessWidget {
         children: [
           Text(
             controller.userName.value,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -46,17 +45,17 @@ class BalanceCard extends StatelessWidget {
             children: [
               Text(
                 controller.cardNumber.value,
-                style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.backgroundLight)
+                style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.backgroundLight)
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   Image.asset(
-                    HImages.visa,
+                    TImages.visa,
                     width: 50,
                   ),
                   Image.asset(
-                    HImages.masterCard,
+                    TImages.masterCard,
                     width: 50,
                   ),
                 ],
@@ -67,23 +66,23 @@ class BalanceCard extends StatelessWidget {
           const SizedBox(height: 14),
           Text(
             "Your balance",
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.backgroundLight)
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.backgroundLight)
           ),
           const SizedBox(height: 8),
           Obx(() => Row(
             children: [
               Text(
                 "\$${controller.balance.value.toStringAsFixed(2)}",
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: HColors.backgroundLight)
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: TColors.backgroundLight)
               ),
-              Spacer(),
+              const Spacer(),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.white
                 ),
-                onPressed: () => Get.to(TopUpScreen()),
-                child: Text("Top Up",style: Theme.of(context).textTheme.bodySmall,),
+                onPressed: () => Get.to(const TopUpScreen()),
+                child: Text("Top Up",style: Theme.of(context).textTheme.bodySmall?.apply(color: isDark ? Colors.black: Colors.black ),),
               ),
             ],
           )),

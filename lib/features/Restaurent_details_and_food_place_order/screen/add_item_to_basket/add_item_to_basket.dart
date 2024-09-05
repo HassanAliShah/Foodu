@@ -10,10 +10,9 @@ import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class AddItemToBasket extends StatelessWidget {
-   AddItemToBasket({super.key});
+   const AddItemToBasket({super.key});
 
 
   @override
@@ -29,28 +28,28 @@ class AddItemToBasket extends StatelessWidget {
               [
                 Container(
                   width: double.infinity,
-                  height: HHelperFunctions.screenHeight() /3,
-                  decoration: BoxDecoration(
+                  height: THelperFunctions.screenHeight() /3,
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(HImages.restaurent),
+                      image: AssetImage(TImages.restaurent),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
-                Positioned(top:20,right: 0,left: 0, child:
+                Positioned(top:TSizes.appBarHeight,right: 0,left: 0, child:
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+                  padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
                         Get.back();
-                      }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+                      }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
                       SizedBox(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconButton(onPressed: (){}, icon: Icon(Icons.share,color: Colors.white,)),
+                            IconButton(onPressed: (){}, icon: const Icon(Icons.share,color: Colors.white,)),
                           ],
                         ),
                       )
@@ -59,23 +58,22 @@ class AddItemToBasket extends StatelessWidget {
                 )
               ],
             ),
-            Padding(padding: HSpacingStyles.paddingWithHeightWidth,child:
+            Padding(padding: TSpacingStyles.paddingWithHeightWidth,child:
               Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: Center(
-                      child: Text(
-                        'Big Gardan Salad',
-                        style: Theme.of(context).textTheme.bodySmall,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                    child: Text(
+                      'Big Gardan Salad',
+                      textAlign: TextAlign.left,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  custom_divider(),
-                  ExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
-                  Gap(20),
+                  const TCustomDivider(),
+                  const TExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
+                  const Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -84,15 +82,15 @@ class AddItemToBasket extends StatelessWidget {
                       CounterButton(onTap: ()=> controller.itemCount--,iconData: Icons.remove,)
                     ],
                   ),
-                  CustomTextField(height: HHelperFunctions.screenHeight() /5,
+                  const Gap(20),
+                  TCustomTextField(height: THelperFunctions.screenHeight() /5,
                       maxline: 4,
                       hintText: 'Note To Restaurant (Optional)',
                       textEditingController: controller.textEditingController),
-                  custom_divider(),
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text("Add to Basket - 12\$")))
+                  const TCustomDivider(),
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text("Add to Basket - 12\$")))
                 ],
               ),)
-
           ],
         ),
       ),
@@ -110,22 +108,23 @@ class CounterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return InkWell(
       onTap: onTap,
       child: Container(
         width: 58,
         height: 58,
-        padding: const EdgeInsets.all(17),
+        padding: const EdgeInsets.all(TSizes.md),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard : Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: HColors.borderGrey),
-            borderRadius: BorderRadius.circular(16),
+            side: const BorderSide(width: 1, color: TColors.borderGrey),
+            borderRadius: BorderRadius.circular(TSizes.md),
           ),
         ),
         child: Center(
-          child: Icon(iconData,color: HColors.primary,),
+          child: Icon(iconData,color: TColors.primary,),
         )
       ),
     );

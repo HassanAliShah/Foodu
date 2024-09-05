@@ -7,12 +7,12 @@ class ProfileToggleItem extends StatelessWidget {
   final ValueChanged<bool> onChanged;
 
   const ProfileToggleItem({
-    Key? key,
+    super.key,
      this.icon,
     required this.title,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

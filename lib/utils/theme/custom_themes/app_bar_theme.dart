@@ -2,19 +2,33 @@
 
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
-import 'package:foodu/utils/constants/text_strings.dart';
 
-class HAppBarTheme{
-  HAppBarTheme._();
+class TAppBarTheme{
+  TAppBarTheme._();
 
-  static  AppBarTheme lightAppBarTheme = AppBarTheme(
+  static  AppBarTheme lightAppBarTheme = const AppBarTheme(
     elevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
     centerTitle: false,
     scrolledUnderElevation: 0,
-    titleTextStyle: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: HColors.textblack),
-    iconTheme: IconThemeData(color: HColors.backgroundDark,size: 24),
-    actionsIconTheme: IconThemeData(color: HColors.backgroundDark,size: 24),
+    titleTextStyle: TextStyle(fontSize: 24,
+        fontFamily: 'Urbanist',
+        fontWeight: FontWeight.w700, color: TColors.textblack),
+    iconTheme: IconThemeData(color: TColors.backgroundDark,size: 24),
+    actionsIconTheme: IconThemeData(color: TColors.backgroundDark,size: 24),
+  );
+
+  static  AppBarTheme darkAppBarTheme = const AppBarTheme(
+    elevation: 0,
+    backgroundColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    centerTitle: false,
+    scrolledUnderElevation: 0,
+    titleTextStyle: TextStyle(fontSize: 24,
+        fontFamily: 'Urbanist',
+        fontWeight: FontWeight.w700, color: TColors.textWhite),
+    iconTheme: IconThemeData(color: TColors.backgroundLight,size: 24),
+    actionsIconTheme: IconThemeData(color: TColors.backgroundLight,size: 24),
   );
 }

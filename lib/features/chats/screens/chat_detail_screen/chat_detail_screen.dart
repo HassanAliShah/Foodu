@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/chats/controller/chat_controller.dart';
@@ -15,16 +14,16 @@ class ChatDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = ChatController.instance;
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
-        title: Text('Hassan Ali'),
+        title: const Text('Hassan Ali'),
         actions: [
           IconButton(
-            icon: Icon(Icons.call),
+            icon: const Icon(Icons.call),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.videocam),
+            icon: const Icon(Icons.videocam),
             onPressed: () {},
           ),
         ],

@@ -1,15 +1,13 @@
 
 
 
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class SocialIcon extends StatelessWidget {
-  SocialIcon({
+class TSocialIcon extends StatelessWidget {
+  const TSocialIcon({
     super.key, required this.image, required this.onTap,
   });
 
@@ -21,11 +19,11 @@ class SocialIcon extends StatelessWidget {
     return Container(
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: HColors.borderGrey),
+          side: const BorderSide(width: 1, color: TColors.borderGrey),
           borderRadius: BorderRadius.circular(10),
         ),
       ),
-      child: IconButton(onPressed: onTap, icon: Image(image: AssetImage(image),height: HSizes.lg,width: HSizes.lg,)),
+      child: IconButton(onPressed: onTap, icon: Image(image: AssetImage(image),height: TSizes.lg,width: TSizes.lg,)),
     );
   }
 }

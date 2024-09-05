@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/chats/model/chat_message_model.dart';
 
 class ChatBubble extends StatelessWidget {
   final ChatMessage message;
 
-  const ChatBubble({Key? key, required this.message}) : super(key: key);
+  const ChatBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,8 @@ class ChatBubble extends StatelessWidget {
     return Align(
       alignment: isSender ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+        padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           color:message.isImage? Colors.white : backgroundColor,
           borderRadius: BorderRadius.circular(12.0),
@@ -25,7 +24,7 @@ class ChatBubble extends StatelessWidget {
         child: message.isImage
             ? Image.asset(message.content)
             : message.isAudio
-            ? Row(
+            ? const Row(
           children: [
             Icon(Icons.play_arrow),
             Text("Voice Message"),

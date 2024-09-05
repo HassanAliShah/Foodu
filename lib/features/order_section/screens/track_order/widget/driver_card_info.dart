@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/order_section/screens/track_order/common/action_button.dart';
-import 'package:foodu/features/order_section/screens/track_order/widget/driver_card_info.dart';
 import 'package:foodu/utils/constants/colors.dart';
 
 class DriverInfoCard extends StatelessWidget {
@@ -14,7 +13,7 @@ class DriverInfoCard extends StatelessWidget {
   final VoidCallback onCall;
 
   const DriverInfoCard({
-    Key? key,
+    super.key,
     required this.driverName,
     required this.vehicleName,
     required this.vehiclePlate,
@@ -23,13 +22,13 @@ class DriverInfoCard extends StatelessWidget {
     required this.onCancel,
     required this.onMessage,
     required this.onCall,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
 
       ),
@@ -41,14 +40,14 @@ class DriverInfoCard extends StatelessWidget {
               'Driver is heading to the restaurant...',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold)
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               children: [
                 CircleAvatar(
                   radius: 30,
                   backgroundImage: AssetImage(driverImageUrl),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +58,7 @@ class DriverInfoCard extends StatelessWidget {
                       ),
                       Text(
                         vehicleName,
-                        style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.textGrey)
+                        style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.textGrey)
                       ),
                     ],
                   ),
@@ -69,8 +68,8 @@ class DriverInfoCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.star, color: HColors.primary, size: 16),
-                        SizedBox(width: 4),
+                        const Icon(Icons.star, color: TColors.primary, size: 16),
+                        const SizedBox(width: 4),
                         Text(
                           rating.toString(),
                           style: Theme.of(context).textTheme.bodySmall
@@ -85,13 +84,13 @@ class DriverInfoCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ActionButton(onTap: onCancel,iconData: Icons.close ,colorGradient: HColors.redGradient,),
-                ActionButton(onTap: onMessage,iconData: Icons.message ,colorGradient: HColors.greenGradient,),
-                ActionButton(onTap: onCall,iconData: Icons.call ,colorGradient: HColors.greenGradient,),
+                ActionButton(onTap: onCancel,iconData: Icons.close ,colorGradient: TColors.redGradient,),
+                ActionButton(onTap: onMessage,iconData: Icons.message ,colorGradient: TColors.greenGradient,),
+                ActionButton(onTap: onCall,iconData: Icons.call ,colorGradient: TColors.greenGradient,),
               ],
             ),
           ],

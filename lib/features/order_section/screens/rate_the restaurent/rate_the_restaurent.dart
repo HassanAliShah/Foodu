@@ -11,48 +11,48 @@ class RateTheRestaurentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: HSizes.defaultSpace, vertical: HSizes.defaultSpace),
+          padding: const EdgeInsets.symmetric(
+              horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace),
           child: OrderFeedbackWidget(
-            imageUrl: HImages.mixid_salad,
+            imageUrl: TImages.mixid_salad,
             title: 'How was the delivery of your order from Big Garden Salad?',
             subtitle:
                 'Enjoyed your food? Rate the restaurant, your feedback is matters.',
             onRatingChanged: (rating) {},
           )),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
         child: Row(
           children: [
             Expanded(
               child: OutlinedButton(
                 onPressed: () {},
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(color: HColors.primary),
-                ),
                 style: OutlinedButton.styleFrom(
                     elevation: 0,
-                    backgroundColor: Color(0xFFE8F7ED),
+                    backgroundColor: const Color(0xFFE8F7ED),
                     side: const BorderSide(color: Color(0xFFE8F7ED)),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25)),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         fontSize: 14,
-                        color: HColors.primary,
+                        color: TColors.primary,
                         fontWeight: FontWeight.w700)),
+                child: const Text(
+                  'Cancel',
+                  style: TextStyle(color: TColors.primary),
+                ),
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Submit'),
+                child: const Text('Submit'),
               ),
             ),
           ],

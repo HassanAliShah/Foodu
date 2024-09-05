@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/account_setup/controller/profile_form_controller.dart';
 import 'package:foodu/features/account_setup/screens/location/set_your_location.dart';
 import 'package:foodu/features/account_setup/screens/profile_form/widget/profile_form.dart';
@@ -13,24 +14,20 @@ class ProfileFormScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ProfileFormController());
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.arrow_back)),
-        title: Text(HText.fillYourProfile),
+      appBar: const TAppBar(
+        showBackButton: true,
+        title: Text(TText.fillYourProfile),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: HSizes.defaultSpace,vertical: HSizes.defaultSpace),
+          padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace,vertical: TSizes.defaultSpace),
           child: Column(
             children: [
-              ProfileForm(),
-              SizedBox(
-                height: HSizes.defaultSpace,
+              const ProfileForm(),
+              const SizedBox(
+                height: TSizes.defaultSpace,
               ),
-              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(SetYourLocation()), child: Text(HText.continueB)))
+              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(const SetYourLocation()), child: const Text(TText.continueB)))
 
 
             ],

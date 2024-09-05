@@ -20,7 +20,7 @@ class OrderController extends GetxController {
       'itemsInfo': '3 items | 1.4 km',
       'price': 32.00,
       'isCancelled': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
@@ -30,7 +30,7 @@ class OrderController extends GetxController {
       'itemsInfo': '4 items | 2.7 km',
       'price': 22.00,
       'isCompleted': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
@@ -48,7 +48,7 @@ class OrderController extends GetxController {
       'itemsInfo': '4 items | 2.7 km',
       'price': 22.00,
       'isPaid': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
@@ -57,7 +57,7 @@ class OrderController extends GetxController {
   }
 
   void trackOrder(int index) {
-    Get.to(TrackOrderScreen());
+    Get.to(const TrackOrderScreen());
   }
 
   var reasons = [

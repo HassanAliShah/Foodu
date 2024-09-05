@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 class TextIconContainer extends StatelessWidget {
-  TextIconContainer({
+  const TextIconContainer({
     super.key,
     required this.text, required this.iconData, required this.onTap,
   });
@@ -13,16 +14,17 @@ class TextIconContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: HSizes.buttonHeight,
-        padding: const EdgeInsets.symmetric(horizontal: HSizes.appBarHeight),
+        height: TSizes.buttonHeight,
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.appBarHeight),
         decoration: ShapeDecoration(
-          color: HColors.textFieldFillColor,
+          color:  isDark ? TColors.darkCard :TColors.textFieldFillColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(HSizes.md),
+            borderRadius: BorderRadius.circular(TSizes.md),
           ),
         ),
         child: Row(
@@ -38,7 +40,7 @@ class TextIconContainer extends StatelessWidget {
                 ),
               ),
             ),
-            Icon(iconData,color: HColors.textGrey,),
+            Icon(iconData,color: TColors.textGrey,),
           ],
         ),
       ),

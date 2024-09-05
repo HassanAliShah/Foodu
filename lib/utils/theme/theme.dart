@@ -12,36 +12,38 @@ import 'package:foodu/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/text_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/chip_theme.dart';
 
-class HAppTheme{
-  HAppTheme._();
+class TAppTheme{
+  TAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Urbanist',
     brightness: Brightness.light,
-      primaryColor: HColors.primary,
-    scaffoldBackgroundColor: HColors.backgroundLight,
-    textTheme: HTextTheme.lightTextTheme,
-    checkboxTheme: HCheckBoxTheme.lightCheckBoxTheme,
-    chipTheme: HChipTheme.lightChipTheme,
-    appBarTheme: HAppBarTheme.lightAppBarTheme,
-    cardTheme: HCardTheme.lightCardTheme,
-    outlinedButtonTheme: HOutlineButtonTheme.lightOutlineButtonTheme,
-    elevatedButtonTheme: HElevatedButtonTheme.lightElevatedButtonTheme,
-    inputDecorationTheme: HTextFormFieldTheme.lightInputDecorationTheme,
-    tabBarTheme: HTabBarTheme.lightTabBarTheme,
+    primaryColor: TColors.primary,
+    scaffoldBackgroundColor: TColors.backgroundLight,
+    textTheme: TTextTheme.lightTextTheme,
+    checkboxTheme: TCheckBoxTheme.lightCheckBoxTheme,
+    chipTheme: TChipTheme.lightChipTheme,
+    appBarTheme: TAppBarTheme.lightAppBarTheme,
+    cardTheme: TCardTheme.lightCardTheme,
+    outlinedButtonTheme: TOutlineButtonTheme.lightOutlineButtonTheme,
+    elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
+    inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+    tabBarTheme: TTabBarTheme.lightTabBarTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Urbanist',
     brightness: Brightness.dark,
-      primaryColor: HColors.primary,
-      scaffoldBackgroundColor: HColors.backgroundLight,
-      textTheme: HTextTheme.darkTextTheme,
-      checkboxTheme: HCheckBoxTheme.darkCheckBoxTheme,
-      chipTheme: HChipTheme.darkChipTheme,
-      outlinedButtonTheme: HOutlineButtonTheme.darkOutlineButtonTheme,
-      elevatedButtonTheme: HElevatedButtonTheme.darkElevatedButtonTheme,
-      inputDecorationTheme: HTextFormFieldTheme.darkInputDecorationTheme
+      primaryColor: TColors.primary,
+      scaffoldBackgroundColor: TColors.backgroundDark,
+      appBarTheme: TAppBarTheme.darkAppBarTheme,
+      textTheme: TTextTheme.darkTextTheme,
+      checkboxTheme: TCheckBoxTheme.darkCheckBoxTheme,
+      chipTheme: TChipTheme.darkChipTheme,
+      tabBarTheme: TTabBarTheme.darkTabBarTheme,
+      outlinedButtonTheme: TOutlineButtonTheme.darkOutlineButtonTheme,
+      elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
+      inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme
   );
 }

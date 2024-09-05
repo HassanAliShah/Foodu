@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/onboarding_signup_signin/controller/onboarding_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
@@ -16,30 +15,31 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = OnBoardingController.instance;
     return Padding(
-      padding:  EdgeInsets.all(HSizes.defaultSpace),
+      padding:  const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-              height: HHelperFunctions.screenHeight() * 0.5,
-              width: HHelperFunctions.screenWidth() * 0.8,
+              height: THelperFunctions.screenHeight() * 0.5,
+              width: THelperFunctions.screenWidth() * 0.8,
               image:  AssetImage(image)),
           Text(title,
             style: Theme.of(context).textTheme.headlineLarge,
             textAlign: TextAlign.center ,),
-          const SizedBox(height: HSizes.spaceBtwItems,),
+          const SizedBox(height: TSizes.spaceBtwItems,),
           Text(subTitle,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: HColors.textblack
+                color: isDark ? TColors.textWhite : TColors.textblack
             ),
             textAlign: TextAlign.center ,),
-          const SizedBox(height: HSizes.defaultSpace,),
+          const SizedBox(height: TSizes.defaultSpace,),
           SmoothPageIndicator(controller: controller.pageController,onDotClicked: controller.dotNavigationClick,
             count: 3,
-            effect: const ExpandingDotsEffect(activeDotColor: HColors.primary,dotHeight: 6),),
-          const SizedBox(height: HSizes.defaultSpace,),
+            effect: const ExpandingDotsEffect(activeDotColor: TColors.primary,dotHeight: 6),),
+          const SizedBox(height: TSizes.defaultSpace,),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(onPressed: () => controller.nextPage(),

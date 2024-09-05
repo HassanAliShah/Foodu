@@ -5,10 +5,9 @@ import 'package:foodu/features/home_action_menu/screens/filter/filter_screen.dar
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-class OptionBar extends StatelessWidget {
-  const OptionBar({
+class TOptionBar extends StatelessWidget {
+  const TOptionBar({
     super.key,
   });
 
@@ -20,14 +19,14 @@ class OptionBar extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           GestureDetector(onTap: (){
-            Get.to(FilterScreen());
-          },child: CustomChip(label: 'Filter',imagePath: HImages.filter,)),
-          Gap(5),
-          CustomChip(label: 'Sort',imagePath: HImages.filter,),
-          Gap(5),
-          CustomChip(label: 'Promo',),
-          Gap(5),
-          CustomChip(label: 'Self Pick',),
+            Get.to(const FilterScreen());
+          },child: const TCustomChip(label: 'Filter',imagePath: TImages.filter,)),
+          const Gap(5),
+          const TCustomChip(label: 'Sort',imagePath: TImages.filter,),
+          const Gap(5),
+          const TCustomChip(label: 'Promo',),
+          const Gap(5),
+          const TCustomChip(label: 'Self Pick',),
         ],
       ),
     );

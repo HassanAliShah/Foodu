@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/home_action_menu/screens/home/home_screen.dart';
 import 'package:foodu/features/navigation_menu/navigation_menu.dart';
 import 'package:foodu/features/onboarding_signup_signin/screens/welcome/welcome.dart';
 import 'package:foodu/utils/theme/theme.dart';
@@ -17,9 +16,9 @@ class App extends StatelessWidget {
     return  GetMaterialApp(
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      theme: HAppTheme.lightTheme,
-      darkTheme: HAppTheme.darkTheme,
-      home:  NavigationMenu(),
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      home:  const WelcomeScreen(),
     );
   }
 }

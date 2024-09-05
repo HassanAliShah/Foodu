@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
@@ -13,21 +12,21 @@ class RatingAndBarGraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        Container(
-          width: HHelperFunctions.screenWidth() / 3,
-          height: HHelperFunctions.screenHeight() / 6.2,
+        SizedBox(
+          width: THelperFunctions.screenWidth() / 3,
+          height: THelperFunctions.screenHeight() / 6.2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text("4.8",style: Theme.of(context).textTheme.titleLarge,),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.star_rate_rounded,color: HColors.rating ,),
-                  Icon(Icons.star_rate_rounded,color: HColors.rating ,),
-                  Icon(Icons.star_rate_rounded,color: HColors.rating ,),
-                  Icon(Icons.star_half_rounded,color: HColors.rating ,),
-                  Icon(Icons.star_border_outlined,color: HColors.rating ,),
+                  Icon(Icons.star_rate_rounded,color: TColors.rating ,),
+                  Icon(Icons.star_rate_rounded,color: TColors.rating ,),
+                  Icon(Icons.star_rate_rounded,color: TColors.rating ,),
+                  Icon(Icons.star_half_rounded,color: TColors.rating ,),
+                  Icon(Icons.star_border_outlined,color: TColors.rating ,),
                 ],
               ),
 
@@ -35,10 +34,10 @@ class RatingAndBarGraph extends StatelessWidget {
             ],
           ),
         ),
-        Gap(10),
-        Container(
-          width: HHelperFunctions.screenWidth() / 2.0,
-          height: HHelperFunctions.screenHeight() / 6.2,
+        const Gap(10),
+        SizedBox(
+          width: THelperFunctions.screenWidth() / 2.0,
+          height: THelperFunctions.screenHeight() / 6.2,
           child: Column(
             children: [
               chartRow(context,'5',85),
@@ -58,9 +57,9 @@ class RatingAndBarGraph extends StatelessWidget {
         SizedBox(
           width: 5,
             child: Text(label, style: Theme.of(context).textTheme.titleSmall)),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+          padding: const EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
           child:
           Stack(
               children: [
@@ -68,19 +67,19 @@ class RatingAndBarGraph extends StatelessWidget {
                   height: 4,
                   width: MediaQuery.of(context).size.width * 0.4,
                   decoration: BoxDecoration(
-                      color: HColors.textGrey,
+                      color: TColors.textGrey,
                       borderRadius: BorderRadius.circular(20)
                   ),
-                  child: Text(''),
+                  child: const Text(''),
                 ),
                 Container(
                   height: 4,
                   width: MediaQuery.of(context).size.width * (pct/100) * 0.45,
                   decoration: BoxDecoration(
-                      color:HColors.primary,
+                      color:TColors.primary,
                       borderRadius: BorderRadius.circular(20)
                   ),
-                  child: Text(''),
+                  child: const Text(''),
                 ),
               ]
 

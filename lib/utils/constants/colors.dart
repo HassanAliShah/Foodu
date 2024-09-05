@@ -1,12 +1,10 @@
 
 
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HColors{
-  HColors._();
+class TColors{
+  TColors._();
 
   // App Basic Color
   static const Color primary = Color(0xff1BAC4B);
@@ -15,6 +13,7 @@ class HColors{
 
   static const Color backgroundLight = Colors.white;
   static const Color backgroundDark = Color(0xff181A20);
+  static const Color darkCard = Color(0xFF1F222A);
 
 
 
@@ -22,6 +21,7 @@ class HColors{
   static const Color textPrimary = Color(0xff1BAC4B);
   static const Color textblack = Color(0xFF212121);
   static const Color textGrey = Color(0xFF9E9E9E);
+  static const Color textWhite = Colors.white;
 
   // Button Color
   static const Color buttonPrimary = Color(0xff1BAC4B);

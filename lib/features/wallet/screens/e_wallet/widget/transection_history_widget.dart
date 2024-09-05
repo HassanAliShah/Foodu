@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class TransectionHistoryWidget extends StatelessWidget {
@@ -11,6 +11,7 @@ class TransectionHistoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = WalletController.instance;
+    final isDark = THelperFunctions.isDarkMode(context);
     return  Expanded(
       child: Obx(
             () => ListView.builder(
@@ -25,18 +26,18 @@ class TransectionHistoryWidget extends StatelessWidget {
               ),
               title: Text(
                 transaction['title'] as String,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: HColors.textblack),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: isDark ? Colors.white : TColors.textblack),
               ),
               subtitle: Text(
                 transaction['date'] as String,
-                style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.textGrey),
+                style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.textGrey),
               ),
               trailing: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
                     "\$${transaction['amount'] as double}",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: HColors.textblack)
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: TColors.textblack)
                   ),
                   SizedBox(
                     width: 70,
@@ -45,9 +46,9 @@ class TransectionHistoryWidget extends StatelessWidget {
                       children: [
                         Text(
                           transaction['type'] as String,
-                          style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.textGrey),
+                          style:  Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.textGrey),
                         ),
-                        Image.asset( transaction['isCredit'] as bool  ? HImages.topdown :HImages.topup)
+                        Image.asset( transaction['isCredit'] as bool  ? TImages.topdown :TImages.topup)
                       ],
                     ),
                   ),

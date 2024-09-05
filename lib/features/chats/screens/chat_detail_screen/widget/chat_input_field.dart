@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_text_field.dart';
 import 'package:foodu/features/chats/controller/chat_controller.dart';
@@ -12,6 +11,8 @@ class ChatInputField extends StatelessWidget {
 
   final TextEditingController _controller = TextEditingController();
 
+  ChatInputField({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -23,7 +24,7 @@ class ChatInputField extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: CustomTextField(height: 40,
+                child: TCustomTextField(height: 40,
                   textEditingController: _controller,
                   prefixIcon: Icons.sentiment_satisfied,
                   prefixOnTap:  () =>_showAttachmentOptions(context) ,
@@ -31,13 +32,13 @@ class ChatInputField extends StatelessWidget {
               ),
 
               IconButton(
-                icon: Icon(Icons.photo),
+                icon: const Icon(Icons.photo),
                 onPressed: () {
-                  chatController.sendMessage(HImages.mixid_salad, isImage: true);
+                  chatController.sendMessage(TImages.mixid_salad, isImage: true);
                 },
               ),
               IconButton(
-                icon: Icon(Icons.send),
+                icon: const Icon(Icons.send),
                 onPressed: () {
                   if (_controller.text.trim().isNotEmpty) {
                     chatController.sendMessage(_controller.text.trim());
@@ -50,11 +51,11 @@ class ChatInputField extends StatelessWidget {
                 height: 50,
                 padding: const EdgeInsets.all(13),
                 decoration: ShapeDecoration(
-                  gradient: HColors.greenGradient,
+                  gradient: TColors.greenGradient,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                   ),
-                  shadows: [
+                  shadows: const [
                     BoxShadow(
                       color: Color(0x3F1BAC4B),
                       blurRadius: 24,
@@ -63,12 +64,12 @@ class ChatInputField extends StatelessWidget {
                     )
                   ],
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 24,
                       height: 24,
                       child: Row(

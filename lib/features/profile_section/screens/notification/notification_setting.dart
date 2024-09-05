@@ -9,7 +9,7 @@ class NotificationSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Notification"),
       ),

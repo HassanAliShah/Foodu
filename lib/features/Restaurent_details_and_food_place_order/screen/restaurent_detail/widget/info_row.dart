@@ -12,7 +12,7 @@ class InfoRow extends StatelessWidget {
   final Widget? bottomRowIcon; // Icon in the bottom row
 
   const InfoRow({
-    Key? key,
+    super.key,
     this.leadingIcon,
     this.text,
     this.title,
@@ -22,7 +22,7 @@ class InfoRow extends StatelessWidget {
     this.deliveryText,
     this.priceText,
     this.bottomRowIcon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class InfoRow extends StatelessWidget {
                 if(leadingIcon != null)...[
                   leadingIcon!
                 ],
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Expanded(
                   child: Row(
                     children: [
@@ -53,7 +53,7 @@ class InfoRow extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodySmall, // Customize main text style
                       ),],
                       if (secondaryText != null) ...[
-                        SizedBox(width: 8), // Space between main text and secondary text
+                        const SizedBox(width: 8), // Space between main text and secondary text
                         Text(
                           secondaryText!,
                           style: Theme.of(context).textTheme.titleSmall,
@@ -62,11 +62,11 @@ class InfoRow extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(Icons.arrow_forward_ios, color: Colors.grey), // Trailing arrow
+                const Icon(Icons.arrow_forward_ios, color: Colors.grey), // Trailing arrow
               ],
             ),
             if (showBottomRow) ...[
-              SizedBox(height: 8), // Space between rows
+              const SizedBox(height: 8), // Space between rows
               Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -77,12 +77,12 @@ class InfoRow extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                   const SizedBox(width: 12),
-                  Text(
+                  const Text(
                     '|',
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(width: 12),
-                  Icon(
+                  const Icon(
                     Icons.delivery_dining,
                     color: Colors.green,
                     size: 16.0,

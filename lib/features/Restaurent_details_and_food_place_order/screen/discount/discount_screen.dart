@@ -1,16 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/controller/discount_controller.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/discount/widget/discount_card.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class DiscountScreen extends StatelessWidget {
-  DiscountScreen({Key? key}) : super(key: key) {
-  }
+  DiscountScreen({super.key});
 
   final controller = Get.put(DiscountController());
 
@@ -18,12 +14,12 @@ class DiscountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
-        title: Text("Get Discount",style: Theme.of(context).textTheme.bodySmall,),
+        title: Text("Get Discount",),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => ListView.builder(
           itemCount: controller.discounts.length,
           itemBuilder: (context, index) {
@@ -42,7 +38,7 @@ class DiscountScreen extends StatelessWidget {
 
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(14),
-        child: SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.back(), child: Text("Apply"))),
+        child: SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.back(), child: const Text("Apply"))),
       ),
     );
   }

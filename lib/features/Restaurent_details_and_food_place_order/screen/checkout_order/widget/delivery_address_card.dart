@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart';
-import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/checkout_order/widget/order_summery_card.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/delivery_to/delivery_address_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class DeliveryAddressCard extends StatelessWidget {
   final String title;
@@ -13,27 +13,28 @@ class DeliveryAddressCard extends StatelessWidget {
   final bool isDefault;
 
   const DeliveryAddressCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.address,
     this.isDefault = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return InkWell(
-      onTap: () => Get.to(DeliveryAddressScreen()),
+      onTap: () => Get.to(const DeliveryAddressScreen()),
       child: Container(
-        padding: const EdgeInsets.all(16.0),
-        margin: const EdgeInsets.symmetric(vertical: 12.0,),
+        padding: const EdgeInsets.all(TSizes.md),
+        margin: const EdgeInsets.symmetric(vertical: TSizes.xm,),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          color: isDark ? TColors.darkCard :  Colors.white,
+          borderRadius: BorderRadius.circular(TSizes.xm),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 10,
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
             ),
           ],
         ),
@@ -41,25 +42,25 @@ class DeliveryAddressCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Deliver to",style: Theme.of(context).textTheme.bodyLarge,),
-            custom_divider(),
+            const TCustomDivider(),
             Row(
               children: [
                 // Icon or Image
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(TSizes.sm),
                   decoration: BoxDecoration(
                     color: Colors.green.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(TSizes.xm),
                   ),
-                  child: CircleAvatar(
-                    backgroundColor: HColors.primary,
+                  child: const CircleAvatar(
+                    backgroundColor: TColors.primary,
                     child: Icon(
                       Icons.location_on,
                       color: Colors.white,
                     ),
                   ),
                 ),
-               Gap(16),
+               const Gap(16),
                 // Title and Address
                 Expanded(
                   child: Column(
@@ -71,14 +72,14 @@ class DeliveryAddressCard extends StatelessWidget {
                             title,
                             style: Theme.of(context).textTheme.bodyLarge
                           ),
-                          SizedBox(width: 8.0),
+                          const SizedBox(width: TSizes.md),
                           if (isDefault)
                             Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 6.0, vertical: 2.0),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6.0, vertical: TSizes.x),
                               decoration: BoxDecoration(
                                 color: Colors.green.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(TSizes.sm),
                               ),
                               child: Text(
                                 'Default',
@@ -87,7 +88,7 @@ class DeliveryAddressCard extends StatelessWidget {
                             ),
                         ],
                       ),
-                      Gap(4),
+                      const Gap(4),
                       Text(
                         address,
                         style: Theme.of(context).textTheme.labelSmall
@@ -95,11 +96,11 @@ class DeliveryAddressCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Gap(16),
+                const Gap(16),
                 // Arrow Icon
-                Icon(
+                const Icon(
                   Icons.arrow_forward_ios,
-                  color: HColors.primary,
+                  color: TColors.primary,
                 ),
               ],
             ),

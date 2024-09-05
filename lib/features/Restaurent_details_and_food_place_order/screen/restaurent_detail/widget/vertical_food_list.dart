@@ -14,10 +14,10 @@ class VerticalFoodList extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = RestaurantController.instance;
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+      padding:  const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: ListView.builder(
           scrollDirection: Axis.vertical,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: controller.foodItems.length,
           itemBuilder: (context, index) {

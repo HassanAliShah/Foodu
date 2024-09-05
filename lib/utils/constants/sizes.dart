@@ -1,5 +1,6 @@
 
-class HSizes{
+class TSizes{
+  TSizes._();
   // Padding and margin sizes
   static const double xs = 4.0;
   static const double x = 2.0;

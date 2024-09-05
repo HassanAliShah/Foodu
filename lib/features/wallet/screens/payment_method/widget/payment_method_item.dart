@@ -8,7 +8,7 @@ class PaymentMethodItem extends StatelessWidget {
   final String image;
   final String? cardNumber;
 
-  PaymentMethodItem({
+  const PaymentMethodItem({super.key, 
     required this.index,
     required this.label,
     required this.image,

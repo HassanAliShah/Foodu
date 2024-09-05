@@ -4,7 +4,7 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:gap/gap.dart';
 
-class FoodCardHorizental extends StatelessWidget {
+class TFoodCardHorizental extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String distance;
@@ -16,8 +16,8 @@ class FoodCardHorizental extends StatelessWidget {
   final String deliveryFee;
   final VoidCallback onTap;
 
-  const FoodCardHorizental({
-    Key? key,
+  const TFoodCardHorizental({
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.distance,
@@ -28,7 +28,7 @@ class FoodCardHorizental extends StatelessWidget {
     required this.deliveryFee,
     required this.onFavoriteToggle,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class FoodCardHorizental extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Gap(10),
+              const Gap(10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,39 +59,39 @@ class FoodCardHorizental extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    Gap(8),
+                    const Gap(8),
                     Row(
                       children: [
                         Text(
                           '$distance m',
                           style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                         ),
-                       Gap(8.0),
-                        Icon(
+                       const Gap(8.0),
+                        const Icon(
                           Icons.star,
-                          color: HColors.rating,
+                          color: TColors.rating,
                           size: 16.0,
                         ),
-                        Gap(8.0),
+                        const Gap(8.0),
                         Text(
                           '$rating (${reviewCount}k)',
                           style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                         ),
                       ],
                     ),
-                    Gap(8.0),
+                    const Gap(8.0),
                     Row(
                       children: [
                         Text(
                           "\$$price",
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(color: HColors.primary),
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
                         ),
-                        const SizedBox(width:  HSizes.sm),
+                        const SizedBox(width:  TSizes.sm),
                         const SizedBox(
                           height: 14,
                           child: VerticalDivider(
                             thickness: 1,
-                            color: HColors.textGrey,
+                            color: TColors.textGrey,
                           ),
                         ),
                         const Icon(
@@ -99,7 +99,7 @@ class FoodCardHorizental extends StatelessWidget {
                           color: Colors.green,
                           size: 16.0,
                         ),
-                        Gap(8.0),
+                        const Gap(8.0),
                         Text(
                           '\$$deliveryFee',
                           style:  Theme.of(context).textTheme.labelSmall,

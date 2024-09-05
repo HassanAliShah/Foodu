@@ -6,7 +6,6 @@ import 'package:foodu/features/order_section/screens/rate_driver/rate_driver_scr
 import 'package:foodu/features/order_section/screens/whats_your_mind/widget/emoji_list.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class WhatsYourMind extends StatelessWidget {
   const WhatsYourMind({super.key});
@@ -15,11 +14,11 @@ class WhatsYourMind extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = OrderController.instance;
     return Scaffold(
-      appBar: HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Column(
           children: [
             Padding(
@@ -29,7 +28,7 @@ class WhatsYourMind extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium
-                      ?.copyWith(color: HColors.textblack)),
+                      ?.copyWith(color: TColors.textblack)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 3),
@@ -38,7 +37,7 @@ class WhatsYourMind extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall
-                      ?.copyWith(color: HColors.textGrey)),
+                      ?.copyWith(color: TColors.textGrey)),
             ),
             EmojiListWidget(
               emojiList: controller.myEmojis,
@@ -50,34 +49,34 @@ class WhatsYourMind extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding:EdgeInsets.symmetric(vertical: 10,horizontal: 14),
+        padding:const EdgeInsets.symmetric(vertical: 10,horizontal: 14),
         child: Row(
           children: [
             Expanded(
               child: OutlinedButton(
                 onPressed: () {},
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(color: HColors.primary),
-                ),
                 style: OutlinedButton.styleFrom(
                     elevation: 0,
-                    backgroundColor: Color(0xFFE8F7ED),
+                    backgroundColor: const Color(0xFFE8F7ED),
                     side: const BorderSide(color: Color(0xFFE8F7ED)),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25)),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         fontSize: 14,
-                        color: HColors.primary,
+                        color: TColors.primary,
                         fontWeight: FontWeight.w700)),
+                child: const Text(
+                  'Cancel',
+                  style: TextStyle(color: TColors.primary),
+                ),
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: ElevatedButton(
-                onPressed: () => Get.to(RateDriverScreen()),
-                child: Text('Submit'),
+                onPressed: () => Get.to(const RateDriverScreen()),
+                child: const Text('Submit'),
               ),
             ),
           ],

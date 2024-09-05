@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class CategorySelector extends StatelessWidget {
   final List<String> categories;
 
-  CategorySelector({required this.categories});
+  const CategorySelector({super.key, required this.categories});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class CategorySelector extends StatelessWidget {
               ),
               if (controller.selectedCategory.value == category)
                 Container(
-                  margin: EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 5),
                   height: 2,
                   width: 50,
                   color: Colors.green,

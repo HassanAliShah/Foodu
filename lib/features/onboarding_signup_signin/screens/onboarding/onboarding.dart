@@ -5,7 +5,6 @@ import 'package:foodu/features/onboarding_signup_signin/screens/onboarding/widge
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -18,9 +17,9 @@ class OnBoardingScreen extends StatelessWidget {
         controller: controller.pageController,
         onPageChanged: controller.updatePageIndicator,
         children:const [
-          OnBoardingPage(title: HText.onBoardingTitle1,image: HImages.onBoardingImage1,subTitle: HText.onBoardingSubTitle1,buttonText: HText.onBoardingButton1,),
-          OnBoardingPage(title: HText.onBoardingTitle2,image: HImages.onBoardingImage2,subTitle: HText.onBoardingSubTitle2,buttonText: HText.onBoardingButton2,),
-          OnBoardingPage(title: HText.onBoardingTitle3,image: HImages.onBoardingImage3,subTitle: HText.onBoardingSubTitle3,buttonText: HText.onBoardingButton3,),
+          OnBoardingPage(title: TText.onBoardingTitle1,image: TImages.onBoardingImage1,subTitle: TText.onBoardingSubTitle1,buttonText: TText.onBoardingButton1,),
+          OnBoardingPage(title: TText.onBoardingTitle2,image: TImages.onBoardingImage2,subTitle: TText.onBoardingSubTitle2,buttonText: TText.onBoardingButton2,),
+          OnBoardingPage(title: TText.onBoardingTitle3,image: TImages.onBoardingImage3,subTitle: TText.onBoardingSubTitle3,buttonText: TText.onBoardingButton3,),
         ],
       ),
     );

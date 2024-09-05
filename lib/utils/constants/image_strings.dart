@@ -1,4 +1,5 @@
-class HImages{
+class TImages{
+  TImages._();
 
   //==== OnBoarding Images
   static const String onBoardingImage1 = 'assets/images/on_boarding_images/onboarding1.png';
@@ -38,10 +39,10 @@ class HImages{
   static const String pic = 'assets/images/profile/pic.png';
 
   //=== Discount
-  static const String discount0 =  'assets/images/discount/discount0.png';
-  static const String discount1 =  'assets/images/discount/discount1.png';
-  static const String discount2 =  'assets/images/discount/discount2.png';
-  static const String discount3 =  'assets/images/discount/discount3.png';
+  static const String discount0 =  'assets/images/discount/1.png';
+  static const String discount1 =  'assets/images/discount/2.png';
+  static const String discount2 =  'assets/images/discount/3.png';
+  static const String discount3 =  'assets/images/discount/4.png';
 
   //==== Category
   static const String burger =  'assets/images/category/burger.png';
