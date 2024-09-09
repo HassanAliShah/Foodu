@@ -79,7 +79,7 @@ class PromoCard extends StatelessWidget {
             style: OutlinedButton.styleFrom(
           elevation: 0,
           foregroundColor: buttonText == 'Claim' ? TColors.primary : TColors.backgroundLight,
-          backgroundColor: buttonText == 'Claim' ? TColors.backgroundLight : TColors.primary,
+          backgroundColor: buttonText == 'Claim' ? isDark ? TColors.backgroundDark : TColors.backgroundLight : TColors.primary,
           side:  const BorderSide(color:TColors.primary),
           padding: const EdgeInsets.all(8),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

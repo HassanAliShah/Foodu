@@ -7,6 +7,7 @@ import 'package:foodu/utils/theme/custom_themes/card_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/checkBox_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/outline_button_theme.dart';
+import 'package:foodu/utils/theme/custom_themes/switch_button_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/tab_bar_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:foodu/utils/theme/custom_themes/text_theme.dart';
@@ -30,6 +31,8 @@ class TAppTheme{
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
     tabBarTheme: TTabBarTheme.lightTabBarTheme,
+    switchTheme: TSwitchTheme.lightSwitchTheme
+
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -44,6 +47,7 @@ class TAppTheme{
       tabBarTheme: TTabBarTheme.darkTabBarTheme,
       outlinedButtonTheme: TOutlineButtonTheme.darkOutlineButtonTheme,
       elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
-      inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme
+      inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    switchTheme: TSwitchTheme.darkSwitchTheme
   );
 }

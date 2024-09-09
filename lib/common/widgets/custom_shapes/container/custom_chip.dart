@@ -29,7 +29,7 @@ class TCustomChip extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical:  TSizes.xs),
         decoration: BoxDecoration(
-          color: isDark? TColors.backgroundDark :backgroundColor,
+          color: backgroundColor == TColors.primary ? TColors.primary : isDark ? TColors.backgroundDark :TColors.backgroundLight,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: borderColor),
         ),

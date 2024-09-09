@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 
 class PaymentMethodCard extends StatelessWidget {
@@ -19,14 +22,15 @@ class PaymentMethodCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        padding: const EdgeInsets.all(16.0),
+        margin: const EdgeInsets.symmetric(vertical: TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.md),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.0),
+          color: isDark ? TColors.darkCard : Colors.white,
+          borderRadius: BorderRadius.circular(TSizes.xm),
           boxShadow: const [
             BoxShadow(
               color: Colors.black12,
@@ -38,7 +42,7 @@ class PaymentMethodCard extends StatelessWidget {
         child: Row(
           children: [
             Icon(icon, color: Colors.green, size: 40.0),
-            const Gap(16),
+            const Gap(TSizes.md),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

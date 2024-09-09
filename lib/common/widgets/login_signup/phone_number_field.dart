@@ -18,8 +18,8 @@ class TPhoneNumberField extends StatelessWidget {
       height: TSizes.buttonHeight,
       child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
-          fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
-          prefixIcon: const CountryCodePicker(
+          fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+          prefixIcon:  CountryCodePicker(
             padding: EdgeInsets.zero,
             onChanged: print,
             initialSelection: 'PAK',
@@ -28,6 +28,10 @@ class TPhoneNumberField extends StatelessWidget {
             showOnlyCountryWhenClosed: false,
             hideMainText: true,
             alignLeft: false,
+            searchDecoration: InputDecoration(
+              fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+            ),
+            dialogBackgroundColor: isDark ? TColors.backgroundDark : TColors.backgroundLight,
           ),
           hintText: TText.phoneNo,
           hintStyle: Theme.of(context).textTheme.titleSmall,

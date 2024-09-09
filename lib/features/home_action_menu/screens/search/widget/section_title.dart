@@ -11,7 +11,7 @@ class buildSectionTitle extends StatelessWidget {
     final isDark = THelperFunctions.isDarkMode(context);
     return  Text(
       title,
-      style:  TextStyle(fontSize: 14.0,fontFamily: 'Urbanist', fontWeight: FontWeight.bold, color: isDark ? TColors.textWhite : TColors.textblack),
+      style:  TextStyle(fontSize: 16.0,fontFamily: 'Urbanist', fontWeight: FontWeight.bold, color: isDark ? TColors.textWhite : TColors.textblack),
     );
   }
 }

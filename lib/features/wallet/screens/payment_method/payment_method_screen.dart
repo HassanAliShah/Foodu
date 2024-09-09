@@ -4,6 +4,7 @@ import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/features/wallet/screens/confirm_pin/confirm_pin.dart';
 import 'package:foodu/features/wallet/screens/payment_method/widget/payment_method_item.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
@@ -13,6 +14,7 @@ class PaymentMethodScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: const TAppBar(
         showBackButton: true,
@@ -33,10 +35,10 @@ class PaymentMethodScreen extends StatelessWidget {
               label: 'Google Pay',
               image: TImages.google,
             ),
-            const PaymentMethodItem(
+             PaymentMethodItem(
               index: 2,
               label: 'Apple Pay',
-              image: TImages.apple,
+              image: isDark ? TImages.lightAppleLogo : TImages.apple,
             ),
             const PaymentMethodItem(
               index: 3,

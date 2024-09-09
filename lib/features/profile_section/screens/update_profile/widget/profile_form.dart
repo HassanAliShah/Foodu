@@ -20,6 +20,7 @@ class ProfileForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = ProfileController.instance;
     return Form(child: SizedBox(
       height: THelperFunctions.screenHeight() /1.5,
@@ -37,6 +38,7 @@ class ProfileForm extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
                 hintText: TText.fullName,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -50,6 +52,7 @@ class ProfileForm extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
                 hintText: TText.nickName,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -64,6 +67,7 @@ class ProfileForm extends StatelessWidget {
               decoration: InputDecoration(
                 suffixIcon: const Icon(Icons.email),
                 hintText: TText.email,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),

@@ -9,6 +9,7 @@ import 'package:foodu/features/onboarding_signup_signin/screens/let_you_in/widge
 import 'package:foodu/features/onboarding_signup_signin/screens/signup/sign_up_screen.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class LetYouInScreen extends StatelessWidget {
@@ -16,12 +17,13 @@ class LetYouInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return SafeArea(child: Scaffold(
       body: Padding(padding: TSpacingStyles.paddingWithHeightWidth
         ,child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const THeader(text: TText.letYouIn, image: TImages.letYouIn),
+             THeader(text: TText.letYouIn, image: isDark  ?  TImages.darkLetYouIn :TImages.letYouIn),
             //Form
             const SocialButtoWithIcon(),
             const TFormDivider(text: 'or'),

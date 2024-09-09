@@ -24,8 +24,8 @@ class TSignUpForm extends StatelessWidget {
             height: TSizes.buttonHeight,
             child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
-                prefixIcon:const Icon(Icons.email),
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                prefixIcon:const Icon(Icons.email,),
                 hintText: TText.email,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
@@ -36,7 +36,7 @@ class TSignUpForm extends StatelessWidget {
             height: TSizes.buttonHeight,
             child: TextField(style: Theme.of(context).textTheme.bodySmall,cursorColor: TColors.primary,cursorHeight: TSizes.lg,
               decoration: InputDecoration(
-                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 prefixIcon:const Icon(Icons.person),
                 hintText: TText.fullName,
                 hintStyle: Theme.of(context).textTheme.titleSmall,

@@ -10,4 +10,10 @@ class TSpacingStyles{
     right: TSizes.defaultSpace,
    // bottom: HSizes.defaultSpace
   );
+
+  static  EdgeInsetsGeometry paddingOnlyWidth = const EdgeInsets.only(
+    left: TSizes.defaultSpace,
+    right: TSizes.defaultSpace,
+    // bottom: HSizes.defaultSpace
+  );
 }

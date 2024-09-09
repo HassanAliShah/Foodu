@@ -5,6 +5,7 @@ import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart
 import 'package:foodu/common/widgets/custom_shapes/container/custom_text_field.dart';
 import 'package:foodu/features/order_section/screens/rate_driver/widget/star_rating.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
 class OrderFeedbackWidget extends StatelessWidget {
 
@@ -16,6 +17,7 @@ class OrderFeedbackWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -33,7 +35,7 @@ class OrderFeedbackWidget extends StatelessWidget {
           const SizedBox(height: 16.0),
           Text(
             title,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: TColors.textblack),
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: isDark ? TColors.textWhite :  TColors.textblack),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8.0),

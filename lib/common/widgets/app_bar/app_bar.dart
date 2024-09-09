@@ -28,6 +28,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     child: AppBar(
       automaticallyImplyLeading: false,
       title: title,
+      leadingWidth: showBackButton ? 25 : null ,
       centerTitle: false,
       actions: actions,
       bottom: bottomBar,

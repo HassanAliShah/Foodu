@@ -59,7 +59,7 @@ class SocialButtoWithIcon extends StatelessWidget {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(TImages.apple,),
+                Image.asset(  isDark  ?  TImages.lightAppleLogo :TImages.apple,),
                 const Gap(TSizes.sm),
                 Text("${TText.continueWith} Apple",style: Theme.of(context).textTheme.bodySmall,)
               ],

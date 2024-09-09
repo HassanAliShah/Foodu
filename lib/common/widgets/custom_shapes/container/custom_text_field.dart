@@ -71,7 +71,7 @@ class _TCustomTextFieldState extends State<TCustomTextField> {
         style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
           filled: true,
-          contentPadding: const EdgeInsets.all(TSizes.xs),
+          contentPadding: const EdgeInsets.all(TSizes.md),
           fillColor: isTapped ? TColors.textFieldFillTapColor : isDark ? TColors.darkCard : TColors.textFieldFillColor,
           hintText: widget.hintText ?? '',
           hintStyle: Theme.of(context).textTheme.labelSmall,

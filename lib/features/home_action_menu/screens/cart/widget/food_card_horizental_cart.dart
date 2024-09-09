@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
 class FoodCardHorizontalCart extends StatelessWidget {
   final List<String> imageUrl;
@@ -17,11 +18,12 @@ class FoodCardHorizontalCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
       //margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? TColors.darkCard : Colors.white,
         borderRadius: BorderRadius.circular(16.0),
         boxShadow: [
           BoxShadow(
@@ -75,7 +77,7 @@ class FoodCardHorizontalCart extends StatelessWidget {
                 const SizedBox(height: 4.0),
                 Text(
                   description,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 14),
                 ),
                 const SizedBox(height: 8.0),
                 Text(

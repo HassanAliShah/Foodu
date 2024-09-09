@@ -109,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                 },
               ),
               Obx(() => ProfileToggleItem(
-                icon: Icons.dark_mode,
+                icon:  Icons.dark_mode,
                 title: 'Dark Mode',
                 value: controller.isDarkMode.value,
                 onChanged: (newValue) {

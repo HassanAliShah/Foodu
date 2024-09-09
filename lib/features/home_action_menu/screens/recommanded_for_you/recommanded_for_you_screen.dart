@@ -18,7 +18,7 @@ class RecommandedForYouScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: TSpacingStyles.paddingWithHeightWidth,
+          padding: TSpacingStyles.paddingOnlyWidth,
           child: const Column(
             children: [
               ChipListRow(),

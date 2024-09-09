@@ -28,9 +28,9 @@ class DriverInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
+      margin: EdgeInsets.zero,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
-
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

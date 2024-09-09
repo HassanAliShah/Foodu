@@ -37,7 +37,7 @@ class TransectionHistoryWidget extends StatelessWidget {
                 children: [
                   Text(
                     "\$${transaction['amount'] as double}",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: TColors.textblack)
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold,color: isDark ? TColors.textWhite : TColors.textblack)
                   ),
                   SizedBox(
                     width: 70,
