@@ -46,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                 phoneNumber: '+1 111 467 378 399',
                 imageUrl: TImages.pic,
                 onEdit: () {
-                  // Edit profile action
+                  Get.to(const UpdateProfileScreen());
                 },
               ),
               const Divider(),

@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 
 class OrderSummaryCard extends StatelessWidget {
   final String title;
-  final OrderController orderController = Get.put(OrderController());
+  final RestaurentOrderController orderController = Get.put(RestaurentOrderController());
 
   OrderSummaryCard({super.key, required this.title});
 

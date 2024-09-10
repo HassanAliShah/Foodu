@@ -1,7 +1,7 @@
 import 'package:foodu/features/Restaurent_details_and_food_place_order/model/order_item_model.dart';
 import 'package:get/get.dart';
 
-class OrderController extends GetxController {
+class RestaurentOrderController extends GetxController {
   
   var orderItems = <OrderItem>[].obs;
 
