@@ -19,7 +19,7 @@ class TextFeildandTime extends StatelessWidget {
       padding:  const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
       child: Column(
         children: [
-          Text(TText.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
+          Text(TTexts.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
           const SizedBox(
             height: TSizes.buttonHeight,
           ),

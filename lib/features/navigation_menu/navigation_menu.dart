@@ -23,7 +23,7 @@ class NavigationMenu extends StatelessWidget {
             selectedItemColor: TColors.primary,
             unselectedItemColor: TColors.textGrey,
             showUnselectedLabels: true,
-            backgroundColor: isDark ? Color(0xD8181A20)  : TColors.backgroundLight,
+            backgroundColor: isDark ? const Color(0xD8181A20)  : TColors.backgroundLight,
             type: BottomNavigationBarType.fixed,
              items: const [
           BottomNavigationBarItem(icon: ImageIcon(AssetImage(TImages.home))  ,label: 'Home',),

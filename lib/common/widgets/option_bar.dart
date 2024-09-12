@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/custom_chip.dart';
 import 'package:foodu/features/home_action_menu/screens/filter/filter_screen.dart';
@@ -18,15 +17,27 @@ class TOptionBar extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          GestureDetector(onTap: (){
-            Get.to(const FilterScreen());
-          },child: const TCustomChip(label: 'Filter',imagePath: TImages.filter,)),
+          GestureDetector(
+              onTap: () {
+                Get.to(const FilterScreen());
+              },
+              child: const TCustomChip(
+                label: 'Filter',
+                imagePath: TImages.filter,
+              )),
           const Gap(5),
-          const TCustomChip(label: 'Sort',imagePath: TImages.filter,),
+          const TCustomChip(
+            label: 'Sort',
+            imagePath: TImages.filter,
+          ),
           const Gap(5),
-          const TCustomChip(label: 'Promo',),
+          const TCustomChip(
+            label: 'Promo',
+          ),
           const Gap(5),
-          const TCustomChip(label: 'Self Pick',),
+          const TCustomChip(
+            label: 'Self Pick',
+          ),
         ],
       ),
     );

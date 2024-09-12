@@ -6,7 +6,6 @@ import 'package:foodu/features/account_setup/screens/location/widget/location_fi
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
-import 'package:get/get.dart';
 
 class SetYourLocation extends StatelessWidget {
   const SetYourLocation({super.key});
@@ -17,7 +16,7 @@ class SetYourLocation extends StatelessWidget {
     return SafeArea(child: Scaffold(
       appBar: const TAppBar(
         showBackButton: true,
-        title: Text(TText.setYourLocation),
+        title: Text(TTexts.setYourLocation),
       ),
       body: Stack(
         children: [

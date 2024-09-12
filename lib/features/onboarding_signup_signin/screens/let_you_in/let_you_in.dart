@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/login_signup/footer.dart';
@@ -18,23 +16,23 @@ class LetYouInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
-    return SafeArea(child: Scaffold(
-      body: Padding(padding: TSpacingStyles.paddingWithHeightWidth
-        ,child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-             THeader(text: TText.letYouIn, image: isDark  ?  TImages.darkLetYouIn :TImages.letYouIn),
-            //Form
-            const SocialButtoWithIcon(),
-            const TFormDivider(text: 'or'),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, child: const Text(TText.signInWithPhoneNo)
-              )),
-            TFooter(text: TText.alreadyHaveAccount, onPressed: ()=> Get.to(const SignUpScreen()) , buttonText: TText.signUp)
-          ],
-        ),),
-    ));
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: TSpacingStyles.paddingWithHeightWidth,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              THeader(text: TTexts.letYouIn, image: isDark ? TImages.darkLetYouIn : TImages.letYouIn),
+              // Form
+              const SocialButtoWithIcon(),
+              const TFormDivider(text: 'or'),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.signInWithPhoneNo))),
+              TFooter(text: TTexts.alreadyHaveAccount, onPressed: () => Get.to(const SignUpScreen()), buttonText: TTexts.signUp)
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
-

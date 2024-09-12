@@ -53,7 +53,7 @@ class locationFieldAndButtonContainer extends StatelessWidget {
 
             const Divider(),
 
-            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(TText.continueB)))
+            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(TTexts.continueB)))
           ],
         ),
       ),

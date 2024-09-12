@@ -37,7 +37,7 @@ class ProfileForm extends StatelessWidget {
               cursorHeight: TSizes.lg,
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                hintText: TText.fullName,
+                hintText: TTexts.fullName,
                 fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
@@ -51,7 +51,7 @@ class ProfileForm extends StatelessWidget {
               cursorHeight: TSizes.lg,
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                hintText: TText.nickName,
+                hintText: TTexts.nickName,
                 fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
@@ -67,7 +67,7 @@ class ProfileForm extends StatelessWidget {
               decoration: InputDecoration(
                 suffixIcon: const Icon(Icons.email),
                 fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
-                hintText: TText.email,
+                hintText: TTexts.email,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),

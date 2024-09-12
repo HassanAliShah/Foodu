@@ -23,7 +23,7 @@ class HLoginForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Checkbox(value: true, onChanged: (value){},),
-              Text(TText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
+              Text(TTexts.rememberMe,style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
           const SizedBox(height: TSizes.sm,),
@@ -31,7 +31,7 @@ class HLoginForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(onPressed: (){
               Get.to(const OtpScreen());
-            }, child: const Text(TText.signIN)),
+            }, child: const Text(TTexts.signIN)),
           ),
         ],
       ),

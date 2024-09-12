@@ -1,46 +1,52 @@
 name: foodu
-description: "Foodu - Food Delivery App"
-
-
-publish_to: 'none' 
-
-
+description: "T Foodu - Food Delivery App"
+publish_to: 'none'
 version: 1.0.0+1
+
 
 environment:
   sdk: ^3.5.0
+
 
 dependencies:
   flutter:
     sdk: flutter
 
+  # Utility Packages
+  gap: ^3.0.1
   intl: ^0.18.1
   logger: ^2.0.1
-  flutter_native_splash : ^2.3.2
-  smooth_page_indicator: ^1.2.0+3
-  get: ^4.6.6
-  cupertino_icons: ^1.0.8
-  country_code_picker: ^3.0.0
-  image_picker: ^1.1.2
-  gap: ^3.0.1
-  flutter_slidable: ^3.1.1
   ripple_wave: ^0.1.4
   slide_to_act: ^2.0.2
+  image_picker: ^1.1.2
+  flutter_slidable: ^3.1.1
+  country_code_picker: ^3.0.0
+  flutter_native_splash : ^2.3.2
+  smooth_page_indicator: ^1.2.0+3
+
+
+  # State Management
+  get: ^4.6.6
+  get_storage: ^2.1.1
+
+  # Icons
   iconsax: ^0.0.8
+  cupertino_icons: ^1.0.8
+  connectivity_plus: ^6.0.5
+
+
+  # Firebase
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
-  
   flutter_lints: ^4.0.0
 
 
 flutter:
-
   uses-material-design: true
-  #============= Local Assets ===============#
+
+  #--------------- LOCAL ASSETS ------------------#
   assets:
     - assets/logos/
     - assets/icons/
@@ -56,8 +62,8 @@ flutter:
     - assets/images/restaurent/
     - assets/images/map/
 
-  #============= Local Fonts ===============#
 
+  #--------------- LOCAL FONTS ------------------#
   fonts:
     - family: Urbanist
       fonts:

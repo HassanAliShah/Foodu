@@ -29,7 +29,7 @@ class SocialButtoWithIcon extends StatelessWidget {
               children: [
                 Image.asset(TImages.facebook,),
                 const Gap(TSizes.sm),
-                Text("${TText.continueWith} Facebook",style: Theme.of(context).textTheme.bodySmall,)
+                Text("${TTexts.continueWith} Facebook",style: Theme.of(context).textTheme.bodySmall,)
               ],
             )),
           ),
@@ -45,7 +45,7 @@ class SocialButtoWithIcon extends StatelessWidget {
               children: [
                 Image.asset(TImages.google,),
                 const Gap(TSizes.sm),
-                Text("${TText.continueWith} Google",style: Theme.of(context).textTheme.bodySmall,)
+                Text("${TTexts.continueWith} Google",style: Theme.of(context).textTheme.bodySmall,)
               ],
             )),
           ),
@@ -61,7 +61,7 @@ class SocialButtoWithIcon extends StatelessWidget {
               children: [
                 Image.asset(  isDark  ?  TImages.lightAppleLogo :TImages.apple,),
                 const Gap(TSizes.sm),
-                Text("${TText.continueWith} Apple",style: Theme.of(context).textTheme.bodySmall,)
+                Text("${TTexts.continueWith} Apple",style: Theme.of(context).textTheme.bodySmall,)
               ],
             )),
           ),

@@ -26,7 +26,7 @@ class TSignUpForm extends StatelessWidget {
               decoration: InputDecoration(
                 fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 prefixIcon:const Icon(Icons.email,),
-                hintText: TText.email,
+                hintText: TTexts.email,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -38,7 +38,7 @@ class TSignUpForm extends StatelessWidget {
               decoration: InputDecoration(
                 fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 prefixIcon:const Icon(Icons.person),
-                hintText: TText.fullName,
+                hintText: TTexts.fullName,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -48,13 +48,13 @@ class TSignUpForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Checkbox(value: true, onChanged: (value){},),
-              Text(TText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
+              Text(TTexts.rememberMe,style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
           const SizedBox(height: TSizes.sm,),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(onPressed: (){}, child: const Text(TText.signUp)),
+            child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.signUp)),
           ),
         ],
       ),

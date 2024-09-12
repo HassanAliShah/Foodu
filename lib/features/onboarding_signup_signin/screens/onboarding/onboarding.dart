@@ -1,10 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:foodu/features/onboarding_signup_signin/controller/onboarding_controller.dart';
 import 'package:foodu/features/onboarding_signup_signin/screens/onboarding/widget/on_boarding_page.dart';
-import 'package:foodu/utils/constants/image_strings.dart';
-import 'package:foodu/utils/constants/text_strings.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../../utils/exports.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -13,16 +14,49 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
     return Scaffold(
-      body: PageView(
-        controller: controller.pageController,
-        onPageChanged: controller.updatePageIndicator,
-        children:const [
-          OnBoardingPage(title: TText.onBoardingTitle1,image: TImages.onBoardingImage1,subTitle: TText.onBoardingSubTitle1,buttonText: TText.onBoardingButton1,),
-          OnBoardingPage(title: TText.onBoardingTitle2,image: TImages.onBoardingImage2,subTitle: TText.onBoardingSubTitle2,buttonText: TText.onBoardingButton2,),
-          OnBoardingPage(title: TText.onBoardingTitle3,image: TImages.onBoardingImage3,subTitle: TText.onBoardingSubTitle3,buttonText: TText.onBoardingButton3,),
+      body: Stack(
+        children: [
+          /// Pages to scroll with Image, Title and Subtitle
+          PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
+            children: const [
+              OnBoardingPage(title: TTexts.onBoardingTitle1, image: TImages.onBoardingImage1, subTitle: TTexts.onBoardingSubTitle1),
+              OnBoardingPage(title: TTexts.onBoardingTitle2, image: TImages.onBoardingImage2, subTitle: TTexts.onBoardingSubTitle2),
+              OnBoardingPage(title: TTexts.onBoardingTitle3, image: TImages.onBoardingImage3, subTitle: TTexts.onBoardingSubTitle3),
+            ],
+          ),
+
+          /// Button and Slider remained fixed and at the bottom
+          Positioned(
+            bottom: TSizes.defaultSpace,
+            left: TSizes.defaultSpace,
+            right: TSizes.defaultSpace,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                /// Slider Indicator
+                SmoothPageIndicator(
+                  count: 3,
+                  controller: controller.pageController,
+                  onDotClicked: controller.dotNavigationClick,
+                  effect: const ExpandingDotsEffect(activeDotColor: TColors.primary, dotHeight: 6),
+                ),
+                const Gap(TSizes.defaultSpace),
+
+                /// Button
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () => controller.nextPage(),
+                    child: Obx(() => Text(controller.currentPageIndex < 2 ? 'Next' : 'Get Started')),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 }
-

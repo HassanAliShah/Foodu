@@ -14,7 +14,7 @@ class DiscountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Get Discount",),
       ),

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/features/order_section/controller/order_controller.dart';
 import 'package:foodu/features/order_section/screens/order_tab/widget/completd_order_card.dart';
-import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class CompletedOrderTab extends StatelessWidget {

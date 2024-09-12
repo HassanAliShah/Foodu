@@ -12,7 +12,7 @@ class SelectedCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         title: Text('Burger',),
         showBackButton: true,
       ),

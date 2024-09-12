@@ -29,19 +29,19 @@ class SignUpScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // logo widget
-               const THeader(text: TText.createNewAccount,image: TImages.appLogo,),
+               const THeader(text: TTexts.createNewAccount,image: TImages.appLogo,),
 
               //Form
               const TSignUpForm(),
 
               //Divider
-              const TFormDivider(text: "or ${TText.continueWith}",),
+              const TFormDivider(text: "or ${TTexts.continueWith}",),
 
               //Social Button
               const TSocialRowButon(),
 
 
-               TFooter(text: TText.alreadyHaveAccount,buttonText: TText.signIN,onPressed: (){
+               TFooter(text: TTexts.alreadyHaveAccount,buttonText: TTexts.signIN,onPressed: (){
                  Get.to(const LoginScreen());
                },)
 

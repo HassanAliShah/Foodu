@@ -7,14 +7,14 @@ class  TSwitchTheme {
   TSwitchTheme._();
 
   static SwitchThemeData lightSwitchTheme =  SwitchThemeData(
-    thumbColor: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    thumbColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return Colors.white;
       }
       return Colors.white;
     }),
-    trackColor: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    trackColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return TColors.primary;
       }
       return Colors.grey.shade300;
@@ -22,14 +22,14 @@ class  TSwitchTheme {
   );
 
   static SwitchThemeData darkSwitchTheme =  SwitchThemeData(
-    thumbColor: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    thumbColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return Colors.white;
       }
       return Colors.white;
     }),
-    trackColor: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    trackColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return TColors.primary;
       }
       return TColors.darkCard;

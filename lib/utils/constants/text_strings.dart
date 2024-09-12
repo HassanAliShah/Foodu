@@ -1,11 +1,15 @@
 
 
-class TText{
-  TText._();
+class TTexts{
+  TTexts._();
+
+  //====== GLOBAL STRINGS
+  static const String appName = "T Foodu";
+
 
   //====== Welcome Text
 
-  static const String welcomeTitle = 'Welcome to Foodu! 👋';
+  static const String welcomeTitle = 'Welcome to\nFoodu! 👋';
   static const String welcomeSubtitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
   //====== LetYouIn TEXT
@@ -14,7 +18,7 @@ class TText{
   static const String continueWith = "Continue with";
   static const String signInWithPhoneNo = "Sign in with Phone Number";
 
-  //===== otp
+  //===== OTP
   static const String otpCodeVerification = "OTP Code Verification";
   static const String codeSendTo = "Code has been send to +1 111 ******99";
   static const String verify = "Verify";

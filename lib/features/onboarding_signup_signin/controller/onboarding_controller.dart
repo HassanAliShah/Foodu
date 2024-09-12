@@ -1,11 +1,8 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/features/onboarding_signup_signin/screens/let_you_in/let_you_in.dart';
 import 'package:get/get.dart';
 
-class OnBoardingController extends GetxController{
-
+class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
   final pageController = PageController();
@@ -13,20 +10,19 @@ class OnBoardingController extends GetxController{
 
   void updatePageIndicator(index) => currentPageIndex.value = index;
 
-  void dotNavigationClick(index){
-    print(index);
+  void dotNavigationClick(index) {
     currentPageIndex.value = index;
     pageController.jumpToPage(index);
   }
 
-  void nextPage(){
-    if(currentPageIndex.value == 3){
-      Get.offAll( () => const LetYouInScreen());
-    }else
-      {
-        pageController.jumpToPage(currentPageIndex.value++);
-      }
+  void nextPage() {
+    if (currentPageIndex.value == 2) {
+      currentPageIndex.value = 0;
+      // Remove all the previous Screens and Launch Login
+      Get.offAll(() => const LetYouInScreen());
+    } else {
+      currentPageIndex.value++;
+      pageController.jumpToPage(currentPageIndex.value);
+    }
   }
-
-
 }

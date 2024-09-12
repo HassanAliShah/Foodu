@@ -1,50 +1,43 @@
-
 import 'package:flutter/material.dart';
-import 'package:foodu/features/onboarding_signup_signin/controller/onboarding_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:gap/gap.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
-    super.key, required this.image, required this.title, required this.subTitle, required this.buttonText,
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
   });
 
-  final String image,title,subTitle,buttonText;
+  final String image, title, subTitle;
 
   @override
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
-    final controller = OnBoardingController.instance;
     return Padding(
-      padding:  const EdgeInsets.all(TSizes.defaultSpace),
+      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-              height: THelperFunctions.screenHeight() * 0.5,
-              width: THelperFunctions.screenWidth() * 0.8,
-              image:  AssetImage(image)),
-          Text(title,
-            style: Theme.of(context).textTheme.headlineLarge,
-            textAlign: TextAlign.center ,),
-          const SizedBox(height: TSizes.spaceBtwItems,),
-          Text(subTitle,
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: isDark ? TColors.textWhite : TColors.textblack
-            ),
-            textAlign: TextAlign.center ,),
-          const SizedBox(height: TSizes.defaultSpace,),
-          SmoothPageIndicator(controller: controller.pageController,onDotClicked: controller.dotNavigationClick,
-            count: 3,
-            effect: const ExpandingDotsEffect(activeDotColor: TColors.primary,dotHeight: 6),),
-          const SizedBox(height: TSizes.defaultSpace,),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(onPressed: () => controller.nextPage(),
-                child: Text(buttonText,)),
-          )
+            image: AssetImage(image),
+            height: THelperFunctions.screenHeight() * 0.5,
+          ),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineLarge!.apply(fontSizeFactor: 1.3),
+          ),
+          const Gap(TSizes.spaceBtwItems),
+          Text(
+            subTitle,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: isDark ? TColors.textWhite : TColors.textblack),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

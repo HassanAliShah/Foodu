@@ -16,7 +16,7 @@ class ProfileFormScreen extends StatelessWidget {
     return Scaffold(
       appBar: const TAppBar(
         showBackButton: true,
-        title: Text(TText.fillYourProfile),
+        title: Text(TTexts.fillYourProfile),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -27,7 +27,7 @@ class ProfileFormScreen extends StatelessWidget {
               const SizedBox(
                 height: TSizes.defaultSpace,
               ),
-              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(const SetYourLocation()), child: const Text(TText.continueB)))
+              SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(const SetYourLocation()), child: const Text(TTexts.continueB)))
 
 
             ],

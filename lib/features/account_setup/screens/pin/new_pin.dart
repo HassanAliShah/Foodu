@@ -11,7 +11,7 @@ class CreateNewPin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(PinController());
+    // final controller = Get.put(PinController());
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -19,7 +19,7 @@ class CreateNewPin extends StatelessWidget {
               Get.back();
             },
             icon: const Icon(Icons.arrow_back)),
-        title: const Text(TText.createNewPin),
+        title: const Text(TTexts.createNewPin),
       ),
 
       body:
@@ -31,11 +31,11 @@ class CreateNewPin extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(textAlign: TextAlign.center,TText.pinText,style: Theme.of(context).textTheme.bodySmall,),
+            Text(textAlign: TextAlign.center,TTexts.pinText,style: Theme.of(context).textTheme.bodySmall,),
             const SizedBox(height: TSizes.spaceBtwSection,),
             const TPinField(),
             const SizedBox(height: TSizes.spaceBtwSection,),
-            SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const NavigationMenu()), child: const Text(TText.continueB)))
+            SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const NavigationMenu()), child: const Text(TTexts.continueB)))
           ]
 
         ),
