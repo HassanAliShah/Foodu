@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
-class CustomTextField extends StatefulWidget {
+class TCustomTextField extends StatefulWidget {
   final double height;
   final String? hintText;
   final IconData? prefixIcon;
@@ -13,7 +14,7 @@ class CustomTextField extends StatefulWidget {
   final VoidCallback? prefixOnTap;
   final TextEditingController textEditingController;
 
-  const CustomTextField({
+  const TCustomTextField({
     super.key,
     required this.height,
     this.hintText,
@@ -27,10 +28,10 @@ class CustomTextField extends StatefulWidget {
   });
 
   @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
+  _TCustomTextFieldState createState() => _TCustomTextFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _TCustomTextFieldState extends State<TCustomTextField> {
   late FocusNode _focusNode;
   bool isTapped = false;
 
@@ -58,6 +59,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return SizedBox(
       height: widget.height,
       child: TextField(
@@ -69,8 +71,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
           filled: true,
-          contentPadding: const EdgeInsets.all(TSizes.xs),
-          fillColor: isTapped ? TColors.textFieldFillTapColor : TColors.textFieldFillColor,
+          contentPadding: const EdgeInsets.all(TSizes.md),
+          fillColor: isTapped ? TColors.textFieldFillTapColor : isDark ? TColors.darkCard : TColors.textFieldFillColor,
           hintText: widget.hintText ?? '',
           hintStyle: Theme.of(context).textTheme.labelSmall,
           prefixIcon: widget.prefixIcon != null

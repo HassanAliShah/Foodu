@@ -14,13 +14,13 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NotificationController());
     return SafeArea(child: Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         title: Text('Time Square',style: Theme.of(context).textTheme.bodySmall,),
         showBackButton: true,
       ),
       body: Obx(
             () => Padding(
-              padding: HSpacingStyles.paddingWithHeightWidth,
+              padding: TSpacingStyles.paddingWithHeightWidth,
               child: ListView.separated(
                         itemCount: controller.notificationList.length,
                         itemBuilder: (context, index) {

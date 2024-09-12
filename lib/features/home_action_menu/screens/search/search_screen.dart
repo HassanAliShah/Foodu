@@ -22,9 +22,9 @@ class SearchScreen extends StatelessWidget {
       controller.updateSearchText(controller.searchController.text);
     });
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
-        title: CustomTextField(
+        title: TCustomTextField(
           textEditingController: controller.searchController,
           height: 40,
           hintText: 'Search here',
@@ -35,13 +35,13 @@ class SearchScreen extends StatelessWidget {
       ),
       body: Obx(
         () => Padding(
-          padding: HSpacingStyles.paddingWithHeightWidth,
+          padding: TSpacingStyles.paddingWithHeightWidth,
           child: controller.searchText.value.isEmpty
                 ? const ShowRecentSearchAndOtherOptions()
                 : Column(
               children: [
                 const Gap(10),
-                const OptionBar(),
+                const TOptionBar(),
                 const Gap(10),
                 Obx(
                       () => controller.searchFoodItems.isEmpty

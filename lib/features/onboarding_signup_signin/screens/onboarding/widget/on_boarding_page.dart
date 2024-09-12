@@ -15,6 +15,7 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = OnBoardingController.instance;
     return Padding(
       padding:  const EdgeInsets.all(TSizes.defaultSpace),
@@ -31,7 +32,7 @@ class OnBoardingPage extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwItems,),
           Text(subTitle,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: TColors.textblack
+                color: isDark ? TColors.textWhite : TColors.textblack
             ),
             textAlign: TextAlign.center ,),
           const SizedBox(height: TSizes.defaultSpace,),

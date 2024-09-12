@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 
 class AddressCard extends StatelessWidget {
@@ -18,14 +20,15 @@ class AddressCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        padding: const EdgeInsets.all(16.0),
+        margin: const EdgeInsets.symmetric(vertical:TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.md),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.0),
+          color: isDark ? TColors.darkCard : Colors.white,
+          borderRadius: BorderRadius.circular(TSizes.xm),
           boxShadow: const [
             BoxShadow(
               color: Colors.black12,
@@ -37,7 +40,7 @@ class AddressCard extends StatelessWidget {
         child: Row(
           children: [
         Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(TSizes.sm),
         decoration: BoxDecoration(
           color: Colors.green.withOpacity(0.1),
           borderRadius: BorderRadius.circular(100),
@@ -61,13 +64,13 @@ class AddressCard extends StatelessWidget {
                         title,
                           style: Theme.of(context).textTheme.bodyLarge
                       ),
-                      const SizedBox(width: 8.0),
+                      const SizedBox(width:TSizes.sm),
                       if (isDefault)
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
+                          padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.x),
                           decoration: BoxDecoration(
                             color: Colors.green[100],
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(TSizes.xm),
                           ),
                           child: Text(
                             'Default',

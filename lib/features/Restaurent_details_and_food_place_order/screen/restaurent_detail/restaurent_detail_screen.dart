@@ -35,7 +35,7 @@ class RestaurentDetailScreen extends StatelessWidget {
                 height: THelperFunctions.screenHeight() /3,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(HImages.restaurent),
+                    image: AssetImage(TImages.restaurent),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -58,8 +58,6 @@ class RestaurentDetailScreen extends StatelessWidget {
                               ],
                             ),
                           )
-
-
                         ],
                       ),)
                 )

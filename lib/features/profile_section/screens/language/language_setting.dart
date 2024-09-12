@@ -11,7 +11,7 @@ class LanguageSetting extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Language', style: Theme.of(context).textTheme.titleLarge),
+        title: const Text('Language'),
       ),
       body: ListView(
         children: [

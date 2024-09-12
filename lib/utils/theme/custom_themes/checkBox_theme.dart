@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 
-class HCheckBoxTheme {
+class TCheckBoxTheme {
 
-  HCheckBoxTheme._();
+  TCheckBoxTheme._();
 
   static CheckboxThemeData lightCheckBoxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
@@ -38,7 +38,7 @@ class HCheckBoxTheme {
     checkColor: WidgetStateProperty.resolveWith((states){
       if(states.contains(WidgetState.selected))
       {
-        return TColors.primary;
+        return Colors.white;
       }
       else
       {

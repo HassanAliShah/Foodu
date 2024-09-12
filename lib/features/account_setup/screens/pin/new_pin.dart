@@ -19,7 +19,7 @@ class CreateNewPin extends StatelessWidget {
               Get.back();
             },
             icon: const Icon(Icons.arrow_back)),
-        title: const Text(HText.createNewPin),
+        title: const Text(TText.createNewPin),
       ),
 
       body:
@@ -31,11 +31,11 @@ class CreateNewPin extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(textAlign: TextAlign.center,HText.pinText,style: Theme.of(context).textTheme.bodySmall,),
+            Text(textAlign: TextAlign.center,TText.pinText,style: Theme.of(context).textTheme.bodySmall,),
             const SizedBox(height: TSizes.spaceBtwSection,),
-            const PinField(),
+            const TPinField(),
             const SizedBox(height: TSizes.spaceBtwSection,),
-            SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const NavigationMenu()), child: const Text(HText.continueB)))
+            SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const NavigationMenu()), child: const Text(TText.continueB)))
           ]
 
         ),

@@ -16,7 +16,7 @@ class SearchNotFound extends StatelessWidget {
         const Gap(50),
         SizedBox(
             width: double.infinity,
-            child: Image.asset(HImages.searchNotFound,fit: BoxFit.cover,)),
+            child: Image.asset(TImages.searchNotFound,fit: BoxFit.cover,)),
         const Gap(20),
         Text(
             'Not Found',

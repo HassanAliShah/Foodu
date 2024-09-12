@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 class TextIconContainer extends StatelessWidget {
   const TextIconContainer({
     super.key,
@@ -13,6 +14,7 @@ class TextIconContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -20,7 +22,7 @@ class TextIconContainer extends StatelessWidget {
         height: TSizes.buttonHeight,
         padding: const EdgeInsets.symmetric(horizontal: TSizes.appBarHeight),
         decoration: ShapeDecoration(
-          color: TColors.textFieldFillColor,
+          color:  isDark ? TColors.darkCard :TColors.textFieldFillColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(TSizes.md),
           ),

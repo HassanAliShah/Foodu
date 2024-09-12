@@ -21,7 +21,7 @@ class WalletController extends GetxController {
       "date": "Dec 15, 2024 | 16:00 PM",
       "type": "Orders",
       "isCredit": false,
-      "image": HImages.mixid_salad
+      "image": TImages.mixid_salad
     },
     {
       "title": "Top Up E-Wallet",
@@ -29,7 +29,7 @@ class WalletController extends GetxController {
       "date": "Dec 14, 2024 | 16:42 PM",
       "type": "Top up",
       "isCredit": true,
-      "image": HImages.wallet
+      "image": TImages.wallet
     },
     {
       "title": "Vegetable Salad",
@@ -37,7 +37,7 @@ class WalletController extends GetxController {
       "date": "Dec 14, 2024 | 11:39 AM",
       "type": "Orders",
       "isCredit": false,
-      "image":  HImages.sandwich
+      "image":  TImages.sandwich
     },
     {
       "title": "Mixed Salad Bonbon",
@@ -45,7 +45,7 @@ class WalletController extends GetxController {
       "date": "Dec 13, 2024 | 14:46 PM",
       "type": "Orders",
       "isCredit": false,
-      "image":  HImages.mixid_salad
+      "image":  TImages.mixid_salad
     },
     {
       "title": "Top Up E-Wallet",
@@ -53,7 +53,7 @@ class WalletController extends GetxController {
       "date": "Dec 12, 2024 | 09:27 AM",
       "type": "Top up",
       "isCredit": true,
-      "image": HImages.wallet
+      "image": TImages.wallet
     },
   ].obs;
 

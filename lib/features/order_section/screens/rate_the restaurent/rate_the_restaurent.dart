@@ -11,14 +11,14 @@ class RateTheRestaurentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(
               horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace),
           child: OrderFeedbackWidget(
-            imageUrl: HImages.mixid_salad,
+            imageUrl: TImages.mixid_salad,
             title: 'How was the delivery of your order from Big Garden Salad?',
             subtitle:
                 'Enjoyed your food? Rate the restaurant, your feedback is matters.',

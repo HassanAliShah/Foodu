@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:foodu/common/widgets/login_signup/phone_number_field.dart';
 import 'package:foodu/features/onboarding_signup_signin/screens/otp/otp_screen.dart';
@@ -12,33 +13,25 @@ class HLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-        child: Padding(
+    return Form(child: Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSection),
       child: Column(
         children: [
-          const PhoneNumberField(),
-          const SizedBox(height: TSizes.sm),
+          const TPhoneNumberField(),
+          const SizedBox(height: TSizes.sm,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Checkbox(
-                value: true,
-                onChanged: (value) {},
-              ),
-              Text(HText.rememberMe, style: Theme.of(context).textTheme.bodySmall),
+              Checkbox(value: true, onChanged: (value){},),
+              Text(TText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
-          const SizedBox(
-            height: TSizes.sm,
-          ),
+          const SizedBox(height: TSizes.sm,),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-                onPressed: () {
-                  Get.to(const OtpScreen());
-                },
-                child: const Text(HText.signIN)),
+            child: ElevatedButton(onPressed: (){
+              Get.to(const OtpScreen());
+            }, child: const Text(TText.signIN)),
           ),
         ],
       ),

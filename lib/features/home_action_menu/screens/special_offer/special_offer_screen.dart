@@ -15,22 +15,20 @@ class SpecialOfferScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SpecialOfferController());
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         title: Text('Special Offer',style: Theme.of(context).textTheme.bodySmall,),
         showBackButton: true,
       ),
-      body: Padding(padding: HSpacingStyles.paddingWithHeightWidth,
+      body: Padding(padding: TSpacingStyles.paddingWithHeightWidth,
             child: ListView.separated(
               itemCount: controller.specialOffers.length,
               itemBuilder: (BuildContext context, int index) {
                 var offer = controller.specialOffers[index];
-                return DiscountConatiner(
-                    discount: offer['discount']!,
-                    description: offer['description']!,
+                return DiscountImage(
                     imagePath: offer['imageUrl']!,
-                    gradient: controller.colors[index]);
+                );
               }, separatorBuilder: (BuildContext context, int index) {
-                return const Gap(10);
+                return const Gap(1);
             },
             ),),
     );

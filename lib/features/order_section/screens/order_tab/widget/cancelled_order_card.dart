@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 
 class CancalledOrderCard extends StatelessWidget {
@@ -19,12 +22,13 @@ class CancalledOrderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      padding: const EdgeInsets.all(16.0),
+      margin: const EdgeInsets.symmetric(vertical: TSizes.sm),
+      padding: const EdgeInsets.all( TSizes.md),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
+        color: isDark ? TColors.darkCard  : Colors.white,
+        borderRadius: BorderRadius.circular( TSizes.xm),
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
@@ -36,7 +40,7 @@ class CancalledOrderCard extends StatelessWidget {
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular( TSizes.xm),
             child: Image.asset(
               imageUrl,
               width: 80,
@@ -69,15 +73,15 @@ class CancalledOrderCard extends StatelessWidget {
                     if (isCancelled)
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0,
-                          vertical: 4.0,
+                          horizontal:  TSizes.sm,
+                          vertical:  TSizes.xs,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
                             color: Colors.red
                           ),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular( TSizes.xm),
                         ),
                         child:  Text(
                           'Cancelled',

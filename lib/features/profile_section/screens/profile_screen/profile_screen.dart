@@ -29,11 +29,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final  controller = Get.put(ProfileController());
     return Scaffold(
-      appBar: const HAppBar(
-        leadingImage: HImages.appLogo,
+      appBar: const TAppBar(
+        leadingImage: TImages.appLogo,
         title: Text("Profile"),
         actions: [
-          ImageIcon(AssetImage(HImages.more))
+          ImageIcon(AssetImage(TImages.more))
         ],
       ),
       body: SingleChildScrollView(
@@ -44,9 +44,9 @@ class ProfileScreen extends StatelessWidget {
               ProfileHeader(
                 name: 'Andrew Ainsley',
                 phoneNumber: '+1 111 467 378 399',
-                imageUrl: HImages.pic,
+                imageUrl: TImages.pic,
                 onEdit: () {
-                  // Edit profile action
+                  Get.to(const UpdateProfileScreen());
                 },
               ),
               const Divider(),
@@ -109,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                 },
               ),
               Obx(() => ProfileToggleItem(
-                icon: Icons.dark_mode,
+                icon:  Icons.dark_mode,
                 title: 'Dark Mode',
                 value: controller.isDarkMode.value,
                 onChanged: (newValue) {

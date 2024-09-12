@@ -15,6 +15,7 @@ class locationFieldAndButtonContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Positioned(
       bottom: 0,
       child: Container(
@@ -25,9 +26,9 @@ class locationFieldAndButtonContainer extends StatelessWidget {
           horizontal: TSizes.defaultSpace,
         ),
         clipBehavior: Clip.antiAlias,
-        decoration: const ShapeDecoration(
-          color: TColors.backgroundLight,
-          shape: RoundedRectangleBorder(
+        decoration:  ShapeDecoration(
+          color: isDark ?TColors.darkCard : TColors.backgroundLight,
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(TSizes.buttonHeight),
               topRight: Radius.circular(TSizes.buttonHeight),
@@ -52,7 +53,7 @@ class locationFieldAndButtonContainer extends StatelessWidget {
 
             const Divider(),
 
-            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(HText.continueB)))
+            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(TText.continueB)))
           ],
         ),
       ),

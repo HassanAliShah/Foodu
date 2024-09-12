@@ -3,7 +3,7 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
-class FoodCardVertical extends StatelessWidget {
+class TFoodCardVertical extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String distance;
@@ -15,7 +15,7 @@ class FoodCardVertical extends StatelessWidget {
   final VoidCallback onFavoriteToggle;
   final VoidCallback onTap;
 
-  const FoodCardVertical({
+  const TFoodCardVertical({
     super.key,
     required this.imageUrl,
     required this.title,
@@ -31,15 +31,23 @@ class FoodCardVertical extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: THelperFunctions.screenWidth() / 2,
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.sm),
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm,vertical: TSizes.sm),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard  :Colors.white,
           borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), spreadRadius: 1, blurRadius: 15, offset: const Offset(0, 5))],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,10 +63,13 @@ class FoodCardVertical extends StatelessWidget {
                   left: 4,
                   child: Container(
                     padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(color: TColors.primary, borderRadius: BorderRadius.circular(8)),
+                    decoration: BoxDecoration(
+                      color: TColors.primary,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     child: Text(
                       'PROMO',
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight, fontSize: 5),
+                      style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
                     ),
                   ),
                 ),
@@ -76,12 +87,18 @@ class FoodCardVertical extends StatelessWidget {
               children: [
                 Text(
                   distance,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: TSizes.sm),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                 ),
                 const SizedBox(width: TSizes.xs),
-                const SizedBox(height: 14, child: VerticalDivider(thickness: 1, color: TColors.textGrey)),
+                const SizedBox(
+                  height: 14,
+                  child: VerticalDivider(
+                    thickness: 1,
+                    color: TColors.textGrey,
+                  ),
+                ),
                 const Icon(Icons.star, size: 12, color: TColors.rating),
-                const SizedBox(width: TSizes.xs),
+                const SizedBox(width:  TSizes.xs),
                 Text(
                   rating,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
@@ -99,7 +116,7 @@ class FoodCardVertical extends StatelessWidget {
                   "\$$price",
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
                 ),
-                const SizedBox(width: TSizes.sm),
+                const SizedBox(width:  TSizes.sm),
                 const SizedBox(
                   height: 14,
                   child: VerticalDivider(
@@ -108,10 +125,10 @@ class FoodCardVertical extends StatelessWidget {
                   ),
                 ),
                 const Icon(Icons.delivery_dining, size: 20, color: TColors.primary),
-                const SizedBox(width: TSizes.xs),
+                const SizedBox(width:  TSizes.xs),
                 Text(
-                  "\$$deliveryFee",
-                  style: Theme.of(context).textTheme.labelSmall,
+                 "\$$deliveryFee",
+                  style:  Theme.of(context).textTheme.labelSmall,
                 ),
                 const Spacer(),
                 GestureDetector(

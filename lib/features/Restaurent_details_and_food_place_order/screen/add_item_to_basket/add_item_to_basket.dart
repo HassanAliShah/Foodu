@@ -31,12 +31,12 @@ class AddItemToBasket extends StatelessWidget {
                   height: THelperFunctions.screenHeight() /3,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(HImages.restaurent),
+                      image: AssetImage(TImages.restaurent),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
-                Positioned(top:20,right: 0,left: 0, child:
+                Positioned(top:TSizes.appBarHeight,right: 0,left: 0, child:
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
                   child: Row(
@@ -58,22 +58,21 @@ class AddItemToBasket extends StatelessWidget {
                 )
               ],
             ),
-            Padding(padding: HSpacingStyles.paddingWithHeightWidth,child:
+            Padding(padding: TSpacingStyles.paddingWithHeightWidth,child:
               Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: Center(
-                      child: Text(
-                        'Big Gardan Salad',
-                        style: Theme.of(context).textTheme.bodySmall,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                    child: Text(
+                      'Big Gardan Salad',
+                      textAlign: TextAlign.left,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const custom_divider(),
-                  const ExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
+                  const TCustomDivider(),
+                  const TExpandableText(text: "This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies, avocado, nuts, seeds, herbs and feta in a light"),
                   const Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -83,15 +82,15 @@ class AddItemToBasket extends StatelessWidget {
                       CounterButton(onTap: ()=> controller.itemCount--,iconData: Icons.remove,)
                     ],
                   ),
-                  CustomTextField(height: THelperFunctions.screenHeight() /5,
+                  const Gap(20),
+                  TCustomTextField(height: THelperFunctions.screenHeight() /5,
                       maxline: 4,
                       hintText: 'Note To Restaurant (Optional)',
                       textEditingController: controller.textEditingController),
-                  const custom_divider(),
+                  const TCustomDivider(),
                   SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text("Add to Basket - 12\$")))
                 ],
               ),)
-
           ],
         ),
       ),
@@ -109,18 +108,19 @@ class CounterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return InkWell(
       onTap: onTap,
       child: Container(
         width: 58,
         height: 58,
-        padding: const EdgeInsets.all(17),
+        padding: const EdgeInsets.all(TSizes.md),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard : Colors.white,
           shape: RoundedRectangleBorder(
             side: const BorderSide(width: 1, color: TColors.borderGrey),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(TSizes.md),
           ),
         ),
         child: Center(

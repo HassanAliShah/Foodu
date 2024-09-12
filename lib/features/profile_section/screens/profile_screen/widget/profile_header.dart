@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 
 class ProfileHeader extends StatelessWidget {
   final String name;
@@ -18,14 +19,14 @@ class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(TSizes.md),
       child: Row(
         children: [
           CircleAvatar(
             radius: 40,
             backgroundImage: AssetImage(imageUrl),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: TSizes.md),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,6 +34,7 @@ class ProfileHeader extends StatelessWidget {
                 name,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
+              const SizedBox(height: TSizes.md,),
               Text(
                 phoneNumber,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.textGrey),

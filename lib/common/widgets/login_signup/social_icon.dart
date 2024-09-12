@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class SocialIcon extends StatelessWidget {
-  const SocialIcon({
+class TSocialIcon extends StatelessWidget {
+  const TSocialIcon({
     super.key, required this.image, required this.onTap,
   });
 

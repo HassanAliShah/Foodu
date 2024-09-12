@@ -20,7 +20,7 @@ class VerticalFoodList extends StatelessWidget {
       itemCount: controller.foodItems.length,
       itemBuilder: (context, index) {
         final item = controller.foodItems[index];
-        return FoodCardHorizental(
+        return TFoodCardHorizental(
           imageUrl: item['imageUrl'],
           title: item['title'],
           distance: item['distance'],

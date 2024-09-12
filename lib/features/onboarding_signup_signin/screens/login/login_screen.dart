@@ -30,19 +30,19 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // logo widget
-              const HHeader(text: HText.loginYourAccount,image: HImages.appLogo,),
+              const THeader(text: TText.loginYourAccount,image: TImages.appLogo,),
 
               //Form
               const HLoginForm(),
 
               //Divider
-              const HFormDivider(text: HText.continueWith,),
+              const TFormDivider(text: TText.continueWith,),
 
               //Social Button
-              const HSocialRowButon(),
+              const TSocialRowButon(),
 
 
-              HFooter(text:HText.dontHaveAccount,buttonText: HText.signUp,onPressed: (){
+              TFooter(text:TText.dontHaveAccount,buttonText: TText.signUp,onPressed: (){
                 Get.to(const SignUpScreen());
               },)
 

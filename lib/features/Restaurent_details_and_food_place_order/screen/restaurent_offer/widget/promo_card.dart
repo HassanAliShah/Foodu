@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
 class PromoCard extends StatelessWidget {
@@ -20,11 +21,12 @@ class PromoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6.0,vertical: 14),
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      margin: const EdgeInsets.symmetric(vertical:TSizes.sm),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? TColors.darkCard : Colors.white,
         borderRadius: BorderRadius.circular(15.0),
         boxShadow: [
           BoxShadow(
@@ -57,7 +59,7 @@ class PromoCard extends StatelessWidget {
                     width: THelperFunctions.screenWidth() / 2.2,
                     child: Text(
                       title,
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.textblack)
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(color: isDark ? TColors.textWhite  : TColors.textblack)
                     ),
                   ),
                   const SizedBox(height: 4.0),
@@ -77,7 +79,7 @@ class PromoCard extends StatelessWidget {
             style: OutlinedButton.styleFrom(
           elevation: 0,
           foregroundColor: buttonText == 'Claim' ? TColors.primary : TColors.backgroundLight,
-          backgroundColor: buttonText == 'Claim' ? TColors.backgroundLight : TColors.primary,
+          backgroundColor: buttonText == 'Claim' ? isDark ? TColors.backgroundDark : TColors.backgroundLight : TColors.primary,
           side:  const BorderSide(color:TColors.primary),
           padding: const EdgeInsets.all(8),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

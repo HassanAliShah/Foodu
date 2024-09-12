@@ -12,22 +12,22 @@ class SpecialOfferController extends GetxController {
     {
       "discount": "30%",
       "description": "Discount only valid for today!",
-      "imageUrl": HImages.discount0,
+      "imageUrl": TImages.discount0,
     },
     {
       "discount": "15%",
       "description": "Discount only valid for today!",
-      "imageUrl": HImages.discount1,
+      "imageUrl": TImages.discount1,
     },
     {
       "discount": "20%",
       "description": "Discount only valid for today!",
-      "imageUrl": HImages.discount2,
+      "imageUrl": TImages.discount2,
     },
     {
       "discount": "25%",
       "description": "Discount only valid for today!",
-      "imageUrl": HImages.discount3,
+      "imageUrl": TImages.discount3,
     },
   ].obs;
 

@@ -4,8 +4,8 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
-class HSearchContainer extends StatelessWidget {
-  const HSearchContainer({
+class TSearchContainer extends StatelessWidget {
+  const TSearchContainer({
     super.key, this.showBackground = true,
     this.showBorder = true, required this.text,
     this.iconData = Icons.search,
@@ -16,11 +16,12 @@ class HSearchContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
       width: THelperFunctions.screenHeight(),
       padding: const EdgeInsets.all(TSizes.xm),
       decoration: BoxDecoration(
-        color: showBackground ?  TColors.textFieldFillColor :Colors.transparent,
+        color: showBackground ? isDark ?TColors.darkCard : TColors.textFieldFillColor :Colors.transparent,
         borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
         border:showBorder ? Border.all(color: TColors.borderGrey) : null,
       ),

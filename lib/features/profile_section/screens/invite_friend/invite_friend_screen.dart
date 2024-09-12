@@ -12,7 +12,7 @@ class InviteFriendsScreen extends StatelessWidget {
     final FriendsController controller = Get.put(FriendsController());
 
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Invite Friend"),
       ),

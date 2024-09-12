@@ -4,7 +4,7 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:gap/gap.dart';
 
-class FoodCardHorizental extends StatelessWidget {
+class TFoodCardHorizental extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String distance;
@@ -16,7 +16,7 @@ class FoodCardHorizental extends StatelessWidget {
   final String deliveryFee;
   final VoidCallback onTap;
 
-  const FoodCardHorizental({
+  const TFoodCardHorizental({
     super.key,
     required this.imageUrl,
     required this.title,

@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class HFooter extends StatelessWidget {
-   const HFooter({
+class TFooter extends StatelessWidget {
+   const TFooter({
     super.key, required this.text, required this.onPressed, required this.buttonText,
   });
 

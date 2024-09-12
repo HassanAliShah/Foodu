@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class HHeader extends StatelessWidget {
-  const HHeader({
+class THeader extends StatelessWidget {
+  const THeader({
     super.key, required this.text, required this.image,
   });
   final String text;

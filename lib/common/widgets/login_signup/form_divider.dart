@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class HFormDivider extends StatelessWidget {
-  const HFormDivider({
+class TFormDivider extends StatelessWidget {
+  const TFormDivider({
     super.key, required this.text,
   });
 

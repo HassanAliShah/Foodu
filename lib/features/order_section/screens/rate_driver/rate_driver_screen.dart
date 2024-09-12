@@ -15,13 +15,13 @@ class RateDriverScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace,vertical: TSizes.defaultSpace),
         child: DriverRatingWidget(
-          driverImage: HImages.pic,
+          driverImage: TImages.pic,
           title: "Let’s rate your driver’s delivery service",
           subtitle: "How was the delivery of your order from Big Garden Salad?",
           onRatingChanged: (rating) {

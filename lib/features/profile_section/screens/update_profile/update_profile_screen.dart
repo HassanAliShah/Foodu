@@ -12,7 +12,7 @@ class UpdateProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ProfileController());
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Update Profile"),
       ),

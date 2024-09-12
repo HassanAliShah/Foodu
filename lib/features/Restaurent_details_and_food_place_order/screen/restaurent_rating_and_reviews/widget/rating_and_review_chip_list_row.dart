@@ -27,10 +27,10 @@ class RatingAndReviewChipListRow extends StatelessWidget {
           itemBuilder: (context, index){
             return Obx(() {
               bool isSelected = index == controller.selectedChipIndex.value;
-              return CustomChip(
+              return TCustomChip(
                 label: controller.chipList[index],
                 labelColor: isSelected ? Colors.white : TColors.primary,
-                imagePath: controller.chipList[index] == 'Sort By' ? HImages.sort : HImages.rating ,
+                imagePath: controller.chipList[index] == 'Sort By' ? TImages.sort : TImages.rating ,
                 onTap: () {
                   controller.selectChip(index);
                 },

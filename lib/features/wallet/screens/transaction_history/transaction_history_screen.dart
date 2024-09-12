@@ -10,7 +10,7 @@ class TransactionHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: const Text("Transaction History"),
         actions: [

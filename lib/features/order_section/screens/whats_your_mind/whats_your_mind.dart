@@ -5,6 +5,7 @@ import 'package:foodu/features/order_section/controller/order_controller.dart';
 import 'package:foodu/features/order_section/screens/rate_driver/rate_driver_screen.dart';
 import 'package:foodu/features/order_section/screens/whats_your_mind/widget/emoji_list.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class WhatsYourMind extends StatelessWidget {
@@ -12,13 +13,14 @@ class WhatsYourMind extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = OrderController.instance;
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Column(
           children: [
             Padding(
@@ -28,7 +30,7 @@ class WhatsYourMind extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium
-                      ?.copyWith(color: TColors.textblack)),
+                      ?.copyWith(color: isDark ? TColors.textWhite : TColors.textblack)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 3),

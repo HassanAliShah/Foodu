@@ -1,6 +1,8 @@
 
 
+import 'package:foodu/features/order_section/screens/cancel_order/cancel_order_screen.dart';
 import 'package:foodu/features/order_section/screens/track_order/track_order_screen.dart';
+import 'package:foodu/features/order_section/screens/whats_your_mind/whats_your_mind.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +22,7 @@ class OrderController extends GetxController {
       'itemsInfo': '3 items | 1.4 km',
       'price': 32.00,
       'isCancelled': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
@@ -30,12 +32,12 @@ class OrderController extends GetxController {
       'itemsInfo': '4 items | 2.7 km',
       'price': 22.00,
       'isCompleted': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
   void leaveReview(int index) {
-    print('Leaving review for order at index: $index');
+    Get.to(const WhatsYourMind());
   }
 
   void orderAgain(int index) {
@@ -48,12 +50,12 @@ class OrderController extends GetxController {
       'itemsInfo': '4 items | 2.7 km',
       'price': 22.00,
       'isPaid': true,
-      'imageUrl': HImages.mixid_salad,
+      'imageUrl': TImages.mixid_salad,
     },
   ].obs;
 
   void cancelOrder(int index) {
-    print('cancel Order at index: $index');
+   Get.to(const CancelOrderScreen());
   }
 
   void trackOrder(int index) {

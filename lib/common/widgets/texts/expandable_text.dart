@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
-class ExpandableText extends StatefulWidget {
-  const ExpandableText({super.key, required this.text});
+class TExpandableText extends StatefulWidget {
+  const TExpandableText({super.key, required this.text});
   final String text;
 
   @override
-  State<ExpandableText> createState() => _ExpandableTextState();
+  State<TExpandableText> createState() => _TExpandableTextState();
 }
 
-class _ExpandableTextState extends State<ExpandableText> {
+class _TExpandableTextState extends State<TExpandableText> {
   late String firstHalf;
   late String secondHalf;
   bool hiddenText =  true;

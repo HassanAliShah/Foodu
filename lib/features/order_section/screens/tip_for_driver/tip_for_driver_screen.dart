@@ -15,13 +15,13 @@ class TipForDriverScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace,horizontal: TSizes.defaultSpace),
         child: TipSelectionWidget(
-          driverImage: HImages.pic,
+          driverImage: TImages.pic,
           title: "Wow 5 Star! 🤩",
           subtitle:
           "Do you want to add an additional tip to make your driver's day?",

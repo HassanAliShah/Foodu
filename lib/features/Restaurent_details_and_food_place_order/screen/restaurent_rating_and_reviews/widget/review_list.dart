@@ -15,6 +15,7 @@ class ReviewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = ReviewAndRatingController.instance;
+
     return Obx(() {
       return SizedBox(
         height: THelperFunctions.screenHeight() / 1.75,

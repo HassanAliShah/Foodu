@@ -33,7 +33,7 @@ class ProfilePicSelection extends StatelessWidget {
                 ),
                 child: controller.imagePath.value.isEmpty
                     ? const CircleAvatar(
-                  backgroundImage: AssetImage(HImages.profile),
+                  backgroundImage: AssetImage(TImages.profile),
                 )
                     : CircleAvatar(
                   backgroundImage: FileImage(File(controller.imagePath.value)),
@@ -55,7 +55,7 @@ class ProfilePicSelection extends StatelessWidget {
                 child: SizedBox(
                   width: 20,
                   height: 20,
-                  child: Image(image: AssetImage(HImages.picImage),fit:BoxFit.fill,),
+                  child: Image(image: AssetImage(TImages.picImage),fit:BoxFit.fill,),
                 ),
               ),
             ),

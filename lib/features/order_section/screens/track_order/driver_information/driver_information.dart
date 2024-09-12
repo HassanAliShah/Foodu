@@ -13,7 +13,7 @@ class DriverInformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Driver Information"),
       ),
@@ -24,7 +24,7 @@ class DriverInformationScreen extends StatelessWidget {
         const DriverInformationCard(
         driverName: 'Rayford Chenail',
         driverPhoneNumber: '+1 800 555 0199',
-        driverImageUrl: HImages.pic,
+        driverImageUrl: TImages.pic,
         rating: 4.8,
         orders: 425,
         years: 4,

@@ -12,7 +12,7 @@ class CancelOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Cancel Order"),
       ),
@@ -22,7 +22,7 @@ class CancelOrderScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Padding(padding: const EdgeInsets.all(20),child: 
-        ElevatedButton(onPressed: () => Get.to(const CustomDialog(title: "We’re so sad about\nyour cancellation", subtitle: "We will continue to improve our service & satisfy you on the next order.", emoji:  Icons.sentiment_dissatisfied,))  , child: const Text("Submit")),),
+        ElevatedButton(onPressed: () => Get.to(const TCustomDialog(title: "We’re so sad about\nyour cancellation", subtitle: "We will continue to improve our service & satisfy you on the next order.", emoji:  Icons.sentiment_dissatisfied,))  , child: const Text("Submit")),),
     );
   }
 }

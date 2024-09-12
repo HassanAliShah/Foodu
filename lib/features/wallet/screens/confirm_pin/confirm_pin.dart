@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/pin_field.dart';
 import 'package:foodu/common/widgets/dialouge/custom_dialogue.dart';
 import 'package:foodu/features/account_setup/controller/pin_controller.dart';
@@ -15,13 +16,9 @@ class ConfirmPin extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(PinController());
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back)),
-        title: const Text(HText.createNewPin),
+      appBar: const TAppBar(
+        showBackButton: true,
+        title: Text(TText.createNewPin),
       ),
 
       body:
@@ -33,11 +30,11 @@ class ConfirmPin extends StatelessWidget {
         ),
         child: Column(
             children: [
-              Text(textAlign: TextAlign.center,HText.confirmPinText,style: Theme.of(context).textTheme.bodySmall,),
+              Text(textAlign: TextAlign.center,TText.confirmPinText,style: Theme.of(context).textTheme.bodySmall,),
               const SizedBox(height: TSizes.spaceBtwSection,),
-              const PinField(),
+              const TPinField(),
               const SizedBox(height: TSizes.spaceBtwSection,),
-              SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const CustomDialog(title: "Top Up Successful", subtitle: "You have successfully top up e-wallet for \$50", emoji: Icons.wallet)), child: const Text(HText.continueB)))
+              SizedBox(width: double.infinity,child:  ElevatedButton(onPressed: () => Get.to(const TCustomDialog(title: "Top Up Successful", subtitle: "You have successfully top up e-wallet for \$50", emoji: Icons.wallet)), child: const Text(TText.continueB)))
             ]
 
         ),

@@ -15,12 +15,12 @@ class PaymentMethodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final  controller = Get.put(PaymentMethodController());
     return Scaffold(
-      appBar:HAppBar(
+      appBar:TAppBar(
         showBackButton: true,
         title: Text("Payment Method",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => Column(
           children: [
             SizedBox(

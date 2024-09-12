@@ -1,7 +1,7 @@
 
 
-class HText{
-
+class TText{
+  TText._();
 
   //====== Welcome Text
 

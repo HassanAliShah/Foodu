@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomDialog extends StatelessWidget {
+
+class TCustomDialog extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData emoji;
 
-  const CustomDialog({
+  const TCustomDialog({
     super.key,
     required this.title,
     required this.subtitle,

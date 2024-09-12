@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
+import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/common/widgets/login_signup/footer.dart';
 import 'package:foodu/common/widgets/login_signup/form_divider.dart';
 import 'package:foodu/common/widgets/login_signup/header.dart';
@@ -18,31 +19,29 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(onPressed: (){
-            Get.back();
-          }, icon: const Icon(Icons.arrow_back)),
+        appBar: const TAppBar(
+          showBackButton: true,
         ),
         body: SingleChildScrollView(
-          padding: HSpacingStyles.paddingWithHeightWidth,
+          padding: TSpacingStyles.paddingWithHeightWidth,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // logo widget
-               const HHeader(text: HText.createNewAccount,image: HImages.appLogo,),
+               const THeader(text: TText.createNewAccount,image: TImages.appLogo,),
 
               //Form
-              const HSignUpForm(),
+              const TSignUpForm(),
 
               //Divider
-              const HFormDivider(text: "or ${HText.continueWith}",),
+              const TFormDivider(text: "or ${TText.continueWith}",),
 
               //Social Button
-              const HSocialRowButon(),
+              const TSocialRowButon(),
 
 
-               HFooter(text: HText.alreadyHaveAccount,buttonText: HText.signIN,onPressed: (){
+               TFooter(text: TText.alreadyHaveAccount,buttonText: TText.signIN,onPressed: (){
                  Get.to(const LoginScreen());
                },)
 

@@ -4,26 +4,29 @@ import 'package:foodu/common/widgets/login_signup/phone_number_field.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
-class HSignUpForm extends StatelessWidget {
-  const HSignUpForm({
+class TSignUpForm extends StatelessWidget {
+  const TSignUpForm({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Form(child: Padding(
       padding: const EdgeInsets.only(top: TSizes.spaceBtwSection),
       child: Column(
         children: [
-          const PhoneNumberField(),
+          const TPhoneNumberField(),
           const SizedBox(height: TSizes.sm,),
           SizedBox(
             height: TSizes.buttonHeight,
             child: TextField(cursorColor: TColors.primary,cursorHeight: TSizes.lg,style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                prefixIcon:const Icon(Icons.email),
-                hintText: HText.email,
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                prefixIcon:const Icon(Icons.email,),
+                hintText: TText.email,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -33,8 +36,9 @@ class HSignUpForm extends StatelessWidget {
             height: TSizes.buttonHeight,
             child: TextField(style: Theme.of(context).textTheme.bodySmall,cursorColor: TColors.primary,cursorHeight: TSizes.lg,
               decoration: InputDecoration(
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
                 prefixIcon:const Icon(Icons.person),
-                hintText: HText.fullName,
+                hintText: TText.fullName,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -44,13 +48,13 @@ class HSignUpForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Checkbox(value: true, onChanged: (value){},),
-              Text(HText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
+              Text(TText.rememberMe,style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
           const SizedBox(height: TSizes.sm,),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(onPressed: (){}, child: const Text(HText.signUp)),
+            child: ElevatedButton(onPressed: (){}, child: const Text(TText.signUp)),
           ),
         ],
       ),

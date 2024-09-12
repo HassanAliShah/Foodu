@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 
 class OrderSummaryDetail extends StatelessWidget {
   final double subtotal;
@@ -12,13 +15,13 @@ class OrderSummaryDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     double total = subtotal + deliveryFee;
-
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
+        color: isDark ? TColors.darkCard  : Colors.white,
+        borderRadius: BorderRadius.circular(TSizes.sm),
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
@@ -31,7 +34,7 @@ class OrderSummaryDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildSummaryRow('Subtotal', subtotal),
-          const SizedBox(height: 8.0),
+          const SizedBox(height:TSizes.sm),
           _buildSummaryRow('Delivery Fee', deliveryFee),
           const Divider(thickness: 1.0),
           _buildSummaryRow('Total', total, isBold: true),

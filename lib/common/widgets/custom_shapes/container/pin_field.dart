@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:foodu/features/account_setup/controller/pin_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-class PinField extends StatelessWidget {
-  const PinField({
+import 'package:foodu/utils/helpers/helper_function.dart';
+class TPinField extends StatelessWidget {
+  const TPinField({
     super.key,
   });
 
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller  = PinController.instance;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,6 +30,9 @@ class PinField extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
               keyboardType: TextInputType.phone,
               obscureText: true,
+              decoration: InputDecoration(
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+              ),
               onChanged: (value) {
                 controller.moveToNextField(value, controller.focusNode1, controller.focusNode2);
               },
@@ -46,6 +51,9 @@ class PinField extends StatelessWidget {
               obscureText: true,
               style: Theme.of(context).textTheme.bodySmall,
               keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+              ),
               onChanged: (value) {
                 controller.moveToNextField(value, controller.focusNode2, controller.focusNode3);
               },
@@ -64,6 +72,9 @@ class PinField extends StatelessWidget {
               obscureText: true,
               style: Theme.of(context).textTheme.bodySmall,
               keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+              ),
               onChanged: (value) {
                 controller.moveToNextField(value, controller.focusNode3, controller.focusNode4);
               },
@@ -82,6 +93,9 @@ class PinField extends StatelessWidget {
               obscureText: true,
               style: Theme.of(context).textTheme.bodySmall,
               keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+              ),
               onChanged: (value) {
                 controller.focusNode4.unfocus();
               },

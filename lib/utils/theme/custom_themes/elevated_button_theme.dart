@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 
-class HElevatedButtonTheme{
-  HElevatedButtonTheme._();
+class TElevatedButtonTheme{
+  TElevatedButtonTheme._();
 
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
@@ -23,15 +23,15 @@ class HElevatedButtonTheme{
 
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          elevation: 0,
+          elevation: TSizes.buttonElevation,
           foregroundColor: Colors.white,
-          backgroundColor: Colors.blue,
+          backgroundColor: TColors.buttonPrimary,
           disabledBackgroundColor: Colors.grey,
           disabledForegroundColor: Colors.grey,
-          side:  const BorderSide(color:Colors.blue),
-          padding: const EdgeInsets.symmetric(vertical:  18),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle:  const TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.w600)
+          side:  const BorderSide(color:TColors.buttonPrimary),
+          padding: const EdgeInsets.symmetric(vertical:  14,horizontal: 14),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          textStyle:  const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w700)
       )
   );
 }

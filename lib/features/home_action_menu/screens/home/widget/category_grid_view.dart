@@ -26,7 +26,7 @@ class CategoryGridView extends StatelessWidget {
         ),
         itemCount: controller.categoryName.length,
         itemBuilder: (context, index) {
-          return ImageTextCategoryContainer(
+          return TImageTextCategoryContainer(
             image: controller.categoryImage[index],
             text: controller.categoryName[index],
             onTap: () {

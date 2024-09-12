@@ -12,14 +12,14 @@ class SelectedCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
-        title: Text('Burger',style: Theme.of(context).textTheme.bodySmall,),
+      appBar: TAppBar(
+        title: Text('Burger',),
         showBackButton: true,
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: const Column(children: [
-          OptionBar(),
+          TOptionBar(),
           VerticalFoodList(),
         ],),
       ),

@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/utils/constants/colors.dart';
 
-class custom_divider extends StatelessWidget {
-  const custom_divider({
+class TCustomDivider extends StatelessWidget {
+  const TCustomDivider({
     super.key,
   });
 

@@ -14,7 +14,7 @@ class ChatDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = ChatController.instance;
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: const Text('Hassan Ali'),
         actions: [

@@ -16,12 +16,12 @@ class CheckoutOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: Text("Checkout Order",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body: SingleChildScrollView(
-        child: Padding(padding: HSpacingStyles.paddingWithHeightWidth,
+        child: Padding(padding: TSpacingStyles.paddingWithHeightWidth,
         child: Column(
           children: [
             const DeliveryAddressCard(

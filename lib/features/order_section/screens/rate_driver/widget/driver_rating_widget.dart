@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'star_rating.dart';
 
@@ -21,8 +22,8 @@ class DriverRatingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Column(
-
       children: [
         // Driver's Image
         CircleAvatar(
@@ -33,7 +34,7 @@ class DriverRatingWidget extends StatelessWidget {
         // Title
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.headlineMedium?.apply(color: isDark ? TColors.textWhite : TColors.textblack),
           textAlign: TextAlign.center,
         ),
        const Gap(20),

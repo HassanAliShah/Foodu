@@ -15,7 +15,7 @@ class FindingDriver extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: Text("Searching Driver",style: Theme.of(context).textTheme.bodySmall,),
       ),
@@ -25,7 +25,7 @@ class FindingDriver extends StatelessWidget {
           //Head
           Padding(padding: const EdgeInsets.only(top: 10),child: Column(
       children: [
-        const Center(child: Image(image: AssetImage(HImages.appLogo))),
+        const Center(child: Image(image: AssetImage(TImages.appLogo))),
         const SizedBox(height: TSizes.md,),
         Text("Finding you a nearby driver...",
           style: Theme.of(context).textTheme.bodyLarge,
@@ -40,7 +40,7 @@ class FindingDriver extends StatelessWidget {
           RippleWave(
             color: Colors.green,
             repeat: true,
-            child: Image.asset(HImages.pic)
+            child: Image.asset(TImages.pic)
           ),),
           SizedBox(
             width: THelperFunctions.screenWidth() /1.7,

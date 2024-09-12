@@ -4,8 +4,8 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
-class ImageTextCategoryContainer extends StatelessWidget {
-  const ImageTextCategoryContainer({
+class TImageTextCategoryContainer extends StatelessWidget {
+  const TImageTextCategoryContainer({
     super.key, required this.image, required this.text, required this.onTap,
   });
 
@@ -15,6 +15,7 @@ class ImageTextCategoryContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -27,7 +28,7 @@ class ImageTextCategoryContainer extends StatelessWidget {
           Text(
             THelperFunctions.truncateText(text, 6),
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.textblack),
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: isDark ? TColors.textWhite :  TColors.textblack),
           ),
         ],
       ),

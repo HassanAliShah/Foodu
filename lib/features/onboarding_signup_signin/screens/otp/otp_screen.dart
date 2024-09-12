@@ -15,7 +15,7 @@ class OtpScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: const Text(HText.otpCodeVerification),
+        title: const Text(TText.otpCodeVerification),
         leading: IconButton(
             onPressed: () {
               Get.back();
@@ -23,7 +23,7 @@ class OtpScreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back)),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Column(
           children: [
             // otp text box and time
@@ -32,7 +32,7 @@ class OtpScreen extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child:
-                    ElevatedButton(onPressed: ()=> Get.to(const ProfileFormScreen()), child: const Text(HText.verify)))
+                    ElevatedButton(onPressed: ()=> Get.to(const ProfileFormScreen()), child: const Text(TText.verify)))
           ],
         ),
       ),

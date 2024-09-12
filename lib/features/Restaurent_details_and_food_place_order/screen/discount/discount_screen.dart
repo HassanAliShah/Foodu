@@ -14,12 +14,12 @@ class DiscountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
-        title: Text("Get Discount",style: Theme.of(context).textTheme.bodySmall,),
+        title: Text("Get Discount",),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => ListView.builder(
           itemCount: controller.discounts.length,
           itemBuilder: (context, index) {

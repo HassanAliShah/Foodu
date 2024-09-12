@@ -6,8 +6,8 @@ import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-class OptionBar extends StatelessWidget {
-  const OptionBar({
+class TOptionBar extends StatelessWidget {
+  const TOptionBar({
     super.key,
   });
 
@@ -20,13 +20,13 @@ class OptionBar extends StatelessWidget {
         children: [
           GestureDetector(onTap: (){
             Get.to(const FilterScreen());
-          },child: const CustomChip(label: 'Filter',imagePath: HImages.filter,)),
+          },child: const TCustomChip(label: 'Filter',imagePath: TImages.filter,)),
           const Gap(5),
-          const CustomChip(label: 'Sort',imagePath: HImages.filter,),
+          const TCustomChip(label: 'Sort',imagePath: TImages.filter,),
           const Gap(5),
-          const CustomChip(label: 'Promo',),
+          const TCustomChip(label: 'Promo',),
           const Gap(5),
-          const CustomChip(label: 'Self Pick',),
+          const TCustomChip(label: 'Self Pick',),
         ],
       ),
     );

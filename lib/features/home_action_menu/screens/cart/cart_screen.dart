@@ -14,11 +14,11 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(CartController());
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         title: Text('My Cart',style: Theme.of(context).textTheme.bodySmall,),
         showBackButton: true,
       ),
-      body: Padding(padding: HSpacingStyles.paddingWithHeightWidth,
+      body: Padding(padding: TSpacingStyles.paddingWithHeightWidth,
       child: const SingleChildScrollView(child: FoodCardList()),),
     );
   }

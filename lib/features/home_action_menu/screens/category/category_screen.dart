@@ -13,12 +13,12 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryController());
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         title: Text('More Category',style: Theme.of(context).textTheme.bodySmall,),
         showBackButton: true,
       ),
       body: Padding(
-          padding: HSpacingStyles.paddingWithHeightWidth,
+          padding: TSpacingStyles.paddingWithHeightWidth,
           child: const CategoryGridView(),
       ),
     );

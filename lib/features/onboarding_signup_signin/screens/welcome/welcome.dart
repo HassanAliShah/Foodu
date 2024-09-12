@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       Get.offAll( () => const OnBoardingScreen());
     });
     return Container(
@@ -23,23 +23,23 @@ class WelcomeScreen extends StatelessWidget {
       height: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(HImages.welcome),
+          image: AssetImage(TImages.welcome),
           fit: BoxFit.fill,
         ),
       ),
       child: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-              HText.welcomeTitle,
+              TText.welcomeTitle,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineLarge
             ),
             const SizedBox(height: TSizes.spaceBtwItems,),
             Text(
-                HText.welcomeSubtitle,
+                TText.welcomeSubtitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineSmall
             ),

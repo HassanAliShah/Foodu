@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/profile_section/model/faq.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class FAQItem extends StatelessWidget {
@@ -10,9 +11,10 @@ class FAQItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Obx(() => Container(
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: isDark ? TColors.darkCard : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

@@ -5,6 +5,7 @@ import 'package:foodu/features/onboarding_signup_signin/controller/otp_controlle
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 class TextFeildandTime extends StatelessWidget {
   const TextFeildandTime({
     super.key,
@@ -12,12 +13,13 @@ class TextFeildandTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
    final controller = OtpController.instance;
     return Padding(
       padding:  const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
       child: Column(
         children: [
-          Text(HText.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
+          Text(TText.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
           const SizedBox(
             height: TSizes.buttonHeight,
           ),
@@ -35,6 +37,9 @@ class TextFeildandTime extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                    ),
                     onChanged: (value) {
                       controller.moveToNextField(value, controller.focusNode1, controller.focusNode2);
                     },
@@ -52,6 +57,9 @@ class TextFeildandTime extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                    ),
                     onChanged: (value) {
                       controller.moveToNextField(value, controller.focusNode2, controller.focusNode3);
                     },
@@ -69,6 +77,9 @@ class TextFeildandTime extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                    ),
                     onChanged: (value) {
                       controller.moveToNextField(value, controller.focusNode3, controller.focusNode4);
                     },
@@ -86,6 +97,9 @@ class TextFeildandTime extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                    ),
                     onChanged: (value) {
                       controller.focusNode4.unfocus();
                     },

@@ -5,6 +5,7 @@ import 'package:foodu/features/wallet/controller/wallet_controller.dart';
 import 'package:foodu/features/wallet/screens/top_up/top_up_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class BalanceCard extends StatelessWidget {
@@ -13,6 +14,7 @@ class BalanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = WalletController.instance;
+    final isDark = THelperFunctions.isDarkMode(context);
     return  Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -49,11 +51,11 @@ class BalanceCard extends StatelessWidget {
               Row(
                 children: [
                   Image.asset(
-                    HImages.visa,
+                    TImages.visa,
                     width: 50,
                   ),
                   Image.asset(
-                    HImages.masterCard,
+                    TImages.masterCard,
                     width: 50,
                   ),
                 ],
@@ -80,7 +82,7 @@ class BalanceCard extends StatelessWidget {
                   backgroundColor: Colors.white
                 ),
                 onPressed: () => Get.to(const TopUpScreen()),
-                child: Text("Top Up",style: Theme.of(context).textTheme.bodySmall,),
+                child: Text("Top Up",style: Theme.of(context).textTheme.bodySmall?.apply(color: isDark ? Colors.black: Colors.black ),),
               ),
             ],
           )),

@@ -20,6 +20,7 @@ class ProfileForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = ProfileController.instance;
     return Form(child: SizedBox(
       height: THelperFunctions.screenHeight() /1.5,
@@ -36,7 +37,8 @@ class ProfileForm extends StatelessWidget {
               cursorHeight: TSizes.lg,
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                hintText: HText.fullName,
+                hintText: TText.fullName,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -49,7 +51,8 @@ class ProfileForm extends StatelessWidget {
               cursorHeight: TSizes.lg,
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
-                hintText: HText.nickName,
+                hintText: TText.nickName,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -63,7 +66,8 @@ class ProfileForm extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
               decoration: InputDecoration(
                 suffixIcon: const Icon(Icons.email),
-                hintText: HText.email,
+                hintText: TText.email,
+                fillColor: isDark ? TColors.darkCard : TColors.backgroundLight,
                 hintStyle: Theme.of(context).textTheme.titleSmall,
               ),
             ),
@@ -76,7 +80,7 @@ class ProfileForm extends StatelessWidget {
             controller.dateOfBirth.value = DateFormat('dd/MM/yyyy').format(date!);
           },text: controller.dateOfBirth.value,iconData: Icons.calendar_month_rounded,),),
 
-          const PhoneNumberField(),
+          const TPhoneNumberField(),
           const GenderSelectionButton(),
         ],
       ),

@@ -9,6 +9,7 @@ import 'package:foodu/features/onboarding_signup_signin/screens/let_you_in/widge
 import 'package:foodu/features/onboarding_signup_signin/screens/signup/sign_up_screen.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class LetYouInScreen extends StatelessWidget {
@@ -16,20 +17,21 @@ class LetYouInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return SafeArea(child: Scaffold(
-      body: Padding(padding: HSpacingStyles.paddingWithHeightWidth
+      body: Padding(padding: TSpacingStyles.paddingWithHeightWidth
         ,child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const HHeader(text: HText.letYouIn, image: HImages.letYouIn),
+             THeader(text: TText.letYouIn, image: isDark  ?  TImages.darkLetYouIn :TImages.letYouIn),
             //Form
             const SocialButtoWithIcon(),
-            const HFormDivider(text: 'or'),
+            const TFormDivider(text: 'or'),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, child: const Text(HText.signInWithPhoneNo)
+              child: ElevatedButton(onPressed: (){}, child: const Text(TText.signInWithPhoneNo)
               )),
-            HFooter(text: HText.alreadyHaveAccount, onPressed: ()=> Get.to(const SignUpScreen()) , buttonText: HText.signUp)
+            TFooter(text: TText.alreadyHaveAccount, onPressed: ()=> Get.to(const SignUpScreen()) , buttonText: TText.signUp)
           ],
         ),),
     ));

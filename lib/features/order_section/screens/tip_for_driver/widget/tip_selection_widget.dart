@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/order_section/controller/order_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class TipSelectionWidget extends StatelessWidget {
@@ -20,6 +22,7 @@ class TipSelectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final  controller = OrderController.instance;
     return Column(
       children: [
@@ -28,11 +31,11 @@ class TipSelectionWidget extends StatelessWidget {
           radius: 50.0,
           backgroundImage: AssetImage(driverImage),
         ),
-        const SizedBox(height: 20.0),
+        const SizedBox(height: 20),
         // Title with Emoji
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: TColors.textblack),
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: isDark ? TColors.textWhite: TColors.textblack),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 10.0),
@@ -56,9 +59,9 @@ class TipSelectionWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: TColors.primary,
-                    width: 2.0,
+                    width: TSizes.x,
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(TSizes.sm),
                   color: controller.selectedTip.value == tip
                       ? TColors.primary
                       : Colors.transparent,

@@ -14,12 +14,12 @@ class OfferScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OfferController());
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: Text("Offers Are Available",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body:  Padding(
-        padding:HSpacingStyles.paddingWithHeightWidth,
+        padding:TSpacingStyles.paddingWithHeightWidth,
         child: Obx(
               () => ListView.builder(
             itemCount: controller.promoList.length,

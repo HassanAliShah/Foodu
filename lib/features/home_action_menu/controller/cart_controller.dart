@@ -8,9 +8,9 @@ class CartController extends GetxController {
   final foodCards = <FoodCardCartModel>[
     FoodCardCartModel(
       imageUrls: [
-        HImages.fruit_salad,
-        HImages.pizza_hut,
-        HImages.vegeterian_noodels
+        TImages.fruit_salad,
+        TImages.pizza_hut,
+        TImages.vegeterian_noodels
       ],
       title: 'Mixed Salad Bowl',
       description: '3 items | 1.5 km',
@@ -18,9 +18,9 @@ class CartController extends GetxController {
     ),
     FoodCardCartModel(
       imageUrls: [
-        HImages.fruit_salad,
-        HImages.pizza_hut,
-        HImages.vegeterian_noodels
+        TImages.fruit_salad,
+        TImages.pizza_hut,
+        TImages.vegeterian_noodels
       ],
       title: 'Caesar Salad',
       description: '2 items | 2.0 km',
@@ -28,9 +28,9 @@ class CartController extends GetxController {
     ),
     FoodCardCartModel(
       imageUrls: [
-        HImages.fruit_salad,
-        HImages.pizza_hut,
-        HImages.vegeterian_noodels
+        TImages.fruit_salad,
+        TImages.pizza_hut,
+        TImages.vegeterian_noodels
       ],
       title: 'Greek Salad',
       description: '4 items | 0.8 km',

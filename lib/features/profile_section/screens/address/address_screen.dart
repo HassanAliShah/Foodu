@@ -15,12 +15,12 @@ class AddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller  = ProfileController.instance;
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Address"),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => Column(
           children: [
             SizedBox(

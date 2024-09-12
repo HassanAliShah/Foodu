@@ -11,7 +11,7 @@ class ActiveOrderTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final  controller  =  OrderController.instance ;
     return Padding(
-      padding: HSpacingStyles.paddingWithHeightWidth,
+      padding: TSpacingStyles.paddingWithHeightWidth,
       child:Obx(
             () => ListView.builder(
           itemCount: controller.completedOrders.length,

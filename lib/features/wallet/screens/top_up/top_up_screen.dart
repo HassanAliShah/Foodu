@@ -14,7 +14,7 @@ class TopUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = WalletController.instance;
     return Scaffold(
-      appBar: const HAppBar(
+      appBar: const TAppBar(
         showBackButton: true,
         title: Text("Top Up E-Wallet"),
       ),
@@ -60,7 +60,7 @@ class TopUpScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: () => Get.to(PaymentMethodScreen()), child: const Text("Submit"))
+            ElevatedButton(onPressed: () => Get.to( PaymentMethodScreen()), child: const Text("Submit"))
           ],
         ),
       ),

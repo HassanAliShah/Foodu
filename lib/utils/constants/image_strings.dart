@@ -1,4 +1,5 @@
-class HImages{
+class TImages{
+  TImages._();
 
   //==== OnBoarding Images
   static const String onBoardingImage1 = 'assets/images/on_boarding_images/onboarding1.png';
@@ -10,6 +11,7 @@ class HImages{
 
   //==== Let's you in
   static const String letYouIn = 'assets/images/let_you_in/letyouin.png';
+  static const String darkLetYouIn = 'assets/images/let_you_in/darkLetsYouIn.png';
 
   //==== profile form
   static const String picImage = 'assets/icons/pic_image.png';
@@ -17,6 +19,7 @@ class HImages{
 
   //==== Logo Image
   static const String appLogo = 'assets/logos/logo.png';
+  static const String lightAppleLogo = 'assets/logos/lightAppleLogo.png';
   static const String google = 'assets/logos/google.png';
   static const String apple = 'assets/logos/apple.png';
   static const String facebook = 'assets/logos/facebook.png';
@@ -38,10 +41,10 @@ class HImages{
   static const String pic = 'assets/images/profile/pic.png';
 
   //=== Discount
-  static const String discount0 =  'assets/images/discount/discount0.png';
-  static const String discount1 =  'assets/images/discount/discount1.png';
-  static const String discount2 =  'assets/images/discount/discount2.png';
-  static const String discount3 =  'assets/images/discount/discount3.png';
+  static const String discount0 =  'assets/images/discount/1.png';
+  static const String discount1 =  'assets/images/discount/2.png';
+  static const String discount2 =  'assets/images/discount/3.png';
+  static const String discount3 =  'assets/images/discount/4.png';
 
   //==== Category
   static const String burger =  'assets/images/category/burger.png';
@@ -76,6 +79,8 @@ class HImages{
   static const String mozarella_cheese =  'assets/images/food/mozarella_cheese.png';
   static const String pizza_hut =  'assets/images/food/pizza_hut.png';
   static const String vegeterian_noodels =  'assets/images/food/vegeterian_noodles.png';
+  static const String foodMap =  'assets/images/food/foodmap.png';
+  static const String lightfoodMap =  'assets/images/food/lightfoodmap.png';
 
   //==== Icons
   static const String filter = 'assets/icons/filter.png';
@@ -86,6 +91,13 @@ class HImages{
   static const String visa = 'assets/icons/visa.png';
   static const String topup = 'assets/icons/order.png';
   static const String topdown = 'assets/icons/topUp.png';
+
+  //==== Map Images
+
+  static const String darkTrackDriver = 'assets/images/map/darktrackdriver.png';
+  static const String lightTrackDriver = 'assets/images/map/lighttrackdriver.png';
+  static const String darkUserLocation = 'assets/images/map/Dark_location.png';
+  static const String lightUserLocation = 'assets/images/map/Light_location.png';
 
 
   //==== Searchs

@@ -24,7 +24,7 @@ class ChatInputField extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: CustomTextField(height: 40,
+                child: TCustomTextField(height: 40,
                   textEditingController: _controller,
                   prefixIcon: Icons.sentiment_satisfied,
                   prefixOnTap:  () =>_showAttachmentOptions(context) ,
@@ -34,7 +34,7 @@ class ChatInputField extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.photo),
                 onPressed: () {
-                  chatController.sendMessage(HImages.mixid_salad, isImage: true);
+                  chatController.sendMessage(TImages.mixid_salad, isImage: true);
                 },
               ),
               IconButton(

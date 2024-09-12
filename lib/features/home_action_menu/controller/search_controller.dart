@@ -14,7 +14,7 @@ class SearchPageController extends GetxController{
   var searchFoodItems = <SearchFoodItemModel>[
     SearchFoodItemModel(
       title: 'Fruit Salad',
-      imageUrl: HImages.fruit_salad,
+      imageUrl: TImages.fruit_salad,
       distance: 1.4,
       rating: 4.8,
       reviews: 2800,
@@ -22,7 +22,7 @@ class SearchPageController extends GetxController{
       recommendedItems: [
         SearchFoodItemModel(
           title: 'Special Dessert with Strawberry',
-          imageUrl: HImages.mixid_salad,
+          imageUrl: TImages.mixid_salad,
           distance: 0.0,
           rating: 0.0,
           reviews: 0,
@@ -31,7 +31,7 @@ class SearchPageController extends GetxController{
         ),
         SearchFoodItemModel(
           title: 'Fruit Flavor Color Burger',
-          imageUrl: HImages.mozarella_cheese,
+          imageUrl: TImages.mozarella_cheese,
           distance: 0.0,
           rating: 0.0,
           reviews: 0,

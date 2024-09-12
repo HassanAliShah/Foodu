@@ -4,6 +4,7 @@ import 'package:foodu/common/widgets/custom_shapes/container/custom_chip.dart';
 import 'package:foodu/features/home_action_menu/controller/home_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class ChipListRow extends StatelessWidget {
@@ -14,6 +15,7 @@ class ChipListRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     final controller = HomeController.instance;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
@@ -26,7 +28,7 @@ class ChipListRow extends StatelessWidget {
             itemBuilder: (context, index){
               return Obx(() {
                 bool isSelected = index == controller.selectedChipIndex.value;
-                return CustomChip(
+                return TCustomChip(
                   label: controller.chipListName[index],
                   labelColor: isSelected ? Colors.white : TColors.primary,
                   imagePath: controller.chipListImage[index],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 
 class VerticalFoodCardRestaurent extends StatefulWidget {
@@ -32,19 +33,20 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: _toggleBorderColor,
       child: Container(
         width: THelperFunctions.screenWidth() / 2.7,
-        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+        margin: const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.xm),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDark ? TColors.darkCard : Colors.white,
           borderRadius: BorderRadius.circular(15.0),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
+              spreadRadius: 1,
+              blurRadius: 1,
               offset: const Offset(0, 3),
             ),
           ],

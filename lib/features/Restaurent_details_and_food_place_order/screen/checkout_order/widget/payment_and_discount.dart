@@ -3,6 +3,8 @@ import 'package:foodu/common/widgets/custom_shapes/container/custom_divider.dart
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/checkout_order/widget/option_tile.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/discount/discount_screen.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/payment_method/payment_method_screen.dart';
+import 'package:foodu/utils/constants/colors.dart';
+import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
@@ -11,13 +13,14 @@ class PaymentsAndDiscounts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return Container(
       height: THelperFunctions.screenHeight() / 6.5,
-      margin: const EdgeInsets.symmetric(vertical: 12.0,),
+      margin: const EdgeInsets.symmetric(vertical: TSizes.xm,),
       width: double.infinity,
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(TSizes.lg),
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: isDark ? TColors.darkCard : Colors.white,
         shadows: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
@@ -26,7 +29,7 @@ class PaymentsAndDiscounts extends StatelessWidget {
           ),
         ],
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(TSizes.lg),
         ),
 
       ),
@@ -39,7 +42,7 @@ class PaymentsAndDiscounts extends StatelessWidget {
               Get.to(const PaymentMethodScreen());
             },
           ),
-          const custom_divider(),
+          const TCustomDivider(),
           OptionTile(
             icon: Icons.local_offer_outlined,
             title: 'Get Discounts',

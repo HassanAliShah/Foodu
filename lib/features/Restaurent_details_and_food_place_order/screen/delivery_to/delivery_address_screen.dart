@@ -15,12 +15,12 @@ class DeliveryAddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final  controller = Get.put(AddressController());
     return Scaffold(
-      appBar: HAppBar(
+      appBar: TAppBar(
         showBackButton: true,
         title: Text("Deliver to",style: Theme.of(context).textTheme.bodySmall,),
       ),
       body: Padding(
-        padding: HSpacingStyles.paddingWithHeightWidth,
+        padding: TSpacingStyles.paddingWithHeightWidth,
         child: Obx(() => Column(
           children: [
             SizedBox(
