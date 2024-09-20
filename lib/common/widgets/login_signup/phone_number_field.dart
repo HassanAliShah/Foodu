@@ -22,8 +22,8 @@ class TPhoneNumberField extends StatelessWidget {
           prefixIcon:  CountryCodePicker(
             padding: EdgeInsets.zero,
             onChanged: print,
-            initialSelection: 'PAK',
-            favorite: const ['+39','FR'],showDropDownButton: true,
+            initialSelection: 'GB',
+            favorite: const ['+92','PK'],showDropDownButton: true,
             showCountryOnly: false,
             showOnlyCountryWhenClosed: false,
             hideMainText: true,

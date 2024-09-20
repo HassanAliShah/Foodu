@@ -23,16 +23,18 @@ class OnBoardingPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage(image),
-            height: THelperFunctions.screenHeight() * 0.5,
-          ),
+          /// Image
+          Image(image: AssetImage(image), height: THelperFunctions.screenHeight() * 0.5),
+
+          /// Title
           Text(
             title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineLarge!.apply(fontSizeFactor: 1.3),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           const Gap(TSizes.spaceBtwItems),
+
+          /// SubTitle
           Text(
             subTitle,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: isDark ? TColors.textWhite : TColors.textblack),

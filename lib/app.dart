@@ -3,7 +3,7 @@ import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
 import 'bindings/general_bindings.dart';
-import 'features/onboarding_signup_signin/screens/welcome/welcome.dart';
+import 'features/authentication/screens/welcome/welcome.dart';
 import 'utils/theme/theme.dart';
 
 class App extends StatelessWidget {

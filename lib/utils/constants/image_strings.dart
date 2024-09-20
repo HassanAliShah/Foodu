@@ -10,7 +10,7 @@ class TImages{
   static const String welcome = 'assets/images/welcome/welcome.png';
 
   //==== Let's you in
-  static const String letYouIn = 'assets/images/let_you_in/letyouin.png';
+  static const String letYouIn = 'assets/images/let_you_in/let-you-in-light.png';
   static const String darkLetYouIn = 'assets/images/let_you_in/darkLetsYouIn.png';
 
   //==== profile form
@@ -20,9 +20,9 @@ class TImages{
   //==== Logo Image
   static const String appLogo = 'assets/logos/logo.png';
   static const String lightAppleLogo = 'assets/logos/lightAppleLogo.png';
-  static const String google = 'assets/logos/google.png';
-  static const String apple = 'assets/logos/apple.png';
-  static const String facebook = 'assets/logos/facebook.png';
+  static const String google = 'assets/logos/google-logo.png';
+  static const String apple = 'assets/logos/apple-logo.png';
+  static const String facebook = 'assets/logos/facebook-logo.png';
   static const String paypal = 'assets/logos/paypal.png';
 
   //==== Navigation bar

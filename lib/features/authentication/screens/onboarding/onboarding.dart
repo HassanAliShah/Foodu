@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/onboarding_signup_signin/controller/onboarding_controller.dart';
-import 'package:foodu/features/onboarding_signup_signin/screens/onboarding/widget/on_boarding_page.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../utils/exports.dart';
+import '../../controller/onboarding_controller.dart';
+import 'widget/on_boarding_page.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

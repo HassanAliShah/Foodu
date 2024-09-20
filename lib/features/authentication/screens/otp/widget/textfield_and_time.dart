@@ -1,27 +1,27 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:foodu/features/onboarding_signup_signin/controller/otp_controller.dart';
-import 'package:foodu/utils/constants/colors.dart';
-import 'package:foodu/utils/constants/sizes.dart';
-import 'package:foodu/utils/constants/text_strings.dart';
-import 'package:foodu/utils/helpers/helper_function.dart';
-class TextFeildandTime extends StatelessWidget {
-  const TextFeildandTime({
+
+import '../../../../../utils/exports.dart';
+import '../../../controller/otp_controller.dart';
+
+class TextFieldAndTime extends StatelessWidget {
+  const TextFieldAndTime({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
-   final controller = OtpController.instance;
+    final controller = OtpController.instance;
     return Padding(
-      padding:  const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
+      padding: const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
       child: Column(
         children: [
-          Text(TTexts.codeSendTo,style: Theme.of(context).textTheme.bodySmall,),
+          Text(
+            TTexts.codeSendTo,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(
-            height: TSizes.buttonHeight,
+            height: TSizes.buttonHeight
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,8 +32,8 @@ class TextFeildandTime extends StatelessWidget {
                 child: Center(
                   child: TextField(
                     cursorColor: TColors.primary,
-                    focusNode: controller.focusNode1
-                    ,cursorHeight: TSizes.lg,
+                    focusNode: controller.focusNode1,
+                    cursorHeight: TSizes.lg,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                     keyboardType: TextInputType.phone,
@@ -51,8 +51,8 @@ class TextFeildandTime extends StatelessWidget {
                 width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: TColors.primary
-                    ,cursorHeight: TSizes.lg,
+                    cursorColor: TColors.primary,
+                    cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode2,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -71,8 +71,8 @@ class TextFeildandTime extends StatelessWidget {
                 width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: TColors.primary
-                    ,cursorHeight: TSizes.lg,
+                    cursorColor: TColors.primary,
+                    cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode3,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -91,8 +91,8 @@ class TextFeildandTime extends StatelessWidget {
                 width: TSizes.buttonHeight,
                 child: Center(
                   child: TextField(
-                    cursorColor: TColors.primary
-                    ,cursorHeight: TSizes.lg,
+                    cursorColor: TColors.primary,
+                    cursorHeight: TSizes.lg,
                     focusNode: controller.focusNode4,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
@@ -114,18 +114,9 @@ class TextFeildandTime extends StatelessWidget {
           Text.rich(
             TextSpan(
               children: [
-                TextSpan(
-                    text: 'Resend code in ',
-                    style: Theme.of(context).textTheme.titleSmall
-                ),
-                TextSpan(
-                    text: '55',
-                    style: Theme.of(context).textTheme.bodySmall
-                ),
-                TextSpan(
-                    text: ' s',
-                    style: Theme.of(context).textTheme.titleSmall
-                ),
+                TextSpan(text: 'Resend code in ', style: Theme.of(context).textTheme.titleSmall),
+                TextSpan(text: '55', style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: ' s', style: Theme.of(context).textTheme.titleSmall),
               ],
             ),
             textAlign: TextAlign.center,

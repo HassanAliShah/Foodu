@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/features/onboarding_signup_signin/screens/let_you_in/let_you_in.dart';
 import 'package:get/get.dart';
+
+import '../screens/let_you_in/let_you_in.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();

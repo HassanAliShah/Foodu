@@ -24,7 +24,7 @@ class SetYourLocation extends StatelessWidget {
             height: THelperFunctions.screenHeight(),
             width: THelperFunctions.screenWidth(),
             color: Colors.white,
-            child: Image.asset( isDark ? TImages.darkUserLocation : TImages.lightUserLocation,fit: BoxFit.fill,)),
+            child: Image.asset( isDark ? TImages.darkUserLocation : TImages.lightUserLocation,fit: BoxFit.cover )),
           const locationFieldAndButtonContainer(),
         ],
       ),
