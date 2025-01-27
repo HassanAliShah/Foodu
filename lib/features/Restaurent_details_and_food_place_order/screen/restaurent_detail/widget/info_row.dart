@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/utils/exports.dart';
 
 class InfoRow extends StatelessWidget {
   final Icon? leadingIcon;
@@ -26,6 +27,7 @@ class InfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return InkWell(
       onTap: onTap,
       child: Padding(
@@ -33,25 +35,34 @@ class InfoRow extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /// -- Leading Icon and title
             Row(
               children: [
-                if(leadingIcon != null)...[
-                  leadingIcon!
-                ],
-                const SizedBox(width: 8),
+                /// -- Leading Icon
+                if(leadingIcon != null)...[leadingIcon!],
+                const SizedBox(width: TSizes.sm),
+
+                /// -- Title , secondary Text
                 Expanded(
                   child: Row(
                     children: [
+                      // title
                       if(title != null)...[Text(
                         title!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          color: dark ? Colors.white : Colors.black
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),],
+
+                      // main text
                       if(text != null)...[Text(
                         text!,
                         style: Theme.of(context).textTheme.bodySmall, // Customize main text style
                       ),],
+
+                      // Secondary Text
                       if (secondaryText != null) ...[
                         const SizedBox(width: 8), // Space between main text and secondary text
                         Text(
@@ -65,6 +76,8 @@ class InfoRow extends StatelessWidget {
                 const Icon(Icons.arrow_forward_ios, color: Colors.grey), // Trailing arrow
               ],
             ),
+
+            /// -- Deliver now text and fee
             if (showBottomRow) ...[
               const SizedBox(height: 8), // Space between rows
               Row(

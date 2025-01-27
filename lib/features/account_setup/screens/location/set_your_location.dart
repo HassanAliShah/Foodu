@@ -20,11 +20,14 @@ class SetYourLocation extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          /// -- Location Image
           Container(
             height: THelperFunctions.screenHeight(),
             width: THelperFunctions.screenWidth(),
             color: Colors.white,
             child: Image.asset( isDark ? TImages.darkUserLocation : TImages.lightUserLocation,fit: BoxFit.cover )),
+
+          /// -- Location Bottom Widget
           const locationFieldAndButtonContainer(),
         ],
       ),

@@ -37,17 +37,17 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
     return GestureDetector(
       onTap: _toggleBorderColor,
       child: Container(
-        width: THelperFunctions.screenWidth() / 2.7,
-        margin: const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.xm),
+        width: 180,
+        padding: const EdgeInsets.all(TSizes.xm),
         decoration: BoxDecoration(
           color: isDark ? TColors.darkCard : Colors.white,
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.black.withOpacity(0.1),
               spreadRadius: 1,
-              blurRadius: 1,
-              offset: const Offset(0, 3),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
             ),
           ],
           border: Border.all(
@@ -57,7 +57,10 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: TSizes.xm,
           children: [
+
+            /// -- Food Image
             Stack(
               children: [
                 ClipRRect(
@@ -89,24 +92,19 @@ class _VerticalFoodCardRestaurentState extends State<VerticalFoodCardRestaurent>
                   ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: SizedBox(
-                height: 50,
-                child: Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.bodySmall,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
+
+            /// -- Food Title
+            Text(
+              widget.title,
+              style: Theme.of(context).textTheme.bodySmall,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
-              child: Text(
-               "\$ ${widget.price}",
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary)
-              ),
+
+            /// -- Food Price
+            Text(
+             "\$ ${widget.price}",
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary)
             ),
           ],
         ),

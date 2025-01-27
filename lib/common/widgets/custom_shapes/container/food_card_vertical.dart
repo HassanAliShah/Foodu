@@ -36,7 +36,7 @@ class TFoodCardVertical extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: THelperFunctions.screenWidth() / 2,
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm,vertical: TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.xm),
         decoration: BoxDecoration(
           color: isDark ? TColors.darkCard  :Colors.white,
           borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
@@ -51,16 +51,18 @@ class TFoodCardVertical extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: TSizes.xm,
           children: [
+            /// -- Food Image
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
+                  borderRadius: BorderRadius.circular(TSizes.cardRadiusSm * 2),
                   child: Image.asset(imageUrl, fit: BoxFit.cover, width: double.infinity, height: 120),
                 ),
                 Positioned(
                   top: 6,
-                  left: 4,
+                  left: 6,
                   child: Container(
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
@@ -75,21 +77,27 @@ class TFoodCardVertical extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: TSizes.sm),
+
+            /// -- Food Name
             Text(
               title,
               style: Theme.of(context).textTheme.bodySmall,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: TSizes.xs),
+
+            /// -- Distance , Rating
             Row(
               children: [
+
+                // Distance
                 Text(
                   distance,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                 ),
                 const SizedBox(width: TSizes.xs),
+
+                // Divider
                 const SizedBox(
                   height: 14,
                   child: VerticalDivider(
@@ -97,26 +105,37 @@ class TFoodCardVertical extends StatelessWidget {
                     color: TColors.textGrey,
                   ),
                 ),
+
+                // Rating Icon
                 const Icon(Icons.star, size: 12, color: TColors.rating),
                 const SizedBox(width:  TSizes.xs),
+
+                // Rating Text
                 Text(
                   rating,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                 ),
+
+                // Rating Count
                 Text(
                   ' ($reviewsCount)',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
                 ),
               ],
             ),
-            const SizedBox(height: TSizes.sm),
+
+            /// -- Food price , Delivery fee , Favourite
             Row(
               children: [
+
+                // Price
                 Text(
                   "\$$price",
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
                 ),
                 const SizedBox(width:  TSizes.sm),
+
+                // Divider
                 const SizedBox(
                   height: 14,
                   child: VerticalDivider(
@@ -124,13 +143,19 @@ class TFoodCardVertical extends StatelessWidget {
                     color: TColors.textGrey,
                   ),
                 ),
+
+                // Delivery Icon
                 const Icon(Icons.delivery_dining, size: 20, color: TColors.primary),
                 const SizedBox(width:  TSizes.xs),
+
+                // Delivery Fee
                 Text(
                  "\$$deliveryFee",
                   style:  Theme.of(context).textTheme.labelSmall,
                 ),
                 const Spacer(),
+
+                // Favourite
                 GestureDetector(
                   onTap: onFavoriteToggle,
                   child: Icon(

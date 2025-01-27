@@ -39,6 +39,7 @@ class locationFieldAndButtonContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Divider(endIndent: 130,indent: 130,thickness: 2,height: 10,),
+            /// -- Location Text
             SizedBox(
               width: double.infinity,
               child: Text(
@@ -49,8 +50,8 @@ class locationFieldAndButtonContainer extends StatelessWidget {
             ),
             const Divider(),
 
+            /// -- Location text with icon
             TextIconContainer(text: "Islamabad", iconData: Icons.location_on, onTap: (){}),
-
             const Divider(),
 
             SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(const CreateNewPin()), child: const Text(TTexts.continueB)))

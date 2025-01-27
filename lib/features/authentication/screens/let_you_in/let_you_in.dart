@@ -23,6 +23,7 @@ class LetYouInScreen extends StatelessWidget {
             padding: TSpacingStyles.paddingWithAppbarHeight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              spacing: TSizes.spaceBtwSection,
               children: [
                 /// Header
                 THeader(

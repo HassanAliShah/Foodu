@@ -21,11 +21,13 @@ class CategoryGridView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
-          mainAxisSpacing: 1,
-          crossAxisSpacing: 1,
+          mainAxisSpacing: 0,
+          crossAxisSpacing: 0,
         ),
         itemCount: controller.categoryName.length,
         itemBuilder: (context, index) {
+
+          /// -- Category Image with text
           return TImageTextCategoryContainer(
             image: controller.categoryImage[index],
             text: controller.categoryName[index],

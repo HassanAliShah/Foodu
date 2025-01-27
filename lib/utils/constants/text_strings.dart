@@ -3,29 +3,28 @@
 class TTexts{
   TTexts._();
 
-  //====== GLOBAL STRINGS
+  /// ====== GLOBAL STRINGS
   static const String appName = "T Foodu";
 
 
-  //====== Welcome Text
+  /// ====== Welcome Text
 
   static const String welcomeTitle = 'Welcome to\nFoodu! 👋';
   static const String welcomeSubtitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
-  //====== LetYouIn TEXT
-
+  /// ====== LetYouIn TEXT
   static const String letYouIn = "Let's You In";
   static const String continueWith = "Continue with";
   static const String signInWithPhoneNo = "Sign in with Phone Number";
 
-  //===== OTP
+  /// ===== OTP
   static const String otpCodeVerification = "OTP Code Verification";
   static const String codeSendTo = "Code has been send to +1 111 ******99";
   static const String verify = "Verify";
 
 
 
-  //==== Authentication Form
+  /// ==== Authentication Form
   static const String fullName = 'Full Name';
   static const String loginYourAccount = 'Login Your Account';
   static const String createNewAccount = 'Create New Account';
@@ -39,8 +38,7 @@ class TTexts{
   static const String dontHaveAccount = "Don't have an Account?";
   static const String alreadyHaveAccount = "Already have an Account?";
 
-  //====== OnBoarding TEXT
-
+  ///====== OnBoarding TEXT
   static const String onBoardingTitle1 = 'Order For Food';
   static const String onBoardingTitle2 = 'Easy Payment';
   static const String onBoardingTitle3 = 'Fast Delivery';
@@ -53,27 +51,29 @@ class TTexts{
   static const String onBoardingSubTitle2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   static const String onBoardingSubTitle3 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
-  //===== Profile Form Fill
+  /// ===== Profile Form Fill
   static const String fillYourProfile = 'Fill Your Profile';
   static const String nickName = 'Nick Name';
   static const String gender = 'Gender';
   static const String dateOfBirth = 'Date of Birth';
   static const String continueB = 'Continue';
 
-  //===== Set your location
+  /// ===== Set your location
   static const String setYourLocation = 'Set Your Location';
 
-  //===== Crate New Pin
+  /// ===== Crate New Pin
   static const String createNewPin = 'Create New Pin';
   static const String pinText = 'Add a PIN number to make your account more secure';
   static const String confirmPinText = 'Enter your PIN to confirm top up';
 
-  //==== Discount
-
+  /// ==== Discount
   static const String discountPercent = '30%';
   static const String discountSubtitle = 'Discount Only Valid For Today!';
 
-
-
-
+  /// ==== Home
+ static const String deliverTo = 'Deliver To';
+ static const String specialOffer = 'Special Offer';
+ static const String discountGuaranteed = 'Discount Guaranteed! 👌';
+ static const String recommendedForYou = 'Recommended For You 😍';
+ static const String getDiscount = "Get Discount";
 }

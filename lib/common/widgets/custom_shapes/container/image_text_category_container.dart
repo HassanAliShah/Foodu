@@ -23,8 +23,11 @@ class TImageTextCategoryContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          /// -- Category Image
           Image(image: AssetImage(image),width: 40,height: 40,),
           const SizedBox(height: TSizes.sm,),
+
+          /// -- Category Name
           Text(
             THelperFunctions.truncateText(text, 6),
             textAlign: TextAlign.center,

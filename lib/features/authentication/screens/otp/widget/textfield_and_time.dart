@@ -15,14 +15,15 @@ class TextFieldAndTime extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
       child: Column(
+        spacing: TSizes.spaceBtwItems,
         children: [
+          /// -- Code Send text
           Text(
             TTexts.codeSendTo,
             style: Theme.of(context).textTheme.bodySmall,
           ),
-          const SizedBox(
-            height: TSizes.buttonHeight
-          ),
+
+          /// -- Code Input Field
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -108,9 +109,8 @@ class TextFieldAndTime extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: TSizes.buttonHeight,
-          ),
+
+          /// -- resend Code text and time
           Text.rich(
             TextSpan(
               children: [

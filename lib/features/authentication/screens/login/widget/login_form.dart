@@ -13,31 +13,27 @@ class TLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSection),
-        child: Column(
-          children: [
-            /// OTP Field
-            const TPhoneNumberField(),
-            const SizedBox(height: TSizes.sm),
+      child: Column(
+        spacing: TSizes.spaceBtwItems,
+        children: [
+          /// OTP Field
+          const TPhoneNumberField(),
 
-            /// Remember Me Checkbox
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Checkbox(value: true, onChanged: (value) {}),
-                Text(TTexts.rememberMe, style: Theme.of(context).textTheme.bodySmall),
-              ],
-            ),
-            const SizedBox(height: TSizes.sm),
+          /// Remember Me Checkbox
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Checkbox(value: true, onChanged: (value) {}),
+              Text(TTexts.rememberMe, style: Theme.of(context).textTheme.bodySmall),
+            ],
+          ),
 
-            /// Sign in Button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(onPressed: () => Get.to(const OtpScreen()), child: const Text(TTexts.signIN)),
-            ),
-          ],
-        ),
+          /// Sign in Button
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(onPressed: () => Get.to(const OtpScreen()), child: const Text(TTexts.signIN)),
+          ),
+        ],
       ),
     );
   }

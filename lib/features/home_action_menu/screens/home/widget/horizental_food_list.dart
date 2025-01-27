@@ -12,29 +12,31 @@ class HorizontalFoodList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = HomeController.instance;
+
+    /// -- Horizontal Food item list view
     return SizedBox(
-      height: THelperFunctions.screenHeight() / 3.5,
-      child: ListView.builder(
+      height: 233,
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: controller.foodItems.length,
+        separatorBuilder: (context, index){
+          return const SizedBox(width: TSizes.md,);
+        },
         itemBuilder: (context, index) {
           final item = controller.foodItems[index];
-          return Padding(
-            padding: const EdgeInsets.all(TSizes.sm),
-            child: TFoodCardVertical(
-              imageUrl: item['imageUrl'],
-              title: item['title'],
-              distance: item['distance'],
-              rating: item['rating'],
-              reviewsCount: item['reviewsCount'],
-              price: item['price'],
-              deliveryFee: item['deliveryFee'],
-              isFavorite: item['isFavorite'],
-              onFavoriteToggle: () {
 
-              },
-              onTap: (){},
-            ),
+          /// -- Food Item
+          return TFoodCardVertical(
+            imageUrl: item['imageUrl'],
+            title: item['title'],
+            distance: item['distance'],
+            rating: item['rating'],
+            reviewsCount: item['reviewsCount'],
+            price: item['price'],
+            deliveryFee: item['deliveryFee'],
+            isFavorite: item['isFavorite'],
+            onFavoriteToggle: () {},
+            onTap: (){},
           );
         },
       ),

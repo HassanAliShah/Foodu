@@ -27,6 +27,8 @@ class RestaurentDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            /// -- Restaurant Image
             Stack(
               children:
               [
@@ -63,6 +65,8 @@ class RestaurentDetailScreen extends StatelessWidget {
                 )
               ],
             ),
+
+            /// -- Restaurant Detail
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
@@ -77,16 +81,19 @@ class RestaurentDetailScreen extends StatelessWidget {
                 const Divider(),
               ],
             ),),
+
+            /// -- For you Heading
             Padding(
               padding: const EdgeInsets.symmetric(horizontal:TSizes.defaultSpace),
               child: Text("For You",style:  Theme.of(context).textTheme.bodyLarge,),
             ),
 
+            /// -- Horizontal Food List
             const HorizontalFoodList(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:TSizes.defaultSpace),
-              child: Text("Menu",style:  Theme.of(context).textTheme.bodyLarge,),
-            ),
+
+
+
+            /// -- Vertical Food List
             const VerticalFoodList()
           ],
         ),

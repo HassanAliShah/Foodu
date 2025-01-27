@@ -38,17 +38,16 @@ class _HorizontalFoodCardRestaurentState
     return GestureDetector(
       onTap: _toggleBorderColor,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.xs),
-        padding: const EdgeInsets.all(TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.xm),
         decoration: BoxDecoration(
           color: isDark ? TColors.darkCard : Colors.white,
           borderRadius: BorderRadius.circular(15.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.black.withOpacity(0.1),
               spreadRadius: 1,
-              blurRadius: 0,
-              offset: const Offset(0, 1),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
             ),
           ],
           border: Border.all(
@@ -58,6 +57,8 @@ class _HorizontalFoodCardRestaurentState
         ),
         child: Row(
           children: [
+
+            /// -- Food Image
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Image.asset(
@@ -68,6 +69,8 @@ class _HorizontalFoodCardRestaurentState
               ),
             ),
             const SizedBox(width: TSizes.sm),
+
+            /// -- Badge Text, Tile and Price
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

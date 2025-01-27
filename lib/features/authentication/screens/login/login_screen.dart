@@ -23,6 +23,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
+            spacing: TSizes.spaceBtwSection,
             children: [
               /// Header
               const THeader(text: TTexts.loginYourAccount, image: TImages.appLogo),
@@ -31,11 +32,12 @@ class LoginScreen extends StatelessWidget {
               const TLoginForm(),
 
               /// Divider
-              const TFormDivider(text: TTexts.continueWith),
+              const TFormDivider(text: TTexts.orContinueWith),
 
               /// Social Buttons
               const TSocialRowButon(),
 
+              /// Text with Sign Up Button
               TFooter(text: TTexts.dontHaveAccount, buttonText: TTexts.signUp, onPressed: () => Get.to(const SignUpScreen()))
             ],
           ),

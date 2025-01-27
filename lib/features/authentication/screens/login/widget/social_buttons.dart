@@ -16,11 +16,15 @@ class TSocialRowButon extends StatelessWidget {
     final isDark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      spacing: TSizes.spaceBtwItems,
       children: [
+        /// --  Facebook button
         TSocialIcon(image: TImages.facebook,onTap: (){},),
-        const SizedBox(width: TSizes.defaultSpace,),
+
+        /// --  Google button
         TSocialIcon(image: TImages.google,onTap: (){},),
-        const SizedBox(width: TSizes.defaultSpace,),
+
+        /// --  Apple button
         TSocialIcon(image: isDark ? TImages.lightAppleLogo : TImages.apple,onTap: (){},),
       ],
     );

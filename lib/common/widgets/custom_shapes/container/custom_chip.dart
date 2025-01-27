@@ -37,10 +37,13 @@ class TCustomChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            /// -- Chip Image
             if (imagePath != null) ...[
               Image(image: AssetImage(imagePath!),height: 20,width: 20,),
               const SizedBox(width: TSizes.xs),
             ],
+
+            /// -- Chip Name
             Text(
               label,
               style: Theme.of(context).textTheme.labelLarge?.copyWith(color: labelColor)

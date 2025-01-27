@@ -26,11 +26,10 @@ class DiscountCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: TSizes.sm),
         padding: const EdgeInsets.all(TSizes.md),
         decoration: BoxDecoration(
           color: isDark? TColors.darkCard : Colors.white,
-          borderRadius: BorderRadius.circular(TSizes.xm),
+          borderRadius: BorderRadius.circular(TSizes.xm * 2),
           boxShadow: const [
             BoxShadow(
               color: Colors.black12,
@@ -41,6 +40,7 @@ class DiscountCard extends StatelessWidget {
         ),
         child: Row(
           children: [
+            /// --  Discount Icon
             Container(
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
@@ -56,6 +56,8 @@ class DiscountCard extends StatelessWidget {
               ),
             ),
             const Gap(16),
+
+            /// -- Title and Description
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,6 +74,8 @@ class DiscountCard extends StatelessWidget {
                 ],
               ),
             ),
+
+            /// -- Selection Icon
             Icon(
               isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
               color: isSelected ? TColors.primary : Colors.grey,

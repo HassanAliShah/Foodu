@@ -19,9 +19,9 @@ class THeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: TSizes.spaceBtwItems,
       children: [
         Center(child: Image(image: AssetImage(image), width: width, height: height)),
-        const SizedBox(height: TSizes.md),
         Text(text, style: style ?? Theme.of(context).textTheme.titleLarge, textAlign: TextAlign.center),
       ],
     );

@@ -15,35 +15,33 @@ class ChipListRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = THelperFunctions.isDarkMode(context);
     final controller = HomeController.instance;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
-      child: SizedBox(
-        height: 30,
-        width: double.infinity,
-        child:  ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: controller.chipListName.length,
-            itemBuilder: (context, index){
-              return Obx(() {
-                bool isSelected = index == controller.selectedChipIndex.value;
-                return TCustomChip(
-                  label: controller.chipListName[index],
-                  labelColor: isSelected ? Colors.white : TColors.primary,
-                  imagePath: controller.chipListImage[index],
-                  onTap: () {
-                    controller.selectChip(index);
-                  },
-                  backgroundColor: isSelected ? TColors.primary : Colors
-                      .white,);
-              });
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const SizedBox(width: TSizes.sm,);
-            },
-          ),
+    return SizedBox(
+      height: 30,
+      width: double.infinity,
+      child:  ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: controller.chipListName.length,
+          itemBuilder: (context, index){
+            return Obx(() {
+              bool isSelected = index == controller.selectedChipIndex.value;
+
+              /// -- Custom Chip
+              return TCustomChip(
+                label: controller.chipListName[index],
+                labelColor: isSelected ? Colors.white : TColors.primary,
+                imagePath: controller.chipListImage[index],
+                onTap: () {
+                  controller.selectChip(index);
+                },
+                backgroundColor: isSelected ? TColors.primary : Colors
+                    .white,);
+            });
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const SizedBox(width: TSizes.sm,);
+          },
         ),
-    );
+      );
   }
 }

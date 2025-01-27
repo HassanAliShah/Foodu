@@ -32,6 +32,7 @@ class TextIconContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            /// -- Current Location
             Expanded(
               child: SizedBox(
                 child: Text(
@@ -40,6 +41,8 @@ class TextIconContainer extends StatelessWidget {
                 ),
               ),
             ),
+
+            /// -- Location Icon
             Icon(iconData,color: TColors.textGrey,),
           ],
         ),

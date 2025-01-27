@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/common/widgets/button/title_with_text_button.dart';
 import 'package:foodu/common/widgets/custom_shapes/container/discount_container.dart';
@@ -16,9 +17,11 @@ import 'package:foodu/features/home_action_menu/screens/home/widget/verical_food
 import 'package:foodu/features/home_action_menu/screens/notification/notification_screen.dart';
 import 'package:foodu/features/home_action_menu/screens/recommanded_for_you/recommanded_for_you_screen.dart';
 import 'package:foodu/features/home_action_menu/screens/search/search_screen.dart';
+import 'package:foodu/features/home_action_menu/screens/special_offer/special_offer_screen.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -40,7 +43,11 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Deliver To',style: Theme.of(context).textTheme.labelSmall,),
+
+              /// -- Deliver to Text
+              Text(TTexts.deliverTo,style: Theme.of(context).textTheme.labelSmall,),
+
+              /// -- Location Selection Button
               GestureDetector(
                 onTap: (){},
                 child: Row(
@@ -54,29 +61,45 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           actions: [
+            /// -- Notification Icon Button
             ActionIcon(onTap: () =>Get.to(const NotificationScreen())
              ,iconData: Iconsax.notification,),
             const Gap(5),
+
+            /// -- Cart Icon Button
             ActionIcon(onTap:  () =>Get.to(const CartScreen()),iconData: Iconsax.shopping_cart,),
           ],
         ),
         body: SingleChildScrollView(
-          child: Padding(padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+          child: Padding(padding: TSpacingStyles.paddingWithHeightWidth,
           child: Column(
+            spacing: TSizes.defaultSpace,
             children: [
-              const SizedBox(height: TSizes.defaultSpace,),
+              /// -- Search Field
               GestureDetector(onTap: () =>Get.to(const SearchScreen()),child: const TSearchContainer(text: 'What are you craving?',)),
-              const SizedBox(height: TSizes.defaultSpace,),
-              TRowWithTextButton(title: 'Special Offer', onTap: ()=> Get.to(DiscountScreen()),),
-               const DiscountImage(imagePath: TImages.discount0,),
-              const SizedBox(height: TSizes.lg,),
+
+              /// -- Special Offer Heading with See All button
+              TRowWithTextButton(title: TTexts.specialOffer, onTap: ()=> Get.to(const SpecialOfferScreen()),),
+
+               /// -- Banner
+              const DiscountImage(imagePath: TImages.discount0,),
+
+              /// -- Category
               const CategoryGridView(),
-              const SizedBox(height: TSizes.defaultSpace,),
-              TRowWithTextButton(title: 'Discount Guaranteed! 👌', onTap: ()=> Get.to(DiscountScreen()),),
+
+              /// -- Discounted Heading with See All button
+              TRowWithTextButton(title: TTexts.discountGuaranteed, onTap: ()=> Get.to(DiscountScreen()),),
+
+              /// -- Food item list
               const HorizontalFoodList(),
-              const SizedBox(height: TSizes.defaultSpace,),
-              TRowWithTextButton(title: 'Recommended For You 😍', onTap: () => Get.to(const RecommandedForYouScreen())),
+
+              /// -- Recommended Food Heading with See All button
+              TRowWithTextButton(title: TTexts.recommendedForYou, onTap: () => Get.to(const RecommandedForYouScreen())),
+
+              /// -- Category Chips
               const ChipListRow(),
+
+              /// -- Food item list
               const VerticalFoodList(),
             ],
           ),

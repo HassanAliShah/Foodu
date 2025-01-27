@@ -12,22 +12,22 @@ class HorizontalFoodList extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = RestaurantController.instance;
     return Padding(
-      padding:  const EdgeInsets.only(left:TSizes.defaultSpace),
+      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: SizedBox(
-        height: THelperFunctions.screenHeight() / 3.3,
-        child: ListView.builder(
+        height: 210,
+        child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: controller.foodItems.length,
+          separatorBuilder: (context , index){
+            return const SizedBox(width: TSizes.md,);
+          },
           itemBuilder: (context, index) {
             final item = controller.foodItems[index];
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: VerticalFoodCardRestaurent(
-                imageUrl: item['imageUrl'],
-                title: item['title'],
-                price: item['price'],
-                badgeText: item['badgeText'],
-              ),
+            return VerticalFoodCardRestaurent(
+              imageUrl: item['imageUrl'],
+              title: item['title'],
+              price: item['price'],
+              badgeText: item['badgeText'],
             );
           },
         ),

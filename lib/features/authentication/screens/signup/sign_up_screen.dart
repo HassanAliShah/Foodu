@@ -24,6 +24,7 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
+            spacing: TSizes.spaceBtwSection,
             children: [
               /// Header
               const THeader(text: TTexts.createNewAccount, image: TImages.appLogo),
@@ -34,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
               /// Divider
               const TFormDivider(text: "or ${TTexts.continueWith}"),
 
-              //Social Button
+              /// Social Buttons
               const TSocialRowButon(),
 
               TFooter(

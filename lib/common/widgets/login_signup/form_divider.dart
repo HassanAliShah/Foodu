@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
+import 'package:foodu/utils/helpers/exports.dart';
 
 class TFormDivider extends StatelessWidget {
   const TFormDivider({
@@ -12,16 +13,14 @@ class TFormDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(child: Divider(color: TColors.textGrey.withOpacity(0.4), thickness: 0.5, indent: 10, endIndent: 5)),
-          Text(text, style: Theme.of(context).textTheme.titleSmall!.apply(fontWeightDelta: 2, color: Colors.black54, fontSizeFactor: 1.1)),
-          Flexible(child: Divider(color: TColors.textGrey.withOpacity(0.4), thickness: 0.5, indent: 5, endIndent: 10)),
-        ],
-      ),
+    final dark = THelperFunctions.isDarkMode(context);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(child: Divider(color: TColors.textGrey.withOpacity(0.4), thickness: 0.5, indent: 10, endIndent: 5)),
+        Text(text, style: Theme.of(context).textTheme.titleSmall!.apply(fontWeightDelta: 2, color: dark ? TColors.textWhite : Colors.black54, fontSizeFactor: 1.1)),
+        Flexible(child: Divider(color: TColors.textGrey.withOpacity(0.4), thickness: 0.5, indent: 5, endIndent: 10)),
+      ],
     );
   }
 }

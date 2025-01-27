@@ -22,68 +22,74 @@ class ProfileForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
     final controller = ProfileFormController.instance;
-    return Form(child: SizedBox(
-      height: THelperFunctions.screenHeight() /1.5,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Profile Image
-          const ProfilePicSelection(),
-          //Full name
-          SizedBox(
-            height: TSizes.buttonHeight,
-            child: TextField(
-              cursorColor: TColors.primary,
-              cursorHeight: TSizes.lg,
-              style: Theme.of(context).textTheme.bodySmall,
-              decoration: InputDecoration(
-                hintText: TTexts.fullName,
-                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
-                hintStyle: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-          ),
-          //nick name
-          SizedBox(
-            height: TSizes.buttonHeight,
-            child: TextField(
-              cursorColor: TColors.primary,
-              cursorHeight: TSizes.lg,
-              style: Theme.of(context).textTheme.bodySmall,
-              decoration: InputDecoration(
-                hintText: TTexts.nickName,
-                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
-                hintStyle: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-          ),
-          //email
-          SizedBox(
-            height: TSizes.buttonHeight,
-            child: TextField(
-              cursorColor: TColors.primary,
-              cursorHeight: TSizes.lg,
-              style: Theme.of(context).textTheme.bodySmall,
-              decoration: InputDecoration(
-                suffixIcon: const Icon(Icons.email),
-                fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
-                hintText: TTexts.email,
-                hintStyle: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-          ),
-          //custom textIcon Container
-          Obx(()=> TextIconContainer(onTap: () async {
-            final date =   await showDatePicker(context: context,
-              firstDate: DateTime(1950),
-              lastDate: DateTime(2024),);
-            controller.dateOfBirth.value = DateFormat('dd/MM/yyyy').format(date!);
-          },text: controller.dateOfBirth.value,iconData: Icons.calendar_month_rounded,),),
+    return Form(
+        child:
+        Column(
+          spacing: TSizes.spaceBtwItems,
+          children: [
+            /// -- Profile Image
+            const ProfilePicSelection(),
 
-          const TPhoneNumberField(),
-          const GenderSelectionButton(),
-        ],
-      ),
-    ));
+            /// -- Full name text field
+            SizedBox(
+              height: TSizes.buttonHeight,
+              child: TextField(
+                cursorColor: TColors.primary,
+                cursorHeight: TSizes.lg,
+                style: Theme.of(context).textTheme.bodySmall,
+                decoration: InputDecoration(
+                  hintText: TTexts.fullName,
+                  fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                  hintStyle: Theme.of(context).textTheme.titleSmall,
+                ),
+              ),
+            ),
+
+            /// -- Nick name text Field
+            SizedBox(
+              height: TSizes.buttonHeight,
+              child: TextField(
+                cursorColor: TColors.primary,
+                cursorHeight: TSizes.lg,
+                style: Theme.of(context).textTheme.bodySmall,
+                decoration: InputDecoration(
+                  hintText: TTexts.nickName,
+                  fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                  hintStyle: Theme.of(context).textTheme.titleSmall,
+                ),
+              ),
+            ),
+
+            /// -- Email text Field
+            SizedBox(
+              height: TSizes.buttonHeight,
+              child: TextField(
+                cursorColor: TColors.primary,
+                cursorHeight: TSizes.lg,
+                style: Theme.of(context).textTheme.bodySmall,
+                decoration: InputDecoration(
+                  suffixIcon: const Icon(Icons.email),
+                  fillColor: isDark ? TColors.darkCard : TColors.textFieldFillColor,
+                  hintText: TTexts.email,
+                  hintStyle: Theme.of(context).textTheme.titleSmall,
+                ),
+              ),
+            ),
+
+            /// -- Date of birth
+            Obx(()=> TextIconContainer(onTap: () async {
+              final date =   await showDatePicker(context: context,
+                firstDate: DateTime(1950),
+                lastDate: DateTime(2024),);
+              controller.dateOfBirth.value = DateFormat('dd/MM/yyyy').format(date!);
+            },text: controller.dateOfBirth.value,iconData: Icons.calendar_month_rounded,),),
+
+            /// -- Phone Number Field
+            const TPhoneNumberField(),
+
+            /// -- Gender Selection
+            const GenderSelectionButton(),
+          ],
+        ));
   }
 }

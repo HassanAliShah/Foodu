@@ -3,6 +3,8 @@ import 'package:foodu/common/styles/spacing_styles.dart';
 import 'package:foodu/common/widgets/app_bar/app_bar.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/controller/discount_controller.dart';
 import 'package:foodu/features/Restaurent_details_and_food_place_order/screen/discount/widget/discount_card.dart';
+import 'package:foodu/utils/constants/exports.dart';
+import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
 class DiscountScreen extends StatelessWidget {
@@ -16,14 +18,16 @@ class DiscountScreen extends StatelessWidget {
     return Scaffold(
       appBar: const TAppBar(
         showBackButton: true,
-        title: Text("Get Discount",),
+        title: Text(TTexts.getDiscount,),
       ),
       body: Padding(
         padding: TSpacingStyles.paddingWithHeightWidth,
-        child: Obx(() => ListView.builder(
+        child: Obx(() => ListView.separated(
           itemCount: controller.discounts.length,
+          separatorBuilder: (context , index){
+            return const SizedBox(height: TSizes.defaultSpace,);
+          },
           itemBuilder: (context, index) {
-            print("Rebuilding UI, selected index: ${controller.selectedDiscountIndex.value}");
             var discount = controller.discounts[index];
             return DiscountCard(
               title: discount['title'] as String,

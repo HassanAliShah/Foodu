@@ -22,14 +22,13 @@ class ProfileFormScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace,vertical: TSizes.defaultSpace),
           child: Column(
+            spacing: TSizes.spaceBtwSection,
             children: [
+              /// -- Profile Form
               const ProfileForm(),
-              const SizedBox(
-                height: TSizes.defaultSpace,
-              ),
+
+              /// -- continue button
               SizedBox(width:double.infinity,child: ElevatedButton(onPressed: () => Get.to(const SetYourLocation()), child: const Text(TTexts.continueB)))
-
-
             ],
           ),
         ),
