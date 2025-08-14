@@ -1,4 +1,3 @@
-//Add English Language Translations
 class English {
 
   static Map<String, String> get language => {

@@ -4,3 +4,6 @@
 -- */
 
 enum ImageType { asset, network, memory, file }
+
+enum Gender { male, female }
+

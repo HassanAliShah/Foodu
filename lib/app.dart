@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/routes/app_routes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class App extends StatelessWidget {
       initialBinding: GeneralBindings(),
       debugShowCheckedModeBanner: false,
       // To implement Deep Linking use getPages approach
-      // getPages: [],
+      getPages: AppRoutes.pages,
       // initialRoute: ,
       // unknownRoute: ,
 

@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../../../routes/routes.dart';
 import '../screens/let_you_in/let_you_in.dart';
 
+/// -- On Boarding Controller for Managing the OnBoarding Screen
 class OnBoardingController extends GetxController {
-  static OnBoardingController get instance => Get.find();
 
-  final pageController = PageController();
+  /// -- Singleton Instance
+  static OnBoardingController get instance => Get.isRegistered() ? Get.find() : Get.put(OnBoardingController());
+
+  /// -- Observables
   Rx<int> currentPageIndex = 0.obs;
+  final pageController = PageController();
 
   void updatePageIndicator(index) => currentPageIndex.value = index;
 
@@ -20,7 +25,7 @@ class OnBoardingController extends GetxController {
     if (currentPageIndex.value == 2) {
       currentPageIndex.value = 0;
       // Remove all the previous Screens and Launch Login
-      Get.offAll(() => const LetYouInScreen());
+      Get.offAllNamed(TRoutes.letYouIn);
     } else {
       currentPageIndex.value++;
       pageController.jumpToPage(currentPageIndex.value);

@@ -5,6 +5,7 @@ import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class SocialButtonsWithIcon extends StatelessWidget {
   const SocialButtonsWithIcon({super.key});
@@ -14,7 +15,6 @@ class SocialButtonsWithIcon extends StatelessWidget {
     final isDark = THelperFunctions.isDarkMode(context);
     return Column(
       children: [
-
         /// Facebook Sign In
         SizedBox(
           width: double.infinity,
@@ -26,7 +26,7 @@ class SocialButtonsWithIcon extends StatelessWidget {
                 children: [
                   Image.asset(TImages.facebook, width: 25, height: 25),
                   const Gap(TSizes.sm),
-                  Text("${TTexts.continueWith} Facebook", style: Theme.of(context).textTheme.bodySmall)
+                  Text("${TTexts.continueWith.tr} Facebook", style: Theme.of(context).textTheme.bodySmall)
                 ],
               )),
         ),
@@ -43,7 +43,7 @@ class SocialButtonsWithIcon extends StatelessWidget {
                 children: [
                   Image.asset(TImages.google, width: 25, height: 25),
                   const Gap(TSizes.sm),
-                  Text("${TTexts.continueWith} Google", style: Theme.of(context).textTheme.bodySmall)
+                  Text("${TTexts.continueWith.tr} Google", style: Theme.of(context).textTheme.bodySmall)
                 ],
               )),
         ),
@@ -60,7 +60,7 @@ class SocialButtonsWithIcon extends StatelessWidget {
               children: [
                 Image.asset(isDark ? TImages.lightAppleLogo : TImages.apple, width: 25, height: 25),
                 const Gap(TSizes.sm),
-                Text("${TTexts.continueWith} Apple", style: Theme.of(context).textTheme.bodySmall)
+                Text("${TTexts.continueWith.tr} Apple", style: Theme.of(context).textTheme.bodySmall)
               ],
             ),
           ),

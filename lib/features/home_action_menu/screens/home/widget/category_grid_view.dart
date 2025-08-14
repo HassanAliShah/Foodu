@@ -15,28 +15,26 @@ class CategoryGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = HomeController.instance;
-    return SizedBox(
-      height: THelperFunctions.screenHeight() /5.3,
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          mainAxisSpacing: 0,
-          crossAxisSpacing: 0,
-        ),
-        itemCount: controller.categoryName.length,
-        itemBuilder: (context, index) {
-
-          /// -- Category Image with text
-          return TImageTextCategoryContainer(
-            image: controller.categoryImage[index],
-            text: controller.categoryName[index],
-            onTap: () {
-              Get.to(const CategoryScreen());
-            },
-          );
-        },
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 4,
+        mainAxisSpacing: 0,
+        crossAxisSpacing: 4,
       ),
+      itemCount: controller.categoryName.length,
+      itemBuilder: (context, index) {
+
+        /// -- Category Image with text
+        return TImageTextCategoryContainer(
+          image: controller.categoryImage[index],
+          text: controller.categoryName[index],
+          onTap: () {
+            Get.to(const CategoryScreen());
+          },
+        );
+      },
     );
   }
 }

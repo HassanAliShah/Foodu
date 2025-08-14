@@ -40,11 +40,27 @@ class TColors{
   //Rating Color
   static const Color rating = Colors.orange;
 
+  // Icon Color
+  static const Color iconGreyColor = Color(0xFF9E9E9E);
+  static const Color iconBlackColor = Color(0xFF212121);
+
   // Gradient color
   static const Gradient greenGradient =  LinearGradient(
     begin: Alignment(-0.96, 0.28),
     end: Alignment(0.96, -0.28),
     colors: [Color(0xFF1BAC4B), Color(0xFF46D375)],
+  );
+
+  static const Gradient yellowGradient =  LinearGradient(
+    begin: Alignment(-0.96, 0.28),
+    end: Alignment(0.96, -0.28),
+    colors: [Color(0xFFFACC15), Color(0xFFFFE580)],
+  );
+
+  static const Gradient blueGradient = LinearGradient(
+    begin: Alignment(-0.96, 0.28),
+    end: Alignment(0.96, -0.28),
+    colors: [Color(0xFF246BFD), Color(0xFF4F89FF)],
   );
 
   static const Gradient orangeGradient = LinearGradient(
@@ -54,16 +70,12 @@ class TColors{
   );
 
   static const Gradient redGradient = LinearGradient(
-  begin: Alignment(-0.96, 0.28),
-  end: Alignment(0.96, -0.28),
+  end: Alignment(-0.96, 0.28),
+  begin: Alignment(0.96, -0.28),
   colors: [Color(0xFFFF4D67), Color(0xFFFF8A9B)],
   );
 
-  static const Gradient blueGradient = LinearGradient(
-    begin: Alignment(-0.96, 0.28),
-    end: Alignment(0.96, -0.28),
-    colors: [Color(0xFF246BFD), Color(0xFF4F89FF)],
-  );
+
 
 
 }

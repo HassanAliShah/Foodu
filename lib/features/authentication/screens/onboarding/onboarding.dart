@@ -12,7 +12,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(OnBoardingController());
+    final controller = OnBoardingController.instance;
     return Scaffold(
       body: Stack(
         children: [
@@ -20,10 +20,10 @@ class OnBoardingScreen extends StatelessWidget {
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
-            children: const [
-              OnBoardingPage(title: TTexts.onBoardingTitle1, image: TImages.onBoardingImage1, subTitle: TTexts.onBoardingSubTitle1),
-              OnBoardingPage(title: TTexts.onBoardingTitle2, image: TImages.onBoardingImage2, subTitle: TTexts.onBoardingSubTitle2),
-              OnBoardingPage(title: TTexts.onBoardingTitle3, image: TImages.onBoardingImage3, subTitle: TTexts.onBoardingSubTitle3),
+            children: [
+              OnBoardingPage(title: TTexts.onBoardingTitle1.tr, image: TImages.onBoardingImage1, subTitle: TTexts.onBoardingSubTitle1.tr),
+              OnBoardingPage(title: TTexts.onBoardingTitle2.tr, image: TImages.onBoardingImage2, subTitle: TTexts.onBoardingSubTitle2.tr),
+              OnBoardingPage(title: TTexts.onBoardingTitle3.tr, image: TImages.onBoardingImage3, subTitle: TTexts.onBoardingSubTitle3.tr),
             ],
           ),
 
@@ -49,7 +49,7 @@ class OnBoardingScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => controller.nextPage(),
-                    child: Obx(() => Text(controller.currentPageIndex < 2 ? 'Next' : 'Get Started')),
+                    child: Obx(() => Text(controller.currentPageIndex < 2 ? TTexts.onBoardingButton1.tr : TTexts.onBoardingButton3.tr)),
                   ),
                 ),
               ],

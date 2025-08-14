@@ -4,12 +4,13 @@ import 'app.dart';
 
 Future<void> main() async {
   /// -- Uncomment this line if you want to use any of features below
-  // final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  //final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   /// -- INIT Local Storage
+  //await GetStorage.init();
 
   /// -- Overcome from transparent spaces at the bottom in iOS full Mode, [Use only if needed]
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+  //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 
   /// -- Await Splash until other items Loaded
   /// Note: Make sure to call FlutterNativeSplash.remove();

@@ -15,27 +15,36 @@ dependencies:
   # Utility Packages
   gap: ^3.0.1
   intl: ^0.18.1
-  logger: ^2.0.1
-  ripple_wave: ^0.1.4
+  logger: ^2.6.1
+  ripple_wave: ^0.1.5
   slide_to_act: ^2.0.2
   image_picker: ^1.1.2
-  flutter_slidable: ^3.1.1
-  country_code_picker: ^3.0.0
-  flutter_native_splash : ^2.3.2
-  smooth_page_indicator: ^1.2.0+3
+  flutter_slidable: ^4.0.0
+  country_code_picker: ^3.3.0
+  flutter_native_splash : ^2.4.6
+  smooth_page_indicator: ^1.2.1
 
 
   # State Management
-  get: ^4.6.6
+  get: ^4.7.2
   get_storage: ^2.1.1
 
   # Icons
   iconsax: ^0.0.8
+  iconly: ^1.0.1
   cupertino_icons: ^1.0.8
-  connectivity_plus: ^6.0.5
+  connectivity_plus: ^6.1.5
 
 
   # Firebase
+  firebase_core: ^4.0.0
+  firebase_auth: ^6.0.1
+  firebase_messaging: ^16.0.0
+  cloud_firestore: ^6.0.0
+  firebase_storage: ^13.0.0
+  google_sign_in: ^7.1.1
+  cloud_functions: ^6.0.0
+  firebase_crashlytics: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +76,7 @@ flutter:
   fonts:
     - family: Urbanist
       fonts:
-        - asset: assets/fonts/Urbanist-Light.ttf
+        - asset: assets/fonts/Urbanist-SemiBold.ttf
           weight: 300
         - asset: assets/fonts/Urbanist-Regular.ttf
           weight: 400

@@ -1,14 +1,12 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:foodu/common/styles/spacing_styles.dart';
+import 'package:foodu/routes/routes.dart';
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/constants/text_strings.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-
-import '../onboarding/onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -16,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// Timer to call OnBoarding after 3 seconds
-    Timer(const Duration(seconds: 3), () => Get.offAll(() => const OnBoardingScreen()));
+    Timer(const Duration(seconds: 3), () => Get.offAllNamed(TRoutes.onboarding));
 
     /// Use the container to set Background Image
     return Container(
@@ -40,10 +38,10 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(TTexts.welcomeTitle,
+              Text(TTexts.welcomeTitle.tr,
                   textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineLarge!.apply(fontSizeFactor: 1.4)),
               const Gap(TSizes.spaceBtwItems),
-              Text(TTexts.welcomeSubtitle, textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineSmall),
+              Text(TTexts.welcomeSubtitle.tr, textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineSmall),
               const Gap(TSizes.defaultSpace + 10),
             ],
           ),

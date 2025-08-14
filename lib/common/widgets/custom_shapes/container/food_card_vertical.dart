@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/helpers/helper_function.dart';
+import 'package:iconly/iconly.dart';
 
 class TFoodCardVertical extends StatelessWidget {
   final String imageUrl;
@@ -36,10 +37,11 @@ class TFoodCardVertical extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: THelperFunctions.screenWidth() / 2,
+       // height: 220,
         padding: const EdgeInsets.all(TSizes.xm),
         decoration: BoxDecoration(
           color: isDark ? TColors.darkCard  :Colors.white,
-          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusSm * 2),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
@@ -51,7 +53,7 @@ class TFoodCardVertical extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: TSizes.xm,
+          spacing: TSizes.sm,
           children: [
             /// -- Food Image
             Stack(
@@ -71,7 +73,7 @@ class TFoodCardVertical extends StatelessWidget {
                     ),
                     child: Text(
                       'PROMO',
-                      style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 5),
+                      style:Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.backgroundLight,fontSize: 10),
                     ),
                   ),
                 ),
@@ -81,45 +83,29 @@ class TFoodCardVertical extends StatelessWidget {
             /// -- Food Name
             Text(
               title,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
 
-            /// -- Distance , Rating
+            /// -- Rating
             Row(
               children: [
 
-                // Distance
-                Text(
-                  distance,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
-                ),
-                const SizedBox(width: TSizes.xs),
-
-                // Divider
-                const SizedBox(
-                  height: 14,
-                  child: VerticalDivider(
-                    thickness: 1,
-                    color: TColors.textGrey,
-                  ),
-                ),
-
                 // Rating Icon
-                const Icon(Icons.star, size: 12, color: TColors.rating),
+                const Icon(IconlyBold.star, size: 12, color: TColors.rating),
                 const SizedBox(width:  TSizes.xs),
 
                 // Rating Text
                 Text(
                   rating,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 10),
                 ),
 
                 // Rating Count
                 Text(
                   ' ($reviewsCount)',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 10),
                 ),
               ],
             ),
@@ -131,38 +117,42 @@ class TFoodCardVertical extends StatelessWidget {
                 // Price
                 Text(
                   "\$$price",
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary,fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(width:  TSizes.sm),
 
                 // Divider
-                const SizedBox(
-                  height: 14,
-                  child: VerticalDivider(
-                    thickness: 1,
-                    color: TColors.textGrey,
-                  ),
-                ),
+                // const SizedBox(
+                //   height: 14,
+                //   child: VerticalDivider(
+                //     thickness: 1,
+                //     color: TColors.textGrey,
+                //   ),
+                // ),
 
-                // Delivery Icon
-                const Icon(Icons.delivery_dining, size: 20, color: TColors.primary),
-                const SizedBox(width:  TSizes.xs),
-
-                // Delivery Fee
-                Text(
-                 "\$$deliveryFee",
-                  style:  Theme.of(context).textTheme.labelSmall,
-                ),
+                // // Delivery Icon
+                // const Icon(Icons.delivery_dining, size: 20, color: TColors.primary),
+                // const SizedBox(width:  TSizes.xs),
+                //
+                // // Delivery Fee
+                // Text(
+                //  "\$$deliveryFee",
+                //   style:  Theme.of(context).textTheme.labelSmall,
+                // ),
                 const Spacer(),
 
                 // Favourite
                 GestureDetector(
                   onTap: onFavoriteToggle,
-                  child: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: Colors.red,
-                    size: 20,
-                  ),
+                  child: ShaderMask(
+                    shaderCallback: (bounds) =>  TColors.redGradient.createShader(bounds),
+                    child: Icon(
+                      isFavorite ? IconlyBold.heart : IconlyLight.heart,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                  )
+
                 ),
               ],
             ),

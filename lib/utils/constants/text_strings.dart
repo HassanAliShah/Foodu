@@ -5,22 +5,28 @@ class TTexts{
 
   /// ====== GLOBAL STRINGS
   static const String appName = "T Foodu";
+  static const String cancel = "Cancel";
+  static const String confirm = "Confirm";
+  static const String male = "Male";
+  static const String female = "Female";
+  static const String selectGender = "Select Gender";
+
 
 
   /// ====== Welcome Text
-
   static const String welcomeTitle = 'Welcome to\nFoodu! 👋';
   static const String welcomeSubtitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
   /// ====== LetYouIn TEXT
   static const String letYouIn = "Let's You In";
-  static const String continueWith = "Continue with";
+  static const String continueWith = "continue with";
   static const String signInWithPhoneNo = "Sign in with Phone Number";
 
   /// ===== OTP
   static const String otpCodeVerification = "OTP Code Verification";
   static const String codeSendTo = "Code has been send to +1 111 ******99";
   static const String verify = "Verify";
+  static const String resendCodeIn = "Resend code in ";
 
 
 

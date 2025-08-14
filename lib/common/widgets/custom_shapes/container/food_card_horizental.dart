@@ -4,6 +4,7 @@ import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:foodu/utils/exports.dart';
 import 'package:gap/gap.dart';
+import 'package:iconly/iconly.dart';
 
 class TFoodCardHorizental extends StatelessWidget {
   final String imageUrl;
@@ -40,7 +41,7 @@ class TFoodCardHorizental extends StatelessWidget {
         padding: const EdgeInsets.all(TSizes.xm),
         decoration: BoxDecoration(
           color: isDark ? TColors.darkCard  : Colors.white,
-          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusSm * 2),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
@@ -72,29 +73,24 @@ class TFoodCardHorizental extends StatelessWidget {
                   /// -- Food Name
                   Text(
                     title,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const Gap(8),
 
-                  /// -- Distance , Rating
+                  /// -- Distance
                   Row(
                     children: [
-                      Text(
-                        '$distance m',
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
-                      ),
-                     const Gap(8.0),
                       const Icon(
-                        Icons.star,
+                        IconlyBold.star,
                         color: TColors.rating,
                         size: 16.0,
                       ),
                       const Gap(8.0),
                       Text(
                         '$rating (${reviewCount}k)',
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 8),
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(fontSize: 10),
                       ),
                     ],
                   ),
@@ -106,32 +102,9 @@ class TFoodCardHorizental extends StatelessWidget {
                       // Price
                       Text(
                         "\$$price",
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary),
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(color: TColors.primary,fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(width:  TSizes.sm),
-
-                      // Divider
-                      const SizedBox(
-                        height: 14,
-                        child: VerticalDivider(
-                          thickness: 1,
-                          color: TColors.textGrey,
-                        ),
-                      ),
-
-                      // Delivery Icon
-                      const Icon(
-                        Icons.delivery_dining,
-                        color: Colors.green,
-                        size: 16.0,
-                      ),
-                      const Gap(8.0),
-
-                      // Delivery Fee
-                      Text(
-                        '\$$deliveryFee',
-                        style:  Theme.of(context).textTheme.labelSmall,
-                      ),
                     ],
                   ),
                 ],
@@ -139,12 +112,17 @@ class TFoodCardHorizental extends StatelessWidget {
             ),
 
             /// -- Favourite Button
-            IconButton(
-              icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: Colors.red,
-              ),
-              onPressed: onFavoriteToggle,
+            GestureDetector(
+                onTap: onFavoriteToggle,
+                child: ShaderMask(
+                  shaderCallback: (bounds) =>  TColors.redGradient.createShader(bounds),
+                  child: Icon(
+                    isFavorite ? IconlyBold.heart : IconlyLight.heart,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                )
+
             ),
           ],
         ),

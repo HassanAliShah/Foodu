@@ -3,8 +3,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class PinController extends GetxController{
-  static PinController get instance => Get.find();
+/// -- On Pin Controller for Managing the Pin Operations
+class PinController extends GetxController {
+  /// -- Singleton Instance
+  static PinController get instance => Get.isRegistered() ? Get.find() : Get.put(PinController());
+
 
   final focusNode1 = FocusNode();
   final focusNode2 = FocusNode();
@@ -22,7 +25,6 @@ class PinController extends GetxController{
 
 
   void moveToNextField(String value, FocusNode currentNode, FocusNode nextNode) {
-    print(value.length);
     if (value.length == 1) {
       nextNode.requestFocus();
     }

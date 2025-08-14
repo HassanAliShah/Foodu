@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/authentication/screens/login/widget/social_buttons.dart';
 import 'package:get/get.dart';
-
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/login_signup/footer.dart';
 import '../../../../common/widgets/login_signup/form_divider.dart';
 import '../../../../common/widgets/login_signup/header.dart';
+import '../../../../routes/routes.dart';
 import '../../../../utils/exports.dart';
-import '../signup/sign_up_screen.dart';
 import 'widget/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,22 +22,27 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: TSizes.spaceBtwSection,
             children: [
               /// Header
-              const THeader(text: TTexts.loginYourAccount, image: TImages.appLogo),
+              THeader(text: TTexts.loginYourAccount.tr,image: TImages.appLogo),
+              const SizedBox(height:  TSizes.spaceBtwSection,),
 
               /// Form
               const TLoginForm(),
+              const SizedBox(height:  TSizes.spaceBtwSection,),
 
               /// Divider
               const TFormDivider(text: TTexts.orContinueWith),
+              const SizedBox(height:  TSizes.spaceBtwSection,),
+
 
               /// Social Buttons
               const TSocialRowButon(),
+              const SizedBox(height:  TSizes.spaceBtwSection / 2.5,),
+
 
               /// Text with Sign Up Button
-              TFooter(text: TTexts.dontHaveAccount, buttonText: TTexts.signUp, onPressed: () => Get.to(const SignUpScreen()))
+              TFooter(text: TTexts.dontHaveAccount, buttonText: TTexts.signUp.tr, onPressed: () => Get.offAndToNamed(TRoutes.signup))
             ],
           ),
         ),

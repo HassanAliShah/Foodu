@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../utils/exports.dart';
 import '../../../controller/otp_controller.dart';
@@ -19,7 +20,7 @@ class TextFieldAndTime extends StatelessWidget {
         children: [
           /// -- Code Send text
           Text(
-            TTexts.codeSendTo,
+            TTexts.codeSendTo.tr,
             style: Theme.of(context).textTheme.bodySmall,
           ),
 
@@ -114,7 +115,7 @@ class TextFieldAndTime extends StatelessWidget {
           Text.rich(
             TextSpan(
               children: [
-                TextSpan(text: 'Resend code in ', style: Theme.of(context).textTheme.titleSmall),
+                TextSpan(text: TTexts.resendCodeIn.tr, style: Theme.of(context).textTheme.titleSmall),
                 TextSpan(text: '55', style: Theme.of(context).textTheme.bodySmall),
                 TextSpan(text: ' s', style: Theme.of(context).textTheme.titleSmall),
               ],

@@ -3,9 +3,11 @@
 import 'package:foodu/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 
+/// Home Controller for managing Home Screen Operations
 class HomeController extends GetxController{
 
-  static HomeController get instance => Get.find();
+  /// -- Singleton Instance
+  static HomeController get instance => Get.isRegistered() ? Get.find() : Get.put(HomeController());
 
   List<String>  categoryName = [
     'Hamburger',

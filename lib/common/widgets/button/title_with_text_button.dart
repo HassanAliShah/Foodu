@@ -16,8 +16,8 @@ class TRowWithTextButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title,style:  Theme.of(context).textTheme.labelLarge?.copyWith(color: isDark ? TColors.textWhite :TColors.textblack,fontSize: 16),),
-        InkWell(onTap: onTap,child: Text('See All',style: Theme.of(context).textTheme.labelLarge,))
+        Text(title,style:  Theme.of(context).textTheme.labelLarge?.copyWith(color: isDark ? TColors.textWhite :TColors.textblack,fontSize: 16,fontWeight: FontWeight.bold),),
+        InkWell(onTap: onTap,child: Text('See All',style: Theme.of(context).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.bold),))
       ],
     );
   }

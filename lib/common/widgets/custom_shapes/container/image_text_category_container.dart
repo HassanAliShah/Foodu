@@ -29,7 +29,7 @@ class TImageTextCategoryContainer extends StatelessWidget {
 
           /// -- Category Name
           Text(
-            THelperFunctions.truncateText(text, 6),
+            THelperFunctions.truncateText(text, 10),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(color: isDark ? TColors.textWhite :  TColors.textblack),
           ),

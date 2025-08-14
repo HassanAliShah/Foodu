@@ -15,28 +15,30 @@ class HorizontalFoodList extends StatelessWidget {
 
     /// -- Horizontal Food item list view
     return SizedBox(
-      height: 233,
+      height: 254,
       child: ListView.separated(
+        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: controller.foodItems.length,
-        separatorBuilder: (context, index){
-          return const SizedBox(width: TSizes.md,);
-        },
+        separatorBuilder: (context, index) => const SizedBox(width: 0,),
         itemBuilder: (context, index) {
           final item = controller.foodItems[index];
 
           /// -- Food Item
-          return TFoodCardVertical(
-            imageUrl: item['imageUrl'],
-            title: item['title'],
-            distance: item['distance'],
-            rating: item['rating'],
-            reviewsCount: item['reviewsCount'],
-            price: item['price'],
-            deliveryFee: item['deliveryFee'],
-            isFavorite: item['isFavorite'],
-            onFavoriteToggle: () {},
-            onTap: (){},
+          return Container(
+            margin: const EdgeInsets.all(TSizes.md),
+            child: TFoodCardVertical(
+              imageUrl: item['imageUrl'],
+              title: item['title'],
+              distance: item['distance'],
+              rating: item['rating'],
+              reviewsCount: item['reviewsCount'],
+              price: item['price'],
+              deliveryFee: item['deliveryFee'],
+              isFavorite: item['isFavorite'],
+              onFavoriteToggle: () {},
+              onTap: (){},
+            ),
           );
         },
       ),

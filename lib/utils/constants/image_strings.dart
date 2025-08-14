@@ -39,6 +39,7 @@ class TImages{
 
   //==== Home
   static const String pic = 'assets/images/profile/pic.png';
+  static const String user = 'assets/images/profile/user.png';
 
   //=== Discount
   static const String discount0 =  'assets/images/discount/1.png';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/utils/constants/sizes.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:iconly/iconly.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar({
@@ -35,7 +35,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: actions,
         bottom: bottomBar,
         leading: showBackButton
-            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
+            ? IconButton(onPressed: () => Get.back(), icon: const Icon(IconlyLight.arrow_left))
             : leadingImage != null
                 ? Image.asset(leadingImage!, fit: BoxFit.contain, height: TSizes.lg, width: TSizes.lg)
                 : null,

@@ -22,7 +22,7 @@ class THeader extends StatelessWidget {
       spacing: TSizes.spaceBtwItems,
       children: [
         Center(child: Image(image: AssetImage(image), width: width, height: height)),
-        Text(text, style: style ?? Theme.of(context).textTheme.titleLarge, textAlign: TextAlign.center),
+        Text(text, style: style ?? Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold), textAlign: TextAlign.center),
       ],
     );
   }

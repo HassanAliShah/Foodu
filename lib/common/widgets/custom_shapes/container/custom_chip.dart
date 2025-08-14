@@ -31,7 +31,7 @@ class TCustomChip extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor == TColors.primary ? TColors.primary : isDark ? TColors.backgroundDark :TColors.backgroundLight,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: borderColor),
+          border: Border.all(color: borderColor,width: 2),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -46,7 +46,7 @@ class TCustomChip extends StatelessWidget {
             /// -- Chip Name
             Text(
               label,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(color: labelColor)
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(color: labelColor,fontWeight: FontWeight.bold)
             ),
           ],
         ),

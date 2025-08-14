@@ -4,7 +4,6 @@ import 'package:foodu/common/widgets/custom_shapes/container/custom_chip.dart';
 import 'package:foodu/features/home_action_menu/controller/home_controller.dart';
 import 'package:foodu/utils/constants/colors.dart';
 import 'package:foodu/utils/constants/sizes.dart';
-import 'package:foodu/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class ChipListRow extends StatelessWidget {
